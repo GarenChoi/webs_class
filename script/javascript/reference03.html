@@ -144,7 +144,7 @@
     <h2>변수에 저장할 수 있는 자료형</h2>
     <p>변수에 저장할 수 있는 자료형(Data type)으로는 문자형(String), 숫자형(Nember), 논리형(Boolean) 그리고 빈 데이터(Undefined)가 있습니다. 앞으로는 OO형 또는 OO형
         데이터라고 부르겠습니다.</p>
-
+        <br>
     <h3>문자형</h3>
     <p>문자형(String) 데이터는 다음과 같이 문자나 숫자를 큰따옴표("") 또는 작은 따옴표('')로 감싸고 있습니다. 또한 문자형 데이터에 HTML 태그를 포함하여 출력하면 태그로
         인식합니다.</p>
@@ -238,19 +238,29 @@
         </div><br>
 
     <h3>typeof</h3>
-    <p>typeof는 지정한 데이터 또는 변수에 저장된 자료형을 알고 싶을 떄 사용합니다. 기본형은 다음과 같습니다.<br>기본형 : typeof 변수 또는 데이터;<br></p>
-    <script>
-        {
-            var num = 100;
-            var str = "자바스크립트"
-
-            document.write(typeof num, "<br>");
-            document.write(typeof str);
-        }
-    </script>
-    <br>변수에 저장된 자료형(type)을 출력합니다. document.write(데이터, "br")는 화면에 데이터를 출력하고 줄 바꿈합니다.
+    <p>typeof는 지정한 데이터 또는 변수에 저장된 자료형을 알고 싶을 떄 사용합니다. 기본형은 다음과 같습니다.</p>
+        <div id="sample9" class="sample">
+            <div class="code">
+                <pre class="line-nembers"><code class="language-js">기본형 : typeof 변수 또는 데이터;</code></pre>
+            </div>
+        </div>
+        <br>
+        <p>다음은 typeof를 이용하여 변수에 저장된 자료형을 알아내는 예제입니다.</p>
+        <div id="sample9" class="sample">
+            <div class="code">
+                <pre class="line-nembers"><code class="language-js">06: &lt;script&gt;
+07:     var num = 100;
+08:     var str = "자바스크립트"
+09:
+10:     document.write(typeof num, "&lt;br&gt;");
+11:     document.write(typeof str);
+12: &lt;script&gt;</code></pre>
+</div>
+</div>
+<br>
+    <br>변수에 저장된 자료형(type)을 출력합니다. document.write(데이터, "&lt;br&gt;")는 화면에 데이터를 출력하고 줄 바꿈합니다.
     </p>
-
+ 
 </body>
 
 </html>

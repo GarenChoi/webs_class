@@ -106,6 +106,17 @@
             font-size: 24px;
         }
 
+        table {
+            border-collapse: collapse;
+            border-radius: 10px;
+            border-style: hidden;
+            box-shadow: 0 0 0 2px #808080;
+        }
+
+        td {
+            padding: 15px;
+        }
+
         .sample {
             border-radius: 1px;
         }
@@ -119,7 +130,7 @@
             margin: 0 !important;
             border-radius: 1px !important;
         }
-        
+
         .sample pre code {
             color: #000;
         }
@@ -139,34 +150,80 @@
     <h3>변수 선언</h3>
     <p>변수를 선언할 떄는 다음 기본형과 같이 var 키워드를 변수명 앞에 붙입니다. 변수명에는 한글을 사용할 수 없으며, 영문과 숫자 그리고 일부 특수 문자(_,&)만 포함할 수 있습니다. 변수명은 의미에
         맞게 만드는 것이 좋습니다. 가령 수학 시험 점수를 저장하는 변수라면 'mathNum'이라고 이름 지으면 되겠죠. 이때 변수명은 단어와 단어의 조합으로 지었고, 두 번째 단어의 첫 글자는 대문자로
-        표기했습니다. 이는 마치 낙타의 등과 같다고 해서 낙타(Camel)표기법이라 부릅니다.
-        <div id="sample1" class="sample">
-            <div class="code">
-                <pre class="line-nembers"><code class="language-js">기본형 : 변수명; 또는 var 변수명=값;</code></pre>
-            </div>
+        표기했습니다. 이는 마치 낙타의 등과 같다고 해서 낙타(Camel)표기법이라 부릅니다.</p>
+
+    <div id="sample1" class="sample">
+        <div class="code">
+            <pre class="line-nembers"><code class="language-js">기본형 : 변수명; 또는 var 변수명=값;</code></pre>
         </div>
-        변수를 선언하면 변수명으로 데이터를 저장할 수 있는 공간이 생성됩니다. 다음은 box라는 이름을 가진 변수에 100이라는 값을 대입한 예제입니다. 초기에는 값이 등록되지 않은
-        상태(undefined)입니다. box에 100을 대입하면 다음 그림과 같이 변수에 100이 저장됩니다.
-        <div id="sample2" class="sample">
-            <div class="code">
-                <pre class="line-nembers"><code class="language-js">var box;<br>box=100</code></pre>
-            </div>
+    </div>
+    <br>
+    <p>변수를 선언하면 변수명으로 데이터를 저장할 수 있는 공간이 생성됩니다. 다음은 box라는 이름을 가진 변수에 100이라는 값을 대입한 예제입니다. 초기에는 값이 등록되지 않은
+        상태(undefined)입니다. box에 100을 대입하면 다음 그림과 같이 변수에 100이 저장됩니다.</p>
+    <div id="sample2" class="sample">
+        <div class="code">
+            <pre class="line-nembers"><code class="language-js">var box;<br>box=100</code></pre>
         </div>
-        변수에는 하나의 값만 넣을 수 있습니다. 만약 변수 box에 값을 두 번 넣으면 어떻게 될까요? 다움과 같이 변수 box에 새로운 데이터 30이 저장되면 기존에 저장되어 있던 데이터 100은 삭제되고
-        새로운 데이터 30이 저장됩니다.
-        <div id="sample3" class="sample">
-            <div class="code">
-                <pre class="line-nembers"><code class="language-js">05: &lt;script&gt;
+    </div>
+    <br>
+    <p>변수에는 하나의 값만 넣을 수 있습니다. 만약 변수 box에 값을 두 번 넣으면 어떻게 될까요? 다움과 같이 변수 box에 새로운 데이터 30이 저장되면 기존에 저장되어 있던 데이터 100은 삭제되고
+        새로운 데이터 30이 저장됩니다.</p>
+    <div id="sample3" class="sample">
+        <div class="code">
+            <pre class="line-nembers"><code class="language-js">05: &lt;script&gt;
 06: var box;
 07: box = 100;
 08: box = 30;
 09: document.write(box); //30
 10: &lt;/script&gt;</code></pre>
-            </div>
         </div>
-        위에서 작성한 문서를 저장한 후 브라우저에서 확인하면 변수 box에 마지막으로 저장된 데이터 30이 출력됩니다.</p>
+    </div>
+    <br>
+    <p>위에서 작성한 문서를 저장한 후 브라우저에서 확인하면 변수 box에 마지막으로 저장된 데이터 30이 출력됩니다.</p>
+    <h2>변수 선언 시 주의 사항</h2>
+    <p>다음은 변수를 선언할 때 주의해야 할 사항입니다.<br>
+        1. 변수명 첫 글자로는 $, _(언더바), 영문자만 올 수 있습니다.</p>
+    <table class="table table-bordered">
+        <tr>
+            <td class="va">var 1num=10; (X)
+                <br>var $num=10; (O)</td>
+        </tr>
+    </table>
+    <br>
+    <p>2. 변수명 첫 글자 다음은 영문자, 숫자, $, _(언더바)만 포함할 수 있습니다.</p>
+    <table class="table table-bordered">
+        <tr>
+            <td class="va">var 100num=10; (X)
+                <br>var num100=10; (O)</td>
+        </tr>
+    </table>
+    <br>
+    <p>3. 변수명으로는 예약어(document, location, window 등)를 사용할 수 없습니다. 예약어란 이미 자바스맆트에서 사용 중인 단어를 말합니다.</p>
+    <table class="table table-bordered">
+        <tr>
+            <td class="va">var document=10; (X)
+                <br>var num=10; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(O)</td>
+        </tr>
+    </table>
+    <br>
+    <p>4. 변수명을 지을 때는 되도록 의미를 부여해 작성하는 것이 좋습니다.</p>
+    <table class="table table-bordered">
+        <tr>
+            <td class="va">var num="hello"; (X)
+                <br>var num=10; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(O)</td>
+        </tr>
+    </table>
+    <br>
+    <p>5. 변수명을 사용할 때는 대 소문자를 구분해야 합니다.</p>
+    <table class="table table-bordered">
+        <tr>
+            <td class="va">var num=10; document.write(Num)(X)
+                <br>var num=10; document.write(num)(O)</td>
+        </tr>
+    </table>
 
-    
+
+
 </body>
 
 </html>
