@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav>
+            <ul>
+                <li><a href="reference01.html">기초 문법</a></li>
+                <li class="active"><a href="reference02.html">변수</a></li>
+                <li><a href="reference03.html">자료형</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <div class="doc">
+            <h2>변수란?</h2>
+            <p>변수(variables)는 데이터를 담기 위한 메모리 공간을 의미한다. 어떤 값을 담기 위한 상자라고 비유할 수 있다.</p>
+
+            <h2>변수 선언 방법</h2>
+            <p>ES5까지 변수 선언은 var 키워드를 사용해 선언했다. 하지만 var 키워드의 단점을 보완하기 위해 도입된 let 키워드와 const 키워드를 포함해 지금 자바 스크립트에서의 변수 선언
+                방법은 크게 3가지(var, let, const)가 있다.</p>
+
+            <h3>변수 선언 키워드 차이점</h3>
+            <div>
+                <table>
+                    <tr class="list">
+                        <td></td>
+                        <td>var</td>
+                        <td>let</td>
+                        <td>const</td>
+                    </tr>
+                    <tr>
+                        <td class="lists">범위</td>
+                        <td>function</td>
+                        <td>block-level</td>
+                        <td>block-level</td>
+                    </tr>
+                    <tr>
+                        <td class="lists">변수 중복 선언</td>
+                        <td>O</td>
+                        <td>X</td>
+                        <td>X</td>
+                    </tr>
+                    <tr>
+                        <td class="lists">변수 값 재할당</td>
+                        <td>O</td>
+                        <td>O</td>
+                        <td>X</td>
+                    </tr>
+                    <tr>
+                        <td class="lists">초기화 필요</td>
+                        <td>X</td>
+                        <td>X</td>
+                        <td>O</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2>변수명</h2>
+            <p>자바스크립트에는 의미를 가진 단어들이 있기 때문에 사용자가 임의로 사용할 수 없는 단어들이 있다.</p>
+            <div class="line">
+                키워드 : 자바스크립트가 만들어 질 때 정해진 특별한 의미가 있는 단어<br>
+                식별자 : 변수나 함수의 이름이 될 수 있는 사용자가 선언하는 단어
+            </div>
+
+            <h3>식별자를 만드는 규칙</h3>
+            <ul>
+                <li>사용자가 사용할 수 있는 문자 : 알파벳(a~z, A~Z), 숫자(0~9). 밑줄(_), 달러기호($)</li>
+                <li>첫 글자는 숫자를 사용할 수 없다.</li>
+                <li>공백을 사용할 수 없다. : 밑줄(_) 사용가능, 하이픈(-) 사용불가능하다.</li>
+                <li>특수기호를 사용할 수 없다. : 달러기호($)는 사용가능 하다.</li>
+                <li>키워드를 사용할 수 없다.</li>
+            </ul>
+
+            <h3>단어를 조합할 때 규칙</h3>
+            <ul>
+                <li>언더스코어 노테이션 : (snake_case) : 모든 단어가 소문자로 되어 있고, 단어와 단어 사이는 언더바(_)로 연결된다.</li>
+                <li>캐멜 노테이션 : (camelCase) : 첫 단어는 소문자로 시작하고, 두번째 단어부터 대문자로 시작한다. 단어와 단어 사이는 붙인다.</li>
+                <li>파스칼 노테이션 : (PascalCase) : 모든 단어가 대문자로 시작하고, 단어와 단어 사이는 붙인다.</li>
+            </ul>
+        </div>
+     <main>
+</body>
+</html>
