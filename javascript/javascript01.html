@@ -150,9 +150,9 @@
         y = 300;    //전역변수 200->300
 
         document.write("함수 안");
-        document.write(x");
-        document.write(y");
-        document.write(z");
+        document.write(x);
+        document.write(y);
+        document.write(z);
     }
     func();
 
@@ -514,8 +514,6 @@
         }
         // 04. 변수 : 변수의 종류 : 지역변수 + 전역변수 + 매개변수
         {
-            document.write("<br>*** 04. 변수 : 변수의 종류 ***<br>");
-
             //변수 : 데이터 저장
             //함수 : 데이터 실행
             let x = 100;    //전역변수
@@ -527,17 +525,14 @@
                 x = 200;    //지역변수 100->200
                 y = 300;    //전역변수 200->300
 
-                document.write("함수 안<br>");
-                document.write(x, "<br>");
-                document.write(y, "<br>");
-                document.write(z, "<br>");
+                document.querySelector(".result04").innerHTML += "*** 함수 안 ***<br>";
+                document.querySelector(".result04").innerHTML += x + "<br>" + y + "<br>" + z + "<br>";
+
             }
             func();
-
-            document.write("함수 밖<br>");
-            document.write(x, "<br>");
-            document.write(y, "<br>");
-            document.write(z, "<br>");
+            
+            document.querySelector(".result04").innerHTML += "<br>*** 함수 밖 ***<br>";
+            document.querySelector(".result04").innerHTML += x + "<br>" + y + "<br>" + z;
         }
 
         // 05. 상수 : 데이터 저장 + 데이터 변경(X)
@@ -642,13 +637,7 @@
                 d: "javascript"
             };
 
-            document.write("<br>*** 15. 객체 ***<br>");
-            document.write(obj.a, "<br>");
-            document.write(obj.b[0], "<br>");
-            document.write(obj.b[1], "<br>");
-            document.write(obj.c.x, "<br>");
-            document.write(obj.c.y, "<br>");
-            document.write(obj.d, "<br>");
+            document.querySelector(".result15").innerHTML = obj.a + "<br>" + obj.b[0] + "<br>" + obj.b[1] + "<br>" + obj.c.x + "<br>" + obj.c.y + "<br>" + obj.d;
         }
         // 16. 객체 : 데이터를 저장(키와 값) : 표현 방법7 : 객체 속에 변수
         {
@@ -658,10 +647,7 @@
 
             const obj = { a, b, c };
 
-            document.write("<br>*** 16. 객체 ***<br>");
-            document.write(obj.a, "<br>");
-            document.write(obj.b, "<br>");
-            document.write(obj.c, "<br>");
+            document.querySelector(".result16").innerHTML = obj.a + "<br>" + obj.b + "<br>" + obj.c
         }
         // 17. 객체 : 데이터를 저장(키와 값) : 표현 방법8 : 객체 속에 함수
         {
@@ -671,23 +657,17 @@
                 c: {x:400, y:500},
                 d: "javascript",
                 e: function(){
-                    document.write("javascript가 실행되었습니다.")
+                    document.querySelector(".result17").innerHTML += "javascript가 실행되었습니다." + "<br>"
                 },
                 f: function(){
-                    document.write( obj.d + "가 실행되었습니다.")
+                    document.querySelector(".result17").innerHTML += obj.d + "가 실행되었습니다." + "<br>"
                 },
                 g: function(){
-                    document.write( this.d + "가 실행되었습니다")
+                    document.querySelector(".result17").innerHTML += this.d + "가 실행되었습니다." + "<br>"
                 }
                 
             };
-            document.write("<br>*** 17. 객체 ***<br>");
-            document.write(obj.a, "<br>");
-            document.write(obj.b, "<br>");
-            document.write(obj.b[0], "<br>");
-            document.write(obj.b[1], "<br>");
-            document.write(obj.c.x, "<br>");
-            document.write(obj.c.y, "<br>");
+            document.querySelector(".result17").innerHTML += obj.a + "<br>" + obj.b + "<br>" + obj.b[0] + "<br>" + obj.b[1] + "<br>" + obj.c.x + "<br>" + obj.c.y + "<br>"; 
             obj.e();
             obj.f();
             obj.g();

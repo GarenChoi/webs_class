@@ -195,6 +195,13 @@
                 반환한다.</p>
             <strong>비교 연산자의 종류</strong>
             <table>
+                <style>
+                    table tr td.td {
+                        text-align: left;
+                        padding: 0 0 0 5px;
+                    }
+                </style>
+
                 <tr class="list">
                     <td>종류</td>
                     <td>설명</td>
@@ -202,48 +209,96 @@
                 </tr>
                 <tr>
                     <td>A&gt;B</td>
-                    <td>A가 B보다 크다.</td>
+                    <td class="td">A가 B보다 크다.</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>A&lt;B</td>
-                    <td>A가 B보다 작다.</td>
+                    <td class="td">A가 B보다 작다.</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>A&gt;=B</td>
-                    <td>A가 B보다 크거나 같다.</td>
+                    <td class="td">A가 B보다 크거나 같다.</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>A&lt;=B</td>
-                    <td>A가 B보다 작거나 같다.</td>
+                    <td class="td">A가 B보다 작거나 같다.</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>A==B</td>
-                    <td>A와 B는 같다.</td>
-                    <td>숫자를 비교할 경우 자료형은 숫자형이든 문자형이든 상관하지 않고 표기된 숫자만 일치하면 true를 반환한다.</td>
+                    <td class="td">A와 B는 같다.</td>
+                    <td class="td">숫자를 비교할 경우 자료형은 숫자형이든 문자형이든 상관하지 않고 표기된 숫자만 일치하면 true를 반환한다.<br>
+                    <strong>숫자형 10과 문자형 "10"은 같은 것으로 인식되어 true를 반환한다.</strong></td>
                 </tr>
                 <tr>
                     <td>A!=B</td>
-                    <td>A와 B는 다르다.</td>
-                    <td></td>
+                    <td class="td">A와 B는 다르다.</td>
+                    <td class="td">숫자를 비교할 경우 자료형은 숫자형이든 문자형이든 상관하지 않고 표기된 숫자만 다르면 true를 반환한다.<br>
+                    <strong>숫자형 10과 문자형 "10"은 같은 것으로 인식되어 A!=B에 대해 false를 반환한다.</strong></td>
                 </tr>
                 <tr>
                     <td>A===B</td>
-                    <td>A와 B는 같다.</td>
-                    <td></td>
+                    <td class="td">A와 B는 같다.</td>
+                    <td class="td">숫자를 비교할 경우 반드시 표기된 숫자와 자료형도 일치해야만 true를 반환한다. 10과 "10"을 비교했을 경우 표기된 숫자는 같지만<br>
+                    <strong>하나는 숫자형 10이고 하나는 문자형 "10"이므로 false를 반환한다.</strong></td>
                 </tr>
                 <tr>
                     <td>A!==B</td>
-                    <td>A와 B는 다르다.</td>
-                    <td></td>
+                    <td class="td">A와 B는 다르다.</td>
+                    <td class="td">숫자를 비교할 경우 반드시 표기된 숫자 또는 자료형이 일치하지 않을 떄 true를 반환한다. 10과 "10"을 비교했을 경우 표기된 숫자는 같지만<br>
+                    <strong>하나는 숫자형 10이고 하나는 문자형 "10"이므로 true를 반환한다.</strong></td>
                 </tr>
-            </table>
+            </table><br>
+            <h4>예제</h4>
+            <div class="code">
+<pre><code>
+    &lt;script&gt;
+        var a = 10;
+        var b = 20;
+        var c = 10;
+        var f = "20";
+        var result;
+        
+        result = a&gt;b;     //false
+        document.write(result,"&lt;br&gt;");
+        result = a&lt;b;     //true
+        document.write(result,"&lt;br&gt;");
+        result = a&lt;=b;    //true
+        document.write(result,"&lt;br&gt;");
+        result = b==f;      //true
+        document.write(result,"&lt;br&gt;");
+        result = a!=b;      //true
+        document.write(result,"&lt;br&gt;");
+        result = b===f;     //false
+        document.write(result,"&lt;br&gt;");
+    &lt;/script&gt;
+</code></pre>
+            </div>
 
             <h3>논리 연산자</h3>
-
+            <p>논리 연산자에는 ||(or), &&(and), !(not)이 있으며, 논리 연산자는 피연산자가 논리형 데이터인 true 또는 false로 결괏값을 반환한다.</p>
+            <strong>논리 연산자의 종류</strong>
+            <table>
+                <tr class="list">
+                    <td>종류</td>
+                    <td>설명</td>
+                </tr>
+                <tr>
+                    <td>||</td>
+                    <td class="td">or 연산자라 부르며, 피연산자 중 값이<br><strong>하나라도 true가 존재하면 true로 결괏값을 반환한다.</strong></td>
+                </tr>
+                <tr>
+                    <td>&&</td>
+                    <td class="td">and 연산자라 부르며, 피연산자 중 값이<br><strong>하나라도 false가 존재하면 false로 결괏값을 반환한다.</strong></td>
+                </tr>
+                <tr>
+                    <td>!</td>
+                    <td class="td">not 연산자라 부르며, 단항 연산자이다. 피연산자의 값이<br><strong>true이면 반대로 false로 결괏값을 반환한다.</strong></td>
+                </tr>
+            </table>
         </div>
     <main>
 
