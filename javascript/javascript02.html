@@ -16,6 +16,8 @@
 </head>
 <body>
 
+    <div class="top"><a href="#header">Top</a></div>
+
     <header id="header">
         <h1><a href="index.html">Javascript</a></h1>
         <nav>
@@ -36,7 +38,7 @@
                 <li>03. 배열 : 데이터 불러오기</li>
                 <li>04. 배열 : 데이터 불러오기 : 2차 배열</li>
                 <li>05. 배열 : 데이터 불러오기 : 갯수 구하기</li>
-                <li>06. 배열 : 데이터 불러오기 : for( )</li>
+                <li>06. 배열 : 데이터 불러오기 : for( )문</li>
                 <li>07. 배열 : 데이터 불러오기 : forEach( )</li>
                 <li>08. 배열 : 데이터 불러오기 : for of</li>
                 <li>09. 배열 : 데이터 불러오기 : for in</li>
@@ -57,6 +59,12 @@
         </div>
         <!-- list -->
 
+        <div class="note">
+            <a href="reference04.html">for( )문</a>
+            <a href="reference05.html">연산자</a>
+        </div>
+        <!-- note -->
+
         <div class="script">
 
             <!-- sample1 -->
@@ -65,35 +73,41 @@
                 <div class="code">
 <pre class="line-nembers"><code class="language-js">{
     let x = 100;
-    y = 200;
-    z = "javascript";
+        y = 200;
+        z = "javascript";
 
-    document.write("*** 01. 변수 ***");
     document.write(x);
     document.write(y);
     document.write(z);
 }</code></pre>
                 </div>
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result01"></div>
+                </div>
             </div>
-            <!-- sample1 -->
+            <!-- //sample1 -->
 
             <!-- sample2 -->
-            <div id="sample2" class="sample">
+            <div id="sample1" class="sample">
                 <h3>02. 상수 : 데이터 불러오기</h3>
                 <div class="code">
 <pre class="line-nembers"><code class="language-js">{
-    let x = 100;
-    y = 200;
-    z = "javascript";
+    const x = 100;
+          y = 200;
+          z = "javascript";
 
-    document.write("*** 02. 상수 ***");
     document.write(x);
     document.write(y);
     document.write(z);
 }</code></pre>
                 </div>
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result02"></div>
+                </div>
             </div>
-            <!-- sample2 -->
+            <!-- //sample2 -->
 
             <!-- sample3 -->
             <div id="sample3" class="sample">
@@ -102,14 +116,17 @@
 <pre class="line-nembers"><code class="language-js">{
     const arr = [100, 200, "javascript"];
 
-    document.write("*** 03. 배열 ***");
     document.write(arr[0]);
     document.write(arr[1]);
     document.write(arr[2]);
 }</code></pre>
                 </div>
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result03"></div>
+                </div>
             </div>
-            <!-- sample3 -->
+            <!-- //sample3 -->
 
             <!-- sample4 -->
             <div id="sample4" class="sample">
@@ -118,15 +135,19 @@
 <pre class="line-nembers"><code class="language-js">{
     const arr = [100, 200, ["javascript", "jquery"]];
 
-    document.write("*** 04. 배열 ***");
     document.write(arr[0]);
     document.write(arr[1]);
+    document.write(arr[2]);
     document.write(arr[2][0]);
     document.write(arr[2][1]);
 }</code></pre>
                 </div>
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result04"></div>
+                </div>
             </div>
-            <!-- sample4 -->
+            <!-- //sample4 -->
 
             <!-- sample5 -->
             <div id="sample5" class="sample">
@@ -135,30 +156,96 @@
 <pre class="line-nembers"><code class="language-js">{
     const arr = [100, 200, "javascript"];
 
-    document.write("*** 05. 배열 ***");
     document.write(arr.length);
 }</code></pre>
                 </div>
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result05"></div>
+                </div>
             </div>
-            <!-- sample5 -->
-        </div>
+            <!-- //sample5 -->
+
+            <!-- sample6 -->
+            <div id="sample6" class="sample">
+                <h3>06. 배열 : 데이터 불러오기 : for( )문</h3>
+                <div class="code">
+<pre class="line-nembers"><code class="language-js">{
+    const arr = [100, 200, 300, 400, 500]
+
+    // document.write(arr[0]);
+    // document.write(arr[1]);
+    // document.write(arr[2]);
+    // document.write(arr[3]);
+    // document.write(arr[4]);
+
+    //for(초기값, 조건식, 증감식)
+    for( let i=0; i&lt;arr.length; i++ ){
+        document.write(arr[i], "&lt;br&gt;");
+    }
+}</code></pre>
+                </div>
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result06"></div>
+                </div>
+            </div>
+            <!-- //sample6 -->
+
+            <!-- sample7 -->
+            <div id="sample7" class="sample">
+                <h3>07. 배열 : 데이터 불러오기 : forEach( )문</h3>
+                <div class="code">
+<pre class="line-nembers"><code class="language-js">{
+    
+    const num = [100, 200, 300, 400, 500];
+
+    // document.write(num[0]);
+    // document.write(num[1]);
+    // document.write(num[2]);
+    // document.write(num[3]);
+    // document.write(num[4]);
+
+    //for문
+    for( let i=0; i&gt;num. length; i++){
+        document.write += num[i] + "&lt;br&gt;"
+    }
+
+    //forEach( )
+    num.forEach(function(element){
+        document.write(element, "&lt;br&gt;")
+    });
+
+    //forEach(element, index, array)
+    num.forEach(function(element, index, array){
+        document.write(element);
+        document.write(index);
+        document.write(array);
+    })
+}</code></pre>
+                </div>
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result07"></div>
+                </div>
+            </div>
+            <!-- //sample7 -->
+        
+        </div>        
         <!-- script -->
     </main>
 
 
     <!-- script -->
     <script>
-        //sample01
+        //데이터 저장 --> 데이터 불러오기
         // 01. 변수 : 데이터 불러오기
         {
             let x = 100;
                 y = 200;
                 z = "javascript";
 
-            document.write("<br>*** 01. 변수 ***<br>");
-            document.write(x, "<br>");
-            document.write(y, "<br>");
-            document.write(z, "<br>");
+            document.querySelector(".result01").innerHTML = x + "<br>" + y + "<br>" + z;
         }
 
         // 02. 상수 : 데이터 불러오기
@@ -167,41 +254,65 @@
                   y = 200;
                   z = "javascript";
 
-            document.write("<br>*** 02. 상수 ***<br>");
-            document.write(x, "<br>");
-            document.write(y, "<br>");
-            document.write(z, "<br>");
+            document.querySelector(".result02").innerHTML = x + "<br>" + y + "<br>" + z;
         }
 
         // 03. 배열 : 데이터 불러오기
         {
             const arr = [100, 200, "javascript"];
 
-            document.write("<br>*** 03. 배열 ***<br>");
-            document.write(arr[0], "<br>");
-            document.write(arr[1], "<br>");
-            document.write(arr[2], "<br>");
+            document.querySelector(".result03").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
         }
 
         // 04. 배열 : 데이터 불러오기 : 2차 배열
         {
             const arr = [100, 200, ["javascript", "jquery"]];
 
-            document.write("<br>*** 04. 배열 ***<br>");
-            document.write(arr[0], "<br>");
-            document.write(arr[1], "<br>");
-            document.write(arr[2][0], "<br>");
-            document.write(arr[2][1], "<br>");
+            document.querySelector(".result04").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2] + "<br>" + arr[2][0] + "<br>" + arr[2][1];
         }
 
         // 05. 배열 : 데이터 불러오기 : 갯수 구하기
         {
             const arr = [100, 200, "javascript"];
 
-            document.write("<br>*** 05. 배열 ***<br>");
-            document.write(arr.length);
+            document.querySelector(".result05").innerHTML = arr.length;
         }
-    </script>
+        
+        // 06. 배열 : 데이터 불러오기 : for( )문
+        {
+            const arr = [100, 200, 300, 400, 500]
 
+            // document.write(arr[0]);
+            // document.write(arr[1]);
+            // document.write(arr[2]);
+            // document.write(arr[3]);
+            // document.write(arr[4]);
+
+            //for(초기값, 조건식, 증감식)
+            for( let i=0; i<arr. length; i++ ){
+                document.querySelector(".result06").innerHTML += arr[i] + "<br>";
+            }
+        }
+
+        // 07. 배열 : 데이터 불러오기 : forEach( )문
+        {
+            const num = [100, 200, 300, 400, 500];
+
+            // document.write(num[0]);
+            // document.write(num[1]);
+            // document.write(num[2]);
+            // document.write(num[3]);
+            // document.write(num[4]);
+
+            //forEach( )
+            num.forEach(function(el){
+                document.querySelector(".result07").innerHTML += el + "<br>";
+            });
+        }
+
+        //08. 배열 : 데이터 불러오기 : for of
+
+        //09. 배열 : 데이터 불러오기 : for in
+    </script>
 </body>
 </html>
