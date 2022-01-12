@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,6 +16,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/prism.css">
 </head>
+
 <body>
 
     <header id="header">
@@ -23,23 +25,40 @@
     </header>
 
     <main id="contents">
-        <h2>HTML <em>기초 문법</em></h2>
+        <h2><a href="html.html">HTML <em>기초 문법</em></a></h2>
 
         <div class="menu">
             <ul>
+                <li><a href="html.html">속성</a></li>
                 <li class="active"><a href="htmlRefer01.html">기초 문법</a></li>
-                <li><a href="htmlRefer02.html">웹표준/웹접근성/웹호환성</a></li>
+                <li><a href="htmlRefer02.html">웹 표준/웹 접근성/웹 호환성</a></li>
             </ul>
         </div>
         <!-- //menu -->
 
         <div class="refer">
-            
+            <div class="doc">
+                <h3>HTML이란?</h3>
+                <p>HTML(Hypertext Markup Language)이란 우리가 보는 웹페이지가 어떻게 구조화되어 있는지 브라우저로 하여금 알 수 있도록 하는 요소로 
+                    구성된 마크업 언어이다.</p>
+
+                <h4>요소</h4>
+                <ul>
+                    <li>1. 여는 태그(Opening tag): 요소의 이름과 열고 닫는 꺽쇠 괄호(&lt;&gt;)로 구성.</li>
+                    <li>2. 닫는 태그(Closing tag): 요소의 이름 앞에 슬래시(/)가 있는 것을 제외하면 여는 태그와 같음.</li>
+                    <li>3. 내용(Content): 요소의 내용.</li>
+                    <li>4. 요소(Element): 여는 태그, 닫는 태그, 내용을 통틀어 요소(element)라고 함.</li>
+                </ul>
+
+                <h4>속성과 값</h4>
+                <p>요소의 기능을 확장하기 위해 속성(Attributes)을 사용한다. <strong>&lt;TAG 속성= "값"&gt;&lt;/TAG&gt;</strong></p>
+            </div>
         </div>
         <!-- //refer -->
     </main>
-    
+
     <!-- script -->
     <script src="assets/js/prism.js"></script>
 </body>
+
 </html>
