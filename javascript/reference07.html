@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav>
+            <ul>
+                <li><a href="reference01.html">기초 문법</a></li>
+                <li><a href="reference02.html">변수</a></li>
+                <li><a href="reference03.html">자료형</a></li>
+                <li><a href="reference04.html">for( )문</a></li>
+                <li><a href="reference05.html">연산자</a></li>
+                <li><a href="reference06.html">조건문</a></li>
+                <li class="active"><a href="reference07.html">반복문</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <div class="doc">
+            <h2>반복문</h2>
+            <p>반복문을 이용하면 코드를 원하는 횟수만큼 반복하여 실행할 수 있다. 반복문에는 while문, for문, break문, continue문이 있다.</p>
+
+            <h3>while문</h3>
+            <p>while문은 조건식을 만족할 때까지 코드를 여러 회 반복하여 실행할 수 있습니다.</p>
+            <strong>기본형</strong>
+            <div class="line">
+                var 변수=초깃값;<br>
+                while(조건식){<br>
+                    &nbsp;&nbsp;&nbsp;자바스크립트 코드;<br>
+                    &nbsp;&nbsp;&nbsp;증감식;<br>
+                }
+            </div>
+            <p>while문의 순서는 조건식을 검사하고, 만족하면 중괄호 안에 있는 코드와 증감식을 실행한다. 그리고 다시 조건식을 검사한다.</p>
+            <div class="code">
+<pre><code>&lt;script&gt;
+    var i = 1;
+    while(i &lt;= 10){
+        document.write("안녕하세요" + i, "&lt;br&gt;");
+        i++
+    }
+    document.write("====Teh End====")
+&lt;/script&gt;    //안녕하세요1 부터 안녕하세요 10까지 1씩 증가하면서 10회 출력
+</code></pre>
+            </div>
+
+            <h3>for문</h3>
+            <p>for 문은 조건식을 만족할 때까지 특정 코드를 반복하여 실행한다. while 문보다 사용하기 편해 사용 빈도가 높다.</p>
+            <strong>기본형</strong>
+            <div class="line">
+                for(초깃값; 조건식; 증감식){<br>
+                &nbsp;&nbsp; 자바스크립트 코드;<br>
+                }
+            </div>
+            <div class="code">
+<pre><code>&lt;script&gt;
+        //초깃값    //조건식    //증감식
+    for( var i = 1; i &lt;= 10; i++){
+        document.write("반복" + i, "&lt;br&gt;");
+    }       //중괄호의 코드가 10회 반복해서 실행됩니다.
+&lt;/script&gt;
+</code></pre>
+            </div>
+
+            <h3>break문</h3>
+            <p>반복문인 while 문 또는 for 문에서 break 문을 실행하면 조건식과 상관없이 반복문을 종료한다. 즉, break 문은 반복문을 종료할 때 사용한다.</p>
+            <div class="code">
+<pre><code>&lt;script&gt;
+    for(var i = 1; i &lt;= 10; i++){
+        if(i==6) break;     //i의 값이 6이면 반복문을 종료한다.
+        document.write("===End===");
+    }
+&lt;/script&gt;     //1 2 3 4 5 6 ===The End===
+</code></pre>
+            </div>
+
+            <h3>continue문</h3>
+            <p>continue 문은 반복문에서만 사용할 수 있다. while 문에 사용할 경우 continue 문 다음에 오는 코드는 무시하고 바로 조건식으로 이동해 조건 검사를 한다. 
+                for 문에서 사용할 경우엔 continue 문 다음에 오는 코드는 무시하고 바로 증감식으로 이동하여 증감 연산을 실행한다.</p>
+            <div class="code">
+<pre><code>&lt;script&gt;
+    for(var i = 1; i&lt;= 10; i++){
+        if( i % 2 == 0 )continue;
+        document.write(i,"&lt;br&gt;");
+    }
+    document.write("===The End===");
+&lt;/script&gt;
+</code></pre>
+            </div>
+        </div>
+    <main>
+</body>
+</html>
