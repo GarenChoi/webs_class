@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</head>
+
+<body>
+
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav>
+            <ul>
+                <li><a href="reference01.html">기초 문법</a></li>
+                <li><a href="reference02.html">변수</a></li>
+                <li><a href="reference03.html">자료형</a></li>
+                <li><a href="reference04.html">for( )문</a></li>
+                <li><a href="reference05.html">연산자</a></li>
+                <li><a href="reference06.html">조건문</a></li>
+                <li><a href="reference07.html">반복문</a></li>
+                <li class="active"><a href="reference08.html">함수</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <div class="doc">
+            <h2>함수</h2>
+            <p>함수에는 코드를 저장하고 필요할 때마다 호출해서 사용할 수 있다. function이라는 키워드를 이용해 선언하고 출력문, 제어문등의 코드를 저장하고 데이터를 반환한다. </p>
+
+            <h3>선언적 함수</h3>
+            <p>변수를 선언하고 함수에 코드를 저장할 수 있다. 함수에서는 function키워드로 변수를 선언하며 저장된 코드는 바로 실행되지 않고 함수를 호출해야 실행된다.</p>
+            <strong class="mb5">기본형</strong>
+            <div class="line">
+                function 함수명(){<br>
+                &nbsp;&nbsp;&nbsp;자바스크립트 코드;<br>
+                }
+            </div>
+            <h4 class="mt10">예제</h4>
+            <div class="code">
+<pre><code>&lt;script&gt;
+    var count = 0;
+
+    //함수 호출문이 먼저 나와도 호이스팅 방식이 적용되어 정상적으로 함수가 호출됨
+    myFnc();    //hello1
+
+    function myFnc(){
+        count++;
+        document.write("hello" + count, "&lt;br&gt;");
+    }
+
+    myFnc();    //hello2
+
+    var theFnc = function(){
+        count++;
+        document.write("bye" + count, "&lt;br&gt;")
+    }
+
+    theFnc();   //bye3      
+&lt;/script&gt;
+</code></pre>
+            </div>
+
+            <h3>익명 함수</h3>
+            <p>자바스크립트 익명 함수는 함수명 대신 변수명에 함수 코드를 저장하는 구현 방식이다. 익명 함수의 소스 코드는 변수값이므로 끝에 세미콜론 (;) 을 대입한다. 익명 함수는 호출시 변수명을 함수명처럼 사용하면 된다.</p>
+            <strong class="mb5">기본형</strong>
+            <div class="line">
+                참조 변수=function(){<br>
+                &nbsp;&nbsp;&nbsp;자바스크립트 코드;<br>
+                }
+            </div>
+
+            <div class="code">
+<pre><code>&lt;script&gt;
+    let study = function(){
+        document.write("javascript");
+    }
+    study();    //javascript
+&lt;/script&gt;
+</code></pre>
+            </div>
+
+            <h3>매개변수 함수</h3>
+            <p>기본 함수에서는 코드를 실행할 때 함수명으로 호출해서 코드를 실행했다. 즉, 함수를 호출할 때 값을 전달할 수 없었다. 하지만 매개변수 함수는 함수를 호출할 때 전달하고자
+                하는 값을 입력하여 호출할 수 있다.</p>
+            <strong class="mb5">기본형</strong>
+            <div class="line">
+                function 함수명(매개변수 1, 매개변수 2, ... 매개변수 n){<br> 
+                &nbsp;&nbsp;&nbsp;자바스크립트 코드;<br>    
+                }
+                함수명(데이터 1, 데이터 2, ... 데이터 n);
+            </div>
+            <h4 class="mt10">예제</h4>
+            <div class="code">
+<pre><code>&lt;script&gt;
+    function myFnc(name, area){
+        document.write("안녕하세요." + name + "입니다.", "&lt;br&gt;");
+        document.write("사는 곳은" + area + "입니다.", "&lt;br&gt;&lt;br&gt;");
+    }
+
+    myFnc("홍당무", "서울")  //안녕하세요. 홍당무입니다.
+                                        //사는 곳은 서울입니다.
+    myFnc("깍두기", "부산")  //안녕하세요. 깍두기입니다.
+                                        //사는 곳은 부산입니다.
+&lt;/script&gt;
+</code></pre>
+            </div>
+
+            <h3>리턴값 함수</h3>
+            <p>return 문은 함수에서 결괏값을 반환할 때 사용한다. 그리고 함수에서 return 문이 실행되면 반복문의 break 문과 비슷하게 코드가 종료된다.</p>
+            <strong class="mb5">기본형</strong>
+            <div class="line">
+                function 함수명(){<br><br>
+
+                &nbsp;&nbsp;&nbsp;자바스크립트 코드1;<br>
+                &nbsp;&nbsp;&nbsp;return 데이터(값);<br><br>
+
+                &nbsp;&nbsp;&nbsp;자바스크립트 코드2;<br>
+                }<br>
+                var 변수 = 함수명();    //자바스크립트 코드1을 실행한 후 코드2를 무시하고 데이터를 반환
+            </div>
+            <h4 class="mt10">예제 1</h4>
+            <div class="code">
+<pre><code>&lt;script&gt;
+    function testAvg(arrData){  //arrData = ["국어", "영어"]
+        var sum = 0;
+        for (var i = 0; i &lt; arrData.length; i++){
+            sum += Number(prompt(arrData[i] + "점수는?", "0"));
+        }
+
+        var avg = sum/arrData.length;
+        return avg;
+    }
+
+    var arrSubject = ["국어, 수학"];
+    var result = testAvg(arrSubject);
+
+    document.write("평균 점수는 " + result + "점입니다");
+&lt;/script&gt;
+</code></pre>
+            </div>
+            <h4 class="mt10">예제 2</h4>
+            <div class="code">
+<pre><code>&lt;script&gt;
+    var num = 1;
+    function gallery(direct){
+        if(direct){
+            if(num == 8) return;
+            num++
+        } else {
+            if(num == 1) return;
+            num--;
+        }
+
+        var imgTag = document.getElementByld("photo");
+        imgTag.setAttribute("src", "images/pic_" + num + ".jpg");
+    }
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id= "galleryZone&gt;
+        &lt;p&gt;&lt;img src="images/pic_1.jpg" id="photo" alt=""&gt;&lt;/p&gt;
+        &lt;p&gt;
+            &lt;button onclick="gallery(0)&gt;이전&lt;/button&gt;
+            &lt;button onclick="gallery(1)&gt;다음&lt;/button&gt;
+        &lt;/p&gt; 
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+            </div>
+        </div>
+    <main>
+</body>
+
+</html>
