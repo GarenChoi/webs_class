@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout04</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #E1F5FE;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
+            width: 1200px;
+            height: 100px;
+            background-color: #B3E5FC;
+        }
+        #nav {
+            width: 1200px;
+            display: flex;
+        }
+        #nav .article1 {
+            width: 600px;
+            height: 100px;
+            background-color: #81D4FA;
+        }
+        #nav .article2 {
+            width: 600px;
+            height: 100px;
+            background-color: gray;
+        }
+        #main {
+            width: 1200px;
+
+        }
+        #main .contents1 {
+            width: 1200px;
+            display: flex;
+        }
+        #main .contents1 .asdie {
+            width: 300px;
+            height: 520px;
+            background-color: #4FC3F7;
+        }
+        #main .contents1 .content .article1 {
+            width: 900px;
+            height: 260px;
+            background-color: #29B6F6;
+        }
+        #main .contents1 .content .article2 {
+            width: 900px;
+            height: 260px;
+            background-color: #03A9F4;
+        }
+        #main .contents2 {
+            width: 1200px;
+            height: 260px;
+            background-color: #039BE5;
+        }
+        #footer {
+            width: 1200px;
+            height: 100px;
+            background-color: #0288D1;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav">
+            <article class="article1"></article>
+            <article class="article2"></article>
+        </nav>
+        <main id="main">
+            <section class="contents1">
+                <aside class="asdie"></aside>
+                <div class="content">
+                    <article class="article1"></article>
+                    <article class="article2"></article>
+                </div>
+            </section>
+            <section class="contents2"></section>
+        </main>
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>

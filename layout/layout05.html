@@ -1,19 +1,100 @@
-margin-top: 10px;
-            margin-right: 11px;
-            margin-bottom: 12px;
-            margin-left: 13px;
-            margin: 10px;                   /*위,오른쪽,아래,왼쪽 : 10px*/
-            margin: 10px 11px;              /*위,아래 : 10px, 왼쪽, 오른쪽 : 11px*/
-            margin: 10px 11px 12px;         /*위 : 10px, 왼쪽, 오른쪽 : 11px, 아래 : 12px*/
-            margin: 10px 11px 12px 13px;    /*위 : 10px, 오른쪽 : 11px, 아래 : 12px* 왼쪽 : 13px */
-            margin: auto;                   /*자동값, 기본값*/
-            margin: 0 auto;                 /*가운데 정렬(블록구조)*/
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout05</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #E8F5E9;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
+            width: 1200px;
+            height: 100px;
+            background-color: #C8E6C9;
+        }
+        #nav {
+            width: 1200px;
+            display: flex;
+        }
+        #nav .nav1 {
+            width: 400px;
+            height: 100px;
+            background-color: #A5D6A7;
 
-            padding-top: 10px;
-            padding-right: 11px;
-            padding-bottom: 12px;
-            padding-left: 13px;
-            padding: 10px;                   /*위,오른쪽,아래,왼쪽 : 10px*/
-            padding: 10px 11px;              /*위,아래 : 10px, 왼쪽, 오른쪽 : 11px*/
-            padding: 10px 11px 12px;         /*위 : 10px, 왼쪽, 오른쪽 : 11px, 아래 : 12px*/
-            padding: 10px 11px 12px 13px;    /*위 : 10px, 오른쪽 : 11px, 아래 : 12px* 왼쪽 : 13px */
+        }
+        #nav .nav2 {
+            width: 400px;
+            height: 100px;
+            background-color: #66BB6A;
+        }
+        #nav .nav3 {
+            width: 400px;
+            height: 100px;
+            background-color: #A5D6A7;
+        }
+        #main {
+            width: 1200px;
+            display: flex;
+        }
+        #main .section1 {
+            width: 300px;
+            height: 780px;
+            background-color: #81C784;
+        }
+        #main .section2 {
+            width: 600px;
+            height: 780px;
+            background-color: #66BB6A;
+        }
+        #main .section3 {
+            width: 300px;
+            height: 780px;
+            background-color: #4CAF50;
+        }
+        #main .section2 .article1 {
+            width: 600px;
+            height: 390px;
+            background-color: #66BB6A;
+        }
+        #main .section2 .article2 {
+            width: 600px;
+            height: 390px;
+            background-color: #43A047;
+        }
+        #footer {
+            width: 1200px;
+            height: 100px;
+            background-color: #43A047;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav">
+            <div class="nav1"></div>
+            <div class="nav2"></div>
+            <div class="nav3"></div>
+        </nav>
+        <main id="main">
+            <section class="section1"></section>
+            <section class="section2">
+                <article class="article1"></article>
+                <article class="article2"></article>
+            </section>
+            <section class="section3"></section>
+        </main>
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>

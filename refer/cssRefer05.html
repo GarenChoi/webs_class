@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Reference</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/css.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/css.png">
+    <link rel="icon" href="../assets/face/css.png" sizes="128x128">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+
+<body>
+
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <strong>최근영</strong>
+    </header>
+
+    <main id="contents">
+        <h2><a href="css.html">CSS <em>CSS 색상</em></a></h2>
+
+        <div class="menu">
+            <ul>
+                <li><a href="css.html">속성</a></li>
+                <li><a href="cssRefer01.html">기초 문법</a></li>
+                <li><a href="cssRefer02.html">Block/Inline</a></li>
+                <li><a href="cssRefer03.html">CSS 단위</a></li>
+                <li><a href="cssRefer04.html">CSS 색상</a></li>
+                <li class="active"><a href="cssRefer05.html">id/class 차이점</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+        <div class="refer">
+            <div class="doc">
+                <h3>id/class 차이점</h3>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>ID</th>
+                                <th>CLASS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>차이점</th>
+                                <td>한 페이지에 하나의 정의로 하나의 태그만 사용할 수 있다.</td>
+                                <td>한페이지에 반복적으로 사용되는 스타일을 정의할 수 있다.</td>
+                            </tr>
+                            <tr>
+                                <th>스타일 적용법</th>
+                                <td>#ID명으로 적용시킴</td>
+                                <td>.CLASS명으로 적용시킴(둘 이상 사용시 class= "class1 class2" 와 같이 띄어쓰기로 구분) </td>
+                            </tr>
+                            <tr>
+                                <th>주의할 점</th>
+                                <td colspan="2">ID 또는 CLASS를 여러 개 가질 때 스타일이 중복되지 않도록 해야 한다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- //refer -->
+    </main>
+
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</body>
+
+</html>
