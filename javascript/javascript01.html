@@ -90,7 +90,11 @@
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result01"></div>
+                    <div class="result01">
+                        100<br>
+                        200<br>
+                        javascript
+                    </div>
                 </div>
             </div>
             <!-- //sample1 -->
@@ -114,7 +118,11 @@
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result02"></div>
+                    <div class="result02">
+                        300<br>
+                        400<br>
+                        jquery
+                    </div>
                 </div>
             </div>
             <!-- //sample2 -->
@@ -138,7 +146,11 @@
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result03"></div>
+                    <div class="result03">
+                        400<br>
+                        -200<br>
+                        javascriptjquery
+                    </div>
                 </div>
             </div>
             <!-- //sample3 -->
@@ -171,7 +183,7 @@
     document.write("함수 밖");
     document.write(x);
     document.write(y);
-    document.write(z);
+    document.write(x);  //z값 없음
 }</code></pre>
                 </div>
                 <div class="result">
@@ -538,7 +550,7 @@
                 y = 300;    //전역변수 200->300
 
                 document.querySelector(".result04").innerHTML += "*** 함수 안 ***<br>";
-                document.querySelector(".result04").innerHTML += x + "<br>" + y + "<br>" + z + "<br>";
+                document.querySelector(".result04").innerHTML += x + "<br>" + y + "<br>" + x + "<br>";
 
             }
             func();
