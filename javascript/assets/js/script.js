@@ -2,14 +2,9 @@
 // document.querySelector(".result").addEventListener("click", function(){});
 document.querySelectorAll(".result").forEach(function(el){
     el.addEventListener("click", function(){
-        document.querySelectorAll(".result > div").forEach(function(el){
-            el.classList.toggle("selected")
-        });
+       el.classList.toggle("active")
     });
 });
 
-// document.querySelector("#sample2 .btn2").addEventListener("click", function(){
-//     document.querySelectorAll("#sample2 .view > div").forEach(function(el){
-//         el.classList.toggle("selected");
-//     });
-// });
+
+
