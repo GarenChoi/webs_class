@@ -188,6 +188,15 @@
             }
         });
     });
+
+    //이 버튼을 클릭하면 선택된 클래스(selected)를 찾은 후 색을 파란색으로 나오게 합니다.
+    document.querySelector("#sample3 .btn2").addEventListener("click", function(){
+        document.querySelectorAll("#sample3 .view > div").forEach(function(el){
+            if(el.classList.contains("selected")){
+                el.classList.toggle("selected1");
+            }
+        });
+    });
 }</code></pre>
                 </div>
             </div>
