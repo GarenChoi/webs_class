@@ -15,7 +15,7 @@
             border-collapse: collapse;
         }
         table td {
-            border: 1px solid #222;
+            border: 1px solid rgb(201, 74, 74);
             font-size: 16px;
             padding: 15px;
             font-family: 'NexonLv1Gothic';
@@ -25,7 +25,7 @@
 </head>
 <body>
 
-    <div class="back"><a href="practice01.html">Back</a> </div>
+    <div class="back"><a href="practice.html">Back</a> </div>
 
     <main id="main">
         <div class="test">
@@ -49,7 +49,10 @@
         table += "&lt;/table&gt;";   
 }</code></pre>
             </div>
-            <div class="result01"></div>
+            <div class="result result01">
+                <h4>결과보기</h4>
+                <div class="result01"></div>
+            </div>
             <!-- //01 -->
 
             <!-- 02 -->
@@ -73,14 +76,18 @@
     table += "&lt;/table&gt;";   
 }</code></pre>
             </div>
-            <div class="result02"></div>
+            <div class="result result02">
+                <h4>결과보기</h4>
+                <div class="result02"></div>
+            </div>
             <!-- //02 -->
         
         </div>
     
     </main>
         <!-- script -->
-        <script src="assets/js/prism2.js"></script>
+        <script src="assets/js/prism.js"></script>
+        <script src="assets/js/script.js"></script>
         
         <script>
         //01
@@ -98,7 +105,7 @@
 
             table += "</table>";
 
-            document.querySelector(".result01").innerHTML = table;
+            document.querySelector(".result01 > div").innerHTML = table;
         }
 
 
@@ -118,7 +125,7 @@
             
             table += "</table>";
 
-            document.querySelector(".result02").innerHTML = table;
+            document.querySelector(".result02 >div").innerHTML = table;
         }
             
         </script>

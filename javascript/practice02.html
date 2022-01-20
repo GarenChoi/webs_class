@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice01-02</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism2.css">
+
+
+</head>
+<body>
+
+    <div class="back"><a href="practice.html">Back</a> </div>
+
+    <main id="main">
+        <div class="test">
+            <h2>2. 구구단 출력하기</h2>
+            
+            <!-- 01 -->
+            <h3>2.1 for문을 이용해서 2단부터 9단까지 출력하시오!</h3>
+        
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    // i = for(let i=2; i&lt;=9; i++)
+    // j = for(let j=1; j&lt;=9; j++)
+
+    //sum = i * j
+
+    //for문을 이용해서 구구단 출력
+    for(let i=2; i&lt;=9; i++){
+        document.write("&lt;br&gt;");
+        for(let j=1; j&lt;=9; j++){
+            let sum = i * j;
+            document.write(i + " * " + j + " = " + sum, "&lt;br&gt;");
+        }
+    }   
+}</code></pre>
+            </div>
+            <div class="result result01">
+                <h4>결과보기</h4>
+                <div class="result01"></div>
+            </div>
+            <!-- //01 -->
+
+            <!-- 02 -->
+            <h3>2.2 while문을 이용해서 2단부터 9단까지 출력하시오!</h3>
+        
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    let i = 2;
+    let j = 1;
+
+    while(i &lt;= 9){
+        j=1;
+        while(j &lt;= 9){
+            document.write(i + " * " + j + " = " + (i*j) + "&lt;br&gt;");
+            j++;
+        }
+        i++;
+        document.write("&lt;br&gt;")
+    }     
+}</code></pre>
+            </div>
+            <div class="result result02">
+                <h4>결과보기</h4>
+                <div class="result02"></div>
+            </div>
+            <!-- //02 -->
+
+            <!-- 03 -->
+            <h3>2.3 사용자가 원하는 단을 받아 출력하시오</h3>
+            <p>조건 : 사용자가 원하는 단은 prompt()를 사용합니다. <a href="#" class="pBtn btn03">클릭</a></p>
+        
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    let i = 2;
+            
+    while(i &lt;= 9){
+        document.write("&lt;br&gt;")
+        for(let j = 1; j &lt;= 9; j++){
+            let sum = i * j;
+            document.write(i + " * " + j + " = " + sum, "&lt;br&gt;");
+        }
+        i++;
+    }      
+}</code></pre>
+            </div>
+            <div class="result result03">
+                <h4>결과보기</h4>
+                <div class="result03"></div>
+            </div>
+            <!-- //03 -->
+        
+        </div>
+    </main>
+        <!-- script -->
+        <script src="assets/js/prism.js"></script>
+        <script src="assets/js/script.js"></script>
+        
+        <script>
+
+            {
+            //for문을 이용해서 구구단 출력
+                for(i=2;i<=9;i++){
+                    document.querySelector(".result01 > div").innerHTML += "<br>";
+
+                    for(j=1;j<=9;j++){
+                        let sum=i*j;
+                        document.querySelector(".result01 > div").innerHTML += i + "*" + j + "=" + sum + "<br>";
+                    }
+                }
+            }
+            
+            {
+                let i = 2;
+                let j = 1;
+            
+                while(i <= 9){
+                    j=1;
+                    while(j <= 9){
+                        document.querySelector(".result02 > div").innerHTML += i + "*" + j + "=" + (i*j) + "<br>";
+                        j++;
+                    }
+                    i++;
+                    document.querySelector(".result02 > div").innerHTML += "<br>";
+                }
+            }
+
+            {
+            //1.3 사용자가 원하는 단을 받아 출력하시오
+                let num, result;
+
+                //버튼을 클릭하면 경고창
+                document.querySelector(".btn03").addEventListener("click", ()=>{
+                    num = prompt("출력할 구구단 숫자를 입력해주세요 !!", "2")
+                    //console.log(num)
+
+                    for(let i=1; i<=9; i++){
+                        result = num + "*" + i + "=" + (num * i) + "<br>";
+                        // console.log(result)
+                        document.querySelector(".result03 > div").innerHTML += result;
+                    }
+                });
+            }
+   
+        </script>
+   
+   
+</body>
+</html>

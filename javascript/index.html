@@ -21,11 +21,15 @@
     <!-- script -->
     <script src="assets/js/prism.js"></script>
 </head>
+<!-- 인라인 : 텍스트 > 블록 (블록구조 감쌀 수 없음)
+     블록 : 박스 > 인라인 (인라인구조 감쌀 수 있음)
 
+-->
 <body>
     <main class="javascript">
         <div class="dog">
-            <div class='wrap'>
+            <a href="../index.html">
+                <div class='wrap'>
                 <div class='body'>
                     <div class='leg l'>
                         <div class='paw'></div>
@@ -52,8 +56,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none">
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none">
                 <defs>
                     <filter id="squiggly-0">
                         <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="0" />
@@ -76,7 +80,8 @@
                         <feDisplacementMap in="SourceGraphic" in2="noise" scale="1" />
                     </filter>
                 </defs>
-            </svg>
+                </svg>
+            </a>
 
         </div>
         <h1>Javascript</h1>
@@ -97,7 +102,15 @@
                 <li><a href="javascript11.html">이벤트 객체</a></li>
             </ul>
             <ul>
-                <li><a href="practice01.html">데이터 연습하기</a></li>
+                <li><a href="practice.html">데이터 연습하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="sample.html">필수 예제</a></li>
+                <li><a href="plugin.html">플러그인</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 이펙트</a></li>
+                <li><a href="effect/parallaxEffect.html">패랠랙스 이펙트</a></li>
+                <li><a href="effect/slideEffect.html">슬라이드 이펙트</a></li>
+                <li><a href="effect/gameEffect.html">게임 이펙트</a></li>
             </ul>
         </nav>
     </main>
