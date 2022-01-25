@@ -155,9 +155,26 @@ body {
     color: #fff;
 }
 
+.refer .subTitle li {
+    display: inline-block;
+}
+
+.refer .subTitle li a {
+    margin-right: 10px;
+}
+
+.refer .subTitle li.active a {
+    border-bottom: 1px solid #000;
+}
+
 .refer .table {
     margin-top: 40px;
     overflow-x: auto;
+}
+
+.refer .table h3 {
+    font-weight: normal;
+    margin-bottom: 5px;
 }
 
 .refer .table table {

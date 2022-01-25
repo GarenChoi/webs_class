@@ -7,11 +7,11 @@
    2. 부모 영역한테 overflow: hidden; 설정
    3. 가상의 영역(clearfix) 속성을 설정
 */
-#header {
+/*#header {
     padding: 10px;
     min-width: 1200px;
     white-space: nowrap;
-    border: 1px solid #eee;
+    border-bottom: 1px solid #eee;
 }
 #header .logo {
     float: left;
@@ -52,4 +52,47 @@
     margin: 10px 0 0 0;
     padding: 9px 22px 7px;
     font-size: 16px;
+}
+*/
+
+/* 헤더02. flex */
+/*
+#header {
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center
+}
+#header .logo {
+    width: 20%;
+}
+#header .menu {
+    width: 60%;
+    text-align: center;
+}
+#header .menu li {
+    display: inline-block;
+}
+#header .member {
+    width: 20%;
+    text-align: right;
+}
+*/
+
+/* 헤더03. grid */
+#header {
+    border-bottom: 1px solid #eee;
+    display: grid;
+    
+}
+#header .logo {
+   
+}
+#header .menu {
+    
+}
+#header .menu li {
+    
+}
+#header .member {
+    
 }
