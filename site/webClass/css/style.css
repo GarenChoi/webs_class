@@ -194,22 +194,19 @@
     width: 386.66px;
     height: 530px;
     margin-right: 20px;
-    background-color: #ccc;
 }
-.itType01 .img01 {
+.itType01 .img1 {
     float: left;
     width: 386.66px;
     height: 530px;
     margin-right: 20px;
-    background-color: #ccc;
     background-image: url(../img/text@1x.jpg);
 }
 
-.itType01 .img02 {
+.itType01 .img2 {
     float: left;
     width: 386.66px;
     height: 530px;
-    background-color: #ccc;
     background-image: url(../img/img_text_bg2.jpg);
 }
 @media (-webkit-min-device-pixwl-ratio: 1.5){
