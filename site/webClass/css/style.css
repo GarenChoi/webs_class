@@ -1,5 +1,15 @@
 /* 전체 레이아웃 */
+#wrap {
+    height: 20000px;
+}
 
+
+/* 컨테이너 */
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    /* background-color: rgba(0,0,0,0.3); */
+}
 
 /* 헤더 01. float */
 /* float으로 인한 영역 깨짐 현상 발생(하이트 값을 인식 못함)
@@ -153,7 +163,7 @@
 
 /* 배너 */
 #banner {}
-.imgType {
+.imgtype {
     width: 100%;
     height: 700px;
     /* background-image: url(../img/bg01.jpg);
@@ -170,3 +180,34 @@
     2. CSS 속성을 통해서 : background 속성 : 의미가 없는 이미지(배경, 색표현) --> ir효과(대체 문자를 CSS 속성으로표현) 
     3. 이미지 스프라이트 : background와 ir효과를 통해서 이미지를 표현
 */
+
+
+
+/* 이미지/텍스트 유형 */
+/* 유형1 (img_text_type ) */
+.itType01 {
+    padding: 150px 0;
+    overflow: hidden;
+}
+.itType01 .text {
+    float: left;
+    width: 386.66px;
+    height: 530px;
+    margin-right: 20px;
+    background-color: #ccc;
+}
+.itType01 .img01 {
+    float: left;
+    width: 386.66px;
+    height: 530px;
+    margin-right: 20px;
+    background-color: #ccc;
+    background-image: url(../img/img_text_bg1.jpg);
+}
+.itType01 .img02 {
+    float: left;
+    width: 386.66px;
+    height: 530px;
+    background-color: #ccc;
+    background-image: url(../img/img_text_bg2.jpg);
+}
