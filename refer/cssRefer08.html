@@ -37,14 +37,28 @@
                 <li><a href="cssRefer05.html">id/class 차이점</a></li>
                 <li><a href="cssRefer06.html">float</a></li>
                 <li><a href="cssRefer07.html">벤더 프리픽스</a></li>
-                <li class="active"><a href="cssRefer08.html">이미지 표현하는 방법</a></li>
+                <li class="active"><a href="cssRefer08.html">웹 사이트에서의 이미지 표현법</a></li>
             </ul>
         </div>
         <!-- //menu -->
 
         <div class="refer">
             <div class="doc">
-                <h3></h3>
+                <h3>웹 사이트에서의 이미지 표현법</h3>
+                <ul>
+                    <li>1. HTML 태그를 통해서 표현</li>
+                    <li>2. CSS 속성을 통해서 표현</li>
+                    <li>3. 이미지 스프라이트 기법으로 표현</li>
+                </ul>
+                <h4>HTML 태그를 통해서 표현</h4>
+                <p>HTML에서 &lt;img&gt; 태그를 시용해서 이미지를 표현할 수 있다. &lt;img&gt; 태그를 사용할 때 src 특성을 필수적으로 사용해야 하며 src 특성은 표현할 이미지로의 경로를 지정한다.
+                주로 의미가 있는 이미지(로고, 메뉴)를 표현할 때 사용하며 alt 를 사용해 대체 문자를 표현한다.</p>
+                <h4>CSS 속성을 통해서 표현</h4>
+                <p>CSS에서 background-image 속성을 사용해서 이미지를 표현할 수 있다. background-image 속성을 사용할 때 url 을 지정해 표현할 이미지로의 경로를 지정한다.
+                주로 의미가 없는 이미지(배경, 색표현)를 표현할 때 사용하며 ir 효과를 사용해 CSS속성으로 대체 문자를 표현한다.</p>
+                <h4>이미지 스프라이트 기법으로 표현</h4>
+                <p>이미지 스프라이트(image sprite)란 여러 개의 이미지를 하나의 이미지로 합쳐서 관리하는 이미지를 의미한다. 이미지 스프라이트 기법을 쓰면 웹 페이지에서 여러 이미지를 사용해도 서버엔 하나의 이미지만을 요청하기 때문에 로딩시간을 줄여주고
+                많은 이미지 파일 대신 몇 개의 스프라이트 이미지 파일만을 관리하게 되기 때문에 이미지 파일 관리도 간편해진다. ir 효과를 사용해 CSS속성으로 대체 문자를 표현한다.</p>
             </div>
         </div>
         <!-- //refer -->
