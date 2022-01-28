@@ -515,10 +515,10 @@
         a: 100,
         b: 200,
         c: "javascript"
-    }
+    };
     
     for( let key in obj){
-        document.write(obj[key])
+        document.write(obj[key]);
     }
 }</code></pre>
                 </div>
@@ -540,13 +540,13 @@
 <pre class="line-nembers"><code class="language-js">{
     const obj = [
     {a: 100, b: 200, c: "javascript"},
-]
+];
 
-obj.map(function(el){
-    document.write(el.a);
-    document.write(el.b);
-    document.write(el.c);
-})
+    obj.map(function(el){
+        document.write(el.a);
+        document.write(el.b);
+        document.write(el.c);
+    })
 }</code></pre>
                 </div>
                 <div class="result result17t">
@@ -569,11 +569,11 @@ obj.map(function(el){
         a: 100,
         b: 200,
         c: "javascript"
-    }
+    };
 
     document.write(obj.hasOwnProperty('a'));
     document.write(obj.hasOwnProperty('b'));
-    document.write(obj.hasOwnProperty('a'));
+    document.write(obj.hasOwnProperty('c'));
     document.write(obj.hasOwnProperty('d'));
     document.write('a' in obj);
     document.write('b' in obj);
@@ -606,7 +606,7 @@ obj.map(function(el){
         a: 100,
         b: 200,
         c: "javascript"
-    }
+    };
     const spread = {...obj}
 
     document.write(spread.a);
@@ -634,7 +634,7 @@ obj.map(function(el){
         a: 100,
         b: 200,
         c: "javascript"
-    }
+    };
     const spread = {...obj, d: "jquery"}
 
     document.write(spread.a);
@@ -663,11 +663,11 @@ obj.map(function(el){
     const objA = {
         a: 100,
         b: 200
-    }
+    };
     const objB = {
         c: "javascript",
         d: "jquery"
-    }
+    };
     const spread = {...objA, ...objB}
 
     document.write(spread.a);
@@ -698,7 +698,7 @@ obj.map(function(el){
         a: 100,
         b: 200,
         c: "javascript"
-    }
+    };
     const { a,b,c } = obj;
 
     document.write(a);
@@ -727,7 +727,7 @@ obj.map(function(el){
         a: 100,
         b: 200,
         c: "javascript"
-    }
+    };
     const { a:name1, b:name2, c:name3 } = obj;
 
     document.write(name1);
@@ -940,15 +940,15 @@ obj.map(function(el){
         
         //16. 객체 : 데이터 불러오기 : for in
         // {
-            // const obj = {
-            //     a: 100,
-            //     b: 200,
-            //     c: "javascript"
-            // }
+        //     const obj = {
+        //         a: 100,
+        //         b: 200,
+        //         c: "javascript"
+        //     }
             
-            // for( let key in obj){
-            //     document.write(obj[key])
-            // }
+        //     for( let key in obj){
+        //         document.write(obj[key])
+        //     }
         // }
         
         //17. 객체 : 데이터 불러오기 : map( )
@@ -1056,6 +1056,23 @@ obj.map(function(el){
         //     document.write(name2);
         //     document.write(name3);
         // }
+
+        {
+            let direct=0;
+            let num= "1";
+
+            function gallery(num){
+                if(num){
+                    if(num==2)direct++;
+                }   else {
+                    if(num==1)direct--;
+                }
+            }
+            gallery(8);
+
+            document.write(num);
+        }
+        
     </script>
 </body>
 </html>
