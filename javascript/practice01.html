@@ -76,28 +76,38 @@
 }</code></pre>
             </div>
             <!-- //03 -->
+
+            <!-- 04 -->
+            <h3>1.4 for 문을 이용해서 1부터 100까지 합을 출력하세요.</h3>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    let sum= 0;
+    for(let i=1; i&lt;=100; i++){
+        sum += i;
+    }
+    document.write(sum);
+}</code></pre>
+            </div>
+            <div class="result result04">
+                <h4>결과보기</h4>
+                <div class="result04"></div>
+            </div>
+            <!-- //04 -->
         </div>
     </main>
         <!-- script -->
-        <script src="assets/js/prism2.js"></script>
+        <script src="assets/js/prism.js"></script>
+        <script src="assets/js/script.js"></script>
         
         <script>
-        {   
-            //짝수
-            // for( let i=1; i<=100; i++ ){
-            //     if( i % 2 == 0 ) console.log(i);
-            // }
-            // for( let i=2; i<=100; i+=2 ){
-            //     console.log(i);
-            // }
+            {   
+                let sum= 0;
 
-
-            //홀수
-            // for( let i=1; i<=100; i++ ){
-            //     if( i % 2 == 1 )
-            //     console.log(i);
-            // }
-        }
+                for(let i=1; i<=100; i++){
+                    sum += i;
+                }
+                document.querySelector(".result04 > div").innerHTML = sum;
+            }
         </script>
     
    
