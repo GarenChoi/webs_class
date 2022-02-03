@@ -308,6 +308,75 @@
 /* 이미지 유형01(img_type01) */
 .img_type01 {
     padding: 150px 0;
+    margin-bottom: 500px;
+}
+.img_type01 h3 {
+    font-size: 50px;
+    line-height: 1;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+.img_type01 h3 em {
+    font-size: 20px;
+    color: #777;
+    margin-left: 20px;
+    vertical-align: -4px;
+}
+.img_type01 .img-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+.img_type01 .img-wrap .left {
+    width: 590px;
+    height: 360px;
+    background: url(../img/img_text_bg5.jpg) no-repeat;
+    position: relative;
+}
+.img_type01 .img-wrap .right {
+    width: 590px;
+    height: 360px;
+    background: url(../img/img_text_bg6.jpg) no-repeat;
+    position: relative;
+}
+.img_type01 .img-wrap .left-cont {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+.img_type01 .img-wrap .left-cont p {
+    padding-right: 200px;
+}
+.img_type01 .img-wrap .left-cont a {
+    background: #859819bd;
+    padding: 10px 20px;
+}
+.img_type01 .img-wrap .right-cont {
+    position: absolute;
+    left: 20px;
+    bottom: 30px;
+    right: 20px;
+    background-color: #c7847fcb;
+    padding: 10px 10px 10px 20px;
+    margin-right: 90px;
+}
+.img_type01 .img-wrap .right-cont a {
+    color: #fff;
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+.img_type01 .img-wrap h4 {
+    font-size: 30px;
+    color: #fff;
+    font-weight: 500;
+}
+.img_type01 .img-wrap p {
+    font-size: 14px;
+    color: #fff;
+}
+.img_type01 .img-wrap a {
+    color: #fff;
+    display: inline-block;
 }
 
 /* 이미지 유형02(img_type02) */
