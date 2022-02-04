@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>site</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {}
+        #header {
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+        }
+        #contents {
+
+        }
+        #footer {
+            background: #000;
+            height: 370px;
+        }
+        #contents h2 {
+            display: block;
+            width: 1120px;
+            margin: 0 auto;
+            font-size: 48px;
+            margin-top: 240px;
+        }
+        .logo {
+            padding: 30px 0 20px 75px;
+        }
+        .menu {
+            padding: 45px 50px 20px 0;
+        }
+        .menu li {
+            display: inline;
+            list-style: none;
+            padding-right: 50px;
+        }
+        .menu li a {
+            text-decoration: none;
+            color: black;
+            font-weight: 700;
+        }
+        .cont {
+            width: 1120px;
+            display: flex;
+            margin: 0 auto;
+        }
+        .text_tit {
+            font-size: 28px;
+            border-top: 1px solid #000;
+        }
+        .cont .container {
+            height: 2100px;
+        }
+        .cont .imgType01 .box1 {
+            width: 548px;
+            height: 695px;
+            background: url(img/tt1.jpg) no-repeat 0 100px;
+        }
+        .cont .imgType01 .box2 {
+            width: 548px;
+            height: 695px;
+            background: url(img/tt2.jpg) no-repeat 0 100px;
+        }
+        .cont .imgType01 .box1 .text_tit {
+            margin-top: 110px;
+            padding-top: 38px;
+        }
+        .cont .imgType01 .box2 .text_tit {
+            margin-top: 120px;
+            padding-top: 38px;
+        }
+        .cont .imgType02 {
+            margin-left: 24px;
+            margin-top: 50px;
+        }
+        .cont .imgType02 .box1 {
+            width: 548px;
+            height: 695px;
+            background: url(img/tt3.jpg) no-repeat 0 100px;
+        }
+        .cont .imgType02 .box2 {
+            width: 548px;
+            height: 695px;
+            background: url(img/tt4.jpg) no-repeat 0 100px;
+        }
+        .cont .imgType02 .box1 .text_tit {
+            margin-top: 110px;
+            padding-top: 38px;
+        }
+        .cont .imgType02 .box2 .text_tit {
+            margin-top: 120px;
+            padding-top: 38px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <h1 class="logo">IMFORM</h1>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#">SERVICE</a></li>
+                    <li><a href="#">WORK</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- //header -->
+
+        <section id="contents">
+            <h2>We research new opportunities<br>that inspire success.</h2>
+            <div class="cont">
+                <article class="imgType01 container">
+                    <div class="box1">
+                        <h3 class="text_tit">스마트한 카라이프<br>한국타이어</h3>
+                    </div>
+                    <div class="box2">
+                        <h3 class="text_tit">나는 대만족 입니다<br>대만관광청 홈페이지 리뉴얼</h3>
+                    </div>
+                </article>
+                <article class="imgType02 container">
+                    <div class="box1">
+                        <h3 class="text_tit">한섬 프리미엄 스타일<br>모바일 룩북</h3>
+                    </div>
+                    <div class="box2">
+                        <h3 class="text_tit">세련된 감각의 까사미아<br>라이프스타일 매거진</h3>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- //contents -->
+
+        <footer id="footer"></footer>
+        <!-- //footer -->
+    </div>
+</body>
+</html>
