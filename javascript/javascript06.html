@@ -598,7 +598,7 @@
 
             <!-- sample9 -->
             <div id="sample9" class="sample">
-                <h3>12. 배열 메서드 : slice() : 배열 요소를 다른 요소로 변경 : 반환(배열)</h3>
+                <h3>13. 배열 메서드 : splice() : 배열 요소를 다른 요소로 변경 : 반환(배열)</h3>
                 <div class="table">
                     <table>
                         <colgroup>
@@ -1488,21 +1488,68 @@
 
         //과제
         {
-            arrBox = [100, 200, 300, 400, 500, 600, 700];
+            const arrBox = [100, 200, 300, 400, 500, 600, 700];
 
             //300,400
+            // const arrSlice = arrBox.slice(2,4);
+            // document.write(arrSlice);
+
+            // const arrSplice = arrBox.splice(2,2);
+            // document.write(arrSplice);
 
             //100,300,500,700
+            // const arrSplice = arrBox.splice(0,6,100,300,500);
+            // document.write(arrBox);
+
+            // const arrFilter = arrBox.filter(el=>el%200==100);
+            // document.write(arrFilter);
 
             //700
+            // const arrPop = arrBox.pop();
+            // document.write(arrPop);
+            
+            // const arrSlice = arrBox.slice(-1);
+            // document.write(arrSlice);
 
-            arrBox2 = ["j", "b", "c", "d", "e"];
+            // const arrSplice = arrBox.splice(0,6);
+            // document.write(arrBox); 
+
+            // const arrFind = arrBox.find(el=>el===700);
+            // document.write(arrFind);
+        }
+        {
+            const arrBox2 = ["j", "b", "c", "d", "e"];
 
             //j
+            // const arrShift = arrBox2.shift();
+            // document.write(arrShift);
+            
+            // const arrReduce = arrBox2.reduce(el=>el);
+            // document.write(arrReduce);
 
+            // const arrSlice = arrBox2.slice(0,1);
+            // document.write(arrSlice);
+
+            // const arrFind = arrBox2.find(el=>el==='j');
+            // document.write(arrFind);
+            
             //jc
+            // const arrSplice = arrBox2.splice(1,4,'c');
+            // document.write(arrBox2);
 
+            // const arrBox3 = arrBox2.filter(el=>el==='j');
+            // const arrMap = arrBox3.map(el=>el +'c');
+            // document.write(arrMap);
+            
             //jbcd
+            // const arrPop = arrBox2.pop();
+            // document.write(arrBox2);
+
+            // const arrSlice = arrBox2.slice(0,4);
+            // document.write(arrSlice);
+
+            // const arrFilter = arrBox2.filter(el=>el!=='e');
+            // document.write(arrFilter);
         }
     </script>
 </body>
