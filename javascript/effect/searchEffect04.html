@@ -236,10 +236,10 @@
 
         //사용자가 검색한 값
         searchBox.addEventListener("keyup", () => {
-            const seachWord = searchBox.value;
+            const searchWord = searchBox.value;
             //console.log(seachWord)
 
-            findProp(seachWord);
+            findProp(searchWord);
         });
 
         document.querySelectorAll(".list span").forEach(span => {
@@ -250,8 +250,8 @@
             })
         })
 
-        function findProp(seachProp){
-            const targetData = cssProperty.find((data) => data.name === seachProp)
+        function findProp(searchProp){
+            const targetData = cssProperty.find((data) => data.name === searchProp)
             
             //찾는 데이터가 없을 때
             if(targetData == null){
