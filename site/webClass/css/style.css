@@ -1,6 +1,6 @@
 /* 전체 레이아웃 */
 #wrap {
-    height: 20000px;
+
 }
 
 
@@ -464,7 +464,6 @@
 /* 이미지 유형02(img_type02) */
 .img_type02 {
     padding: 150px 0;
-    background: #f5f5f5;
 }
 .img_type02 h3 {
     font-size: 50px;
@@ -552,3 +551,106 @@
 .img_type02 .img-wrap li:nth-child(3) {
     background-image: url(../img/img_type_bg05.jpg);
 }
+
+/* 배너 유형01 */
+.banner_type01 {
+    font-family: 'GmarketSans';
+    padding: 150px 0;
+    background: url(../img/banner_type_bg01.jpg) center center no-repeat;
+    text-align: center;
+    color: #fff;
+    background-size: cover;
+}
+.banner_type01 h3 {
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 65px;
+}
+.banner_type01 p {
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 65px;
+}
+.banner_type01 a {
+    font-size: 16px;
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* 푸터 유형01 */
+.footer_type01 {
+    padding: 150px 0;
+    background: #f5f5f5;
+    font-family: 'GmarketSans';
+}
+.footer-menu {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    margin-bottom: 50px;
+}
+.footer-menu > div {
+    width: 16%;
+}
+.footer-menu > div h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 35px;
+}
+.footer-menu > div li a {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.8;
+    position: relative;
+    color: #111;
+    transition: all 0.3s;
+}
+.footer-menu > div li a:hover {
+    color: rgb(96, 96, 96);
+}
+.footer-menu > div li a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 1px;
+    background: #000;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in;
+}
+.footer-menu > div li a:hover::before {
+    transform: scaleX(1);
+    color: #000;
+}
+.footer-rights {
+    font-family: 'NexonLv1Gothic';
+    text-align: center;
+}
+.footer-sns {
+    margin-top: 10px;
+}
+.footer-sns ul {
+    display: flex;
+    justify-content: center;
+}
+.footer-sns li a {
+    width: 40px;
+    height: 40px;
+    margin: 4px;
+    background: #ccc;
+    display: inline-block;
+    background: url(../img/bg-svg.svg);
+}
+.footer-sns li:nth-child(1) a {}
+.footer-sns li:nth-child(2) a {
+    background-position: -50px 0;
+}
+.footer-sns li:nth-child(3) a {
+    background-position: -100px 0;
+}
+.footer-sns li:nth-child(4) a {
+    background-position: -150px 0;
+}
+
