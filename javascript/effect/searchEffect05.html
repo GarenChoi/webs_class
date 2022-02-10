@@ -154,6 +154,21 @@
             background: #223547;
             color: #fff;
             cursor: pointer;
+            
+        }
+        .board .list li {
+            padding-right: 100px;
+            position: relative;
+        }
+        .board .list li span {
+            position: absolute;
+            right: 10px; top: 50%;
+            font-size: 14px;
+            transform: translateY(-50%);
+        }
+        .board .list li span::before {
+            content: 'view : ';
+            text-transform: uppercase;
         }
     </style>
 </head>
@@ -177,10 +192,10 @@
 
             <!-- 검색 영역 -->
             <div class="search">
-                <span>조회수 10회 이상</span>
-                <span>조회수 20회 이상</span>
-                <span>조회수 30회 이상</span>
-                <span>조회수 40회 이상</span>
+                <span data-view="10">조회수 10회 이상</span>
+                <span data-view="20">조회수 20회 이상</span>
+                <span data-view="30">조회수 30회 이상</span>
+                <span data-view="40">조회수 40회 이상</span>
             </div>
 
             <!-- 전체 목록 갯수 -->
@@ -220,31 +235,36 @@
         const searchBox = document.querySelectorAll(".search span");
         const cssList = document.querySelector(".list ul"); 
         const cssCount = document.querySelector(".count em"); 
+        let listHTML = "";
 
-        
-        
-        
+        //목록 보여주기
+        function upDataList(list){
+            let listHTML = "";
+            
+            for(const data of list){
+                listHTML += `<li>${data.name} : ${data.desc} <span>${data.view}</span></li>`;
+            }
+            cssList.innerHTML = listHTML;
+        }
+        upDataList(cssProperty);
+
+        //버튼 클릭하기
         searchBox.forEach(span => {
             span.addEventListener("click", () => {
-                onClickButton();
-            })
-        });
+                const target = span.dataset.view;
+                const filterList = cssProperty.filter(data => data.view >= target)
+            
+                upDataList(filterList);
+            });
+        })
         
-        //CSS 리스트 출력하기
-        function upDataList(){
-            let list = "";
 
-            for(let data of cssProperty){
-                // list += "<li>"+i.view+"</li>";
-                list += `<li>${data.name} : ${data.desc}<span>${data.view}</span></li>`;
-            }
-            
-            cssList.innerHTML = list; 
-        }
-        upDataList();
-        
-            
-        
+
+
+
+
+
+                
         // //CSS 리스트 출력하기
         // function upDataList(){
         //     let list = "";
