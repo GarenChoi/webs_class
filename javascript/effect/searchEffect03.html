@@ -207,25 +207,25 @@
 
             <div class="list">
                 <ul>
-                    <li data-name="all" data-type="기타"><strong>all</strong> : all 속성은 CSS 속성 을 재설정하는 데 사용할 수 있는 약식 속성입니다.</li>
-                    <li data-name="animation" data-type="애니메이션"><strong>animation</strong> : animation 속성은 애니메이션 속성을 설정하기 위한 약식 속성입니다.</li>
-                    <li data-name="animation-delay" data-type="애니메이션"><strong>animation-delay</strong> : animation-delay 속성은 애니메이션이 시작되는 시간을 설정합니다. </li>
-                    <li data-name="animation-direction" data-type="애니메이션"><strong>animation-direction</strong> : animation-direction 속성은 애니메이션이 움직이는 방향을 설정합니다.</li>
-                    <li data-name="animation-duration" data-type="애니메이션"><strong>animation-duration</strong> : animation-duration 속성은 애니메이션이 움직이는 시간을 설정합니다.</li>
-                    <li data-name="animation-fill-mode" data-type="애니메이션"><strong>animation-fill-mode</strong> : animation-fill-mode 속성은 애니메이션이 끝난 후 상태를 설정합니다.</li>
-                    <li data-name="animation-iteration-count" data-type="애니메이션"><strong>animation-iteration-count</strong> : animation-iteration-count 속성은 애니메이션 반복 횟수를 설정합니다.</li>
-                    <li data-name="animation-name" data-type="애니메이션"><strong>animation-name</strong> : animation-name 속성은 애니메이션 키프레임을 설정합니다.</li>
-                    <li data-name="animation-play-state" data-type="애니메이션"><strong>animation-play-state</strong> : animation-play-state 속성은 애니메이션의 진행상태를 설정합니다.</li>
-                    <li data-name="backdrop-filter" data-type="효과"><strong>backdrop-filter</strong> : backdrop-filter 속성은 요소 뒤에 필터효과를 설정합니다.</li>
-                    <li data-name="backface-visibility" data-type="효과"><strong>backface-visibility</strong> : backface-visibility 속성은 요소 뒷면 출력 여부를 설정합니다.</li>
-                    <li data-name="caption-side" data-type="테이블"><strong>caption-side</strong> : caption-side 속성은</li>
-                    <li data-name="direction" data-type="기타"><strong>direction</strong> : direction</li>
-                    <li data-name="empty-cells" data-type="기타"><strong>empty-cells</strong> : empty-cells</li>
-                    <li data-name="filter" data-type="효과"><strong>filter</strong> : filter</li>
-                    <li data-name="flex" data-type="플렉스"><strong>flex</strong> : flex</li>
-                    <li data-name="grid" data-type="그리드"><strong>grid</strong> : grid</li>
-                    <li data-name="hanging-punctuation" data-type="글씨"><strong>hanging-punctuation</strong> : hanging-punctuation</li>
-                    <li data-name="isolation" data-type="속성"><strong>isolation</strong> : isolation</li>
+                    <li data-name="all"><strong>all</strong> : all 속성은 CSS 속성 을 재설정하는 데 사용할 수 있는 약식 속성입니다.</li>
+                    <li data-name="animation"><strong>animation</strong> : animation 속성은 애니메이션 속성을 설정하기 위한 약식 속성입니다.</li>
+                    <li data-name="animation-delay"><strong>animation-delay</strong> : animation-delay 속성은 애니메이션이 시작되는 시간을 설정합니다. </li>
+                    <li data-name="animation-direction"><strong>animation-direction</strong> : animation-direction 속성은 애니메이션이 움직이는 방향을 설정합니다.</li>
+                    <li data-name="animation-duration"><strong>animation-duration</strong> : animation-duration 속성은 애니메이션이 움직이는 시간을 설정합니다.</li>
+                    <li data-name="animation-fill-mode"><strong>animation-fill-mode</strong> : animation-fill-mode 속성은 애니메이션이 끝난 후 상태를 설정합니다.</li>
+                    <li data-name="animation-iteration-count"><strong>animation-iteration-count</strong> : animation-iteration-count 속성은 애니메이션 반복 횟수를 설정합니다.</li>
+                    <li data-name="animation-name"><strong>animation-name</strong> : animation-name 속성은 애니메이션 키프레임을 설정합니다.</li>
+                    <li data-name="animation-play-state"><strong>animation-play-state</strong> : animation-play-state 속성은 애니메이션의 진행상태를 설정합니다.</li>
+                    <li data-name="backdrop-filter"><strong>backdrop-filter</strong> : backdrop-filter 속성은 요소 뒤에 필터효과를 설정합니다.</li>
+                    <li data-name="backface-visibility"><strong>backface-visibility</strong> : backface-visibility 속성은 요소 뒷면 출력 여부를 설정합니다.</li>
+                    <li data-name="caption-side"><strong>caption-side</strong> : caption-side 속성은</li>
+                    <li data-name="direction"><strong>direction</strong> : direction</li>
+                    <li data-name="empty-cells"><strong>empty-cells</strong> : empty-cells</li>
+                    <li data-name="filter"><strong>filter</strong> : filter</li>
+                    <li data-name="flex"><strong>flex</strong> : flex</li>
+                    <li data-name="grid"><strong>grid</strong> : grid</li>
+                    <li data-name="hanging-punctuation"><strong>hanging-punctuation</strong> : hanging-punctuation</li>
+                    <li data-name="isolation"><strong>isolation</strong> : isolation</li>
                 </ul>
             </div>
         </div>
@@ -251,7 +251,6 @@
 
                 cssList.forEach(el => {
                     const cssName = el.dataset.name;    //CSS 속성 값
-                    const cssType = el.dataset.type;
                     // console.log(cssName)
 
                     //알파벳 첫글자 == CSS 속성의 첫글자(a)
