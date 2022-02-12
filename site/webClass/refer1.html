@@ -7,7 +7,7 @@
     <title>사이트</title>
 
     <!-- 폰트 -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -87,13 +87,11 @@
             margin-top: 126px;
         }
         .banner_bg {
-            
             width: 1249px;
             margin: 0 auto;
         }
         .banner_bg h2 {
             font-size: 80px;
-            font-weight: 500;
             line-height: 0.95;
             letter-spacing: -1.6px;
             color: #292019;
@@ -255,7 +253,27 @@
             color: #3d3d3f;
         }
         .img_text02 .header .btn {
+            display: flex;
             margin-top: 35px;
+            position: relative;
+        }
+        .img_text02 .header .btn .btn_txt {
+            font-size: 17px;
+            color: #3d3d3f;
+            margin-right: 28px;
+        }
+        .img_text02 .header .btn .btn_box {
+            width: 34px;
+            height: 19px;
+            background-color: #e9e9e9;
+            margin-top: 4px;
+        }
+        .img_text02 .header .btn .btn_arrow {
+            width: 25px;
+            height: 17px;
+            background: url(img/bg-svg01.svg) 0 -100px no-repeat;
+            position: absolute;
+            top: 6px; right: 17px;
         }
         .img_text02 .nav {
             width: 421px;
@@ -277,6 +295,60 @@
         .img_text02 .nav li a:hover {
             color: #3d3d3f;
         }
+        .img_text02 .iT {
+            width: 312px;
+            height: 305px;
+            background-color: #fff4e8;
+        }
+        .img_text02 .atc {
+            width: 137px;
+            height: 40px;
+            background-color: #d9ab82;
+            border-radius: 40px;
+            position: absolute;
+            left: 28%; top: -7%;
+            display: flex;
+        }
+        .img_text02 .atc_txt {
+            font-size: 14px;
+            color: #fff;
+            padding: 10px 0 0 14px;
+        }
+        .img_text02 .atc_bk {
+            margin: 7px 0 0 5px;
+            width: 25px;
+            height: 25px;
+            background-color: rgba(255, 255, 255, 0.250);
+            border-radius: 20px;
+        }
+        .img_text02 .atc_bk .bk_img {
+            width: 14px;
+            height: 14px;
+            background: url(img/bg-svg01.svg) -50px -100px no-repeat;
+            margin: 5px 0 0 5px;
+        }
+        .img_text02 .name {
+            font-size: 26px;
+            font-weight: bold;
+            color: #3d3d3f;
+            margin: 35px 0 20px 51px;
+        }
+        .img_text02 .price {
+            display: flex;
+            margin-left: 51px;
+        }
+        .img_text02 .r_price {
+            margin-right: 38px;
+            font-size: 19px;
+            font-weight: 500;
+        }
+        .img_text02 .o_price {
+            font-size: 15px;
+            font-weight: 500;
+            color: #a9a7a6;
+            margin-top: 5px;
+            text-decoration: line-through;
+        }
         .img_text02 .img_container01 {
             display: flex;
             justify-content: space-between;
@@ -284,9 +356,32 @@
             margin: 0 auto;
             margin-top: 150px;
         }
-        .img_text02 .img_container01 .img_txt01 {}
-        .img_text02 .img_container01 .img_txt02 {}
-        .img_text02 .img_container01 .img_txt03 {}
+        .img_text02 .img_container01 .img_txt01 {
+            position: relative;
+        }
+        .img_text02 .img_container01 .img_txt01 .img {
+            width: 250px;
+            height: 280px; 
+            background: url(img/site_refer_bg10.png) -98px -44px no-repeat;
+            margin-left: 40px;
+        }
+
+        .img_text02 .img_container01 .img_txt02 {
+            position: relative;
+        }
+        .img_text02 .img_container01 .img_txt02 .img {
+            width: 280px;
+            height: 255px;
+            background: url(img/site_refer_bg11.png) -30px -25px no-repeat;
+        }
+        .img_text02 .img_container01 .img_txt03 {
+            position: relative;
+        }
+        .img_text02 .img_container01 .img_txt03 .img {
+            width: 290px;
+            height: 255px;
+            background: url(img/site_refer_bg12.png) -50px -35px no-repeat;
+        }
         .img_text02 .img_container02 {
             display: flex;
             justify-content: space-between;
@@ -294,16 +389,32 @@
             margin: 0 auto;
             margin-top: 191px;
         }
-        .img_text02 .img_container02 .img_txt01 {}
-        .img_text02 .img_container02 .img_txt02 {}
-        .img_text02 .img_container02 .img_txt03 {}
-        .img_text02 .iT {
-            width: 312px;
-            height: 305px;
-            background-color: #fff4e8;
+        .img_text02 .img_container02 .img_txt01 {
+            position: relative;
+        }
+        .img_text02 .img_container02 .img_txt01 .img {
+            width: 250px;
+            height: 270px;
+            background: url(img/site_refer_bg13.png) 0 -10px no-repeat;
+        }
+        .img_text02 .img_container02 .img_txt02 {
+            position: relative;
+        }
+        .img_text02 .img_container02 .img_txt02 .img {
+            width: 270px;
+            height: 280px;
+            background: url(img/site_refer_bg14.png) -60px -30px no-repeat;
+        }
+        .img_text02 .img_container02 .img_txt03 {
+            position: relative;
+        }
+        .img_text02 .img_container02 .img_txt03 .img {
+            width: 265px;
+            height: 270px;
+            background: url(img/site_refer_bg15.png) 35px 0px no-repeat;
         }
 
-        /* 이미지 텍스트03
+        /* 이미지 텍스트03 */
         .img_text03 {
             width: 1056px;
             margin: 0 auto;
@@ -351,11 +462,11 @@
         }
         
         /* 푸터 */
-        /* #footer {
+        #footer {
             margin-top: 168px;
             height: 746px;
             background-color: #fff;
-        } */
+        }
     </style>
 </head>
 <body>
@@ -433,7 +544,11 @@
                             <li><a href="#">Most Popular</a></li>
                         </ul>
                     </div>
-                    <div class="btn">See All</div>
+                    <div class="btn">
+                        <div class="btn_txt">See All</div>
+                        <div class="btn_arrow"></div>
+                        <div class="btn_box"></div>
+                    </div>
                 </div>
                 <div class="nav">
                     <ul>
@@ -445,14 +560,92 @@
                     </ul>
                 </div>
                 <div class="img_container01">
-                    <div class="img_txt01 iT"></div>
-                    <div class="img_txt02 iT"></div>
-                    <div class="img_txt03 iT"></div>
+                    <div class="img_txt01 iT">
+                        <div class="atc">
+                            <div class="atc_txt">Add To Cart</div>
+                            <div class="atc_bk">
+                                <div class="bk_img"></div>
+                            </div>
+                        </div>
+                        <div class="name">Ramen Stool</div>
+                        <div class="price">
+                            <div class="r_price">$65.00</div>
+                            <div class="o_price">$95.00</div>
+                        </div>
+                        <div class="img"></div>
+                    </div>
+                    <div class="img_txt02 iT">
+                        <div class="atc">
+                            <div class="atc_txt">Add To Cart</div>
+                            <div class="atc_bk">
+                                <div class="bk_img"></div>
+                            </div>
+                        </div>
+                        <div class="name">Flexform</div>
+                        <div class="price">
+                            <div class="r_price">$35.00</div>
+                            <div class="o_price">$55.00</div>
+                        </div>
+                        <div class="img"></div>
+                    </div>
+                    <div class="img_txt03 iT">
+                        <div class="atc">
+                            <div class="atc_txt">Add To Cart</div>
+                            <div class="atc_bk">
+                                <div class="bk_img"></div>
+                            </div>
+                        </div>
+                        <div class="name">Porada</div>
+                        <div class="price">
+                            <div class="r_price">$87.00</div>
+                            <div class="o_price">$97.00</div>
+                        </div>
+                        <div class="img"></div>
+                    </div>
                 </div>
                 <div class="img_container02">
-                    <div class="img_txt01 iT"></div>
-                    <div class="img_txt02 iT"></div>
-                    <div class="img_txt03 iT"></div>
+                    <div class="img_txt01 iT">
+                        <div class="atc">
+                            <div class="atc_txt">Add To Cart</div>
+                            <div class="atc_bk">
+                                <div class="bk_img"></div>
+                            </div>
+                        </div>
+                        <div class="name">Taknion</div>
+                        <div class="price">
+                            <div class="r_price">$45.00</div>
+                            <div class="o_price">$55.00</div>
+                        </div>
+                        <div class="img"></div>
+                    </div>
+                    <div class="img_txt02 iT">
+                        <div class="atc">
+                            <div class="atc_txt">Add To Cart</div>
+                            <div class="atc_bk">
+                                <div class="bk_img"></div>
+                            </div>
+                        </div>
+                        <div class="name">Amora</div>
+                        <div class="price">
+                            <div class="r_price">$65.00</div>
+                            <div class="o_price">$95.00</div>
+                        </div>
+                        <div class="img"></div>
+                    </div>
+                    <div class="img_txt03 iT">
+                        <div class="atc">
+                            <div class="atc_txt">Add To Cart</div>
+                            <div class="atc_bk">
+                                <div class="bk_img"></div>
+                            </div>
+                        </div>
+                        <div class="name">Liquid Contract</div>
+                        <div class="price">
+                            <div class="r_price">$35.00</div>
+                            <div class="o_price">$45.00</div>
+                        </div>
+                        <div class="img"></div>
+                    </div>
                 </div>
             </div>
             <!-- //img_text02 -->
