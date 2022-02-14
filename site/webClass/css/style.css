@@ -831,6 +831,7 @@
     line-height: 1.6;
     padding-left: 10px;
     position: relative;
+    font-weight: 500;
 }
 .member-form .list li::before {
     content:'';
