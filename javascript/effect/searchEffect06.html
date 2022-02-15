@@ -242,8 +242,8 @@
             let listHTML = '';
 
             cssProperty.forEach((data,index) => {
-                listHTML += `<li>${data.num}. ${data.name} : ${data.desc}</li>`
-                cssCount.innerHTML = `전체 목록 갯수 : <em>${index+1}</em>개`
+                listHTML += `<li>${data.num}. ${data.name} : ${data.desc}</li>`;
+                cssCount.innerHTML = `전체 목록 갯수 : <em>${index+1}</em>개`;
             })
             cssList.innerHTML = listHTML;
         }
