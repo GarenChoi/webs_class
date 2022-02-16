@@ -92,6 +92,13 @@ address {
     font-style: normal;
 }
 
+/* 보더 초기화 */
+img,
+fieldset,
+button {
+    border: 0;
+}
+
 /* 스킵 메뉴 */
 #skip {
     position: relative;
