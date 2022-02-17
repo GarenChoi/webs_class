@@ -274,9 +274,8 @@ let dotIndex = "";
 let dotActive;
 
 function init(){
-    //이미지 갯수만큼 <a></a>
     for( i of slider){
-        dotIndex += "<a href='#'' class='dot'></a>"
+        dotIndex += "&lt;a href='#'' class='dot'&gt;&lt;/a&gt;"
     }
     sliderDot.innerHTML = dotIndex;
 
@@ -289,7 +288,7 @@ function gotoSlider(num){
     sliderInner.style.transform = "translateX("+ -sliderWidth * num + "px)";
     currentIndex = num;
 
-    dotActive = document.querySelectorAll(".slider__dot .dot");
+    dotActive = sliderDot.querySelectorAll(".dot");
     dotActive.forEach(el => {
         el.classList.remove("active");
     })
@@ -372,7 +371,7 @@ sliderDot.querySelectorAll("a").forEach((dot, index) => {
             sliderInner.style.transform = "translateX("+ -sliderWidth * num + "px)";
             currentIndex = num;
 
-            dotActive = document.querySelectorAll(".slider__dot .dot");
+            dotActive = sliderDot.querySelectorAll(".dot");
             dotActive.forEach(el => {
                 el.classList.remove("active");
             })

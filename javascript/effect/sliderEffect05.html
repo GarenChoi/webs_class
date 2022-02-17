@@ -235,10 +235,6 @@ function gotoSlider(num){
 }
 sliderBtnPrev.addEventListener("click", () => {
     let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount;
-    //첫번째에 있을 때 0-->4
-    // if(prevIndex == -1){
-    //     prevIndex = 4;
-    // }
     gotoSlider(prevIndex);
 });
 sliderBtnNext.addEventListener("click", () => {
