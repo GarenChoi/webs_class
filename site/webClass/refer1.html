@@ -427,21 +427,25 @@
         .img_text03 .img_container01 .img {
             width: 470px;
             height: 588px;
-            background-color: #fff4e8;
+            background: url(img/site_refer_bg16.jpg) no-repeat;
         }
         .img_text03 .img_container01 .text {
             margin-left: 107px;
         }
         .img_text03 .img_container01 .text .header {
             width: 427px;
-            height: 112px;
-            background-color: #fff4e8;
+            font-size: 44px;
+            font-weight: bold;
+            line-height: 1.06;
+            color: #3d3d3f;
             margin-top: 69px;
         }
         .img_text03 .img_container01 .text .desc {
             width: 445px;
             height: 140px;
-            background-color: #fff4e8;
+            font-size: 16px;
+            line-height: 1.56;
+            color: #72696a;
             margin-top: 43px;
         }
         .img_text03 .img_container02 {
@@ -449,7 +453,7 @@
             position: absolute;
             bottom: -60px;
         }
-        .img_text03 .img_container02 .img_txt01 {
+        /* .img_text03 .img_container02 .img_txt01 {
             margin-left: 169px;
         }
         .img_text03 .img_container02 .img_txt02 {}
@@ -459,13 +463,103 @@
             height: 132px;
             background-color: #ecb67c;
             margin-right: 25px;
-        }
+        } */
         
         /* 푸터 */
         #footer {
             margin-top: 168px;
-            height: 746px;
             background-color: #fff;
+            padding-top: 130px;
+        }
+        .footer_bg {
+            width: 1249px;
+            margin: 0 auto;
+        }
+        .footer_logo {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.43;
+            letter-spacing: -0.5px;
+            color: #fe8432;
+            border: 1px solid #fe8432;
+            border-radius: 20px;
+            padding: 8px 36px 8px 35px;
+        }
+        .footer_cont {
+            display: flex;
+            justify-content: space-between;
+        }
+        .f_header {
+            margin: 38px 0 50px 0;
+            width: 631px;
+            font-size: 44px;
+            font-weight: bold;
+            line-height: 1.06;
+            color: #3d3d3f;
+        }
+        .watch {
+            display: flex;
+            align-items: center;
+        }
+        .w_img {
+            margin: 0 14px 0 480px;
+            width: 70px;
+            height: 59px;
+            background: url(img/site_refer_bg18.png);
+        }
+        .w_text {
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.33;
+            color: #2e2e2e;
+            text-decoration: underline;
+        }
+        .imgC {
+            width: 444px;
+            height: 380px;
+            background: url(img/site_refer_bg17.jpg) 0 -45px no-repeat;
+        }
+        .footer_end {
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer_end ul {
+            display: flex;
+        }
+        .footer_end li {
+            font-size: 14px;
+            line-height: 1.33;
+            color: #494949;
+            margin-right: 43px;
+        }
+        .footer_icon {
+            display: flex;
+        }
+        .footer_icon .ico01 {
+            width: 6px;
+            height: 12px;
+            background: url(img/bg-svg01.svg) 0 -150px ;
+            margin-right: 29px;
+        }
+        .footer_icon .ico02 {
+            width: 12px;
+            height: 12px;
+            background: url(img/bg-svg01.svg) -15px -150px;
+            margin-right: 29px;
+        }
+        .footer_icon .ico03 {
+            width: 13px;
+            height: 11px;
+            background: url(img/bg-svg01.svg) -30px -150px;
+            margin-right: 80px;
+        }
+        .end {
+            text-align: center;
+            font-size: 12px;
+            color: #adadad;
+            border-top: 1px solid #dfdfe5;
+            margin-top: 55px;
+            padding: 34px 0 40px 0;
         }
     </style>
 </head>
@@ -651,25 +745,55 @@
             <!-- //img_text02 -->
 
             <div class="img_text03">
-            <div class="img_container01">
-                <div class="img"></div>
-                <div class="text">
-                    <h3 class="header"></h3>
-                    <p class="desc"></p>
+                <div class="img_container01">
+                    <div class="img"></div>
+                    <div class="text">
+                        <h3 class="header">Let’s see what our customer’s say</h3>
+                        <p class="desc">Dwelling and speedily ignorant any steepest. Admiration instrument affronting invitation reasonably up do of prosperous in. Shy saw declared age debating ecstatic man. Call in so want pure rank am dear were. Remarkably to continuing in surrounded diminution on.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="img_container02">
-                <div class="img_txt01 iT"></div>
-                <div class="img_txt02 iT"></div>
-                <div class="img_txt03 iT"></div>
-            </div>
+                <!-- <div class="img_container02">
+                    <div class="img_txt01 iT"></div>
+                    <div class="img_txt02 iT"></div>
+                    <div class="img_txt03 iT"></div>
+                </div> -->
             </div>
             <!-- //img_text03 -->
         </main>
         <!-- //contents -->
         
         <footer id="footer">
-            
+            <div class="footer_bg">
+                <span class="footer_logo">Mistrium Interiror</span>
+                <div class="footer_cont">
+                    <div class="footer_left">
+                        <h3 class="f_header">Signup to receive updates about new products</h3>
+                        <div class="watch">
+                            <div class="w_img"></div>
+                            <p class="w_text">Watch intro video</p>
+                        </div>
+                    </div>
+                    <div class="imgC"></div>
+                </div>
+                <div class="footer_end">
+                    <div class="logo">
+                        <div class="logo_icon1"></div>
+                        <div class="logo_icon2"></div>
+                    </div>
+                    <ul>
+                        <li>About</li>
+                        <li>Product</li>
+                        <li>Service</li>
+                        <li>Contact</li>
+                    </ul>
+                    <div class="footer_icon">
+                        <div class="ico01"></div>
+                        <div class="ico02"></div>
+                        <div class="ico03"></div>
+                    </div>
+                </div>
+                <div class="end">GarenChoi © 2022. arshakir.com</div>
+            </div>
         </footer>
         <!-- //footer -->
     </div>
