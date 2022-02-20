@@ -52,7 +52,8 @@ table {
 }
 
 /* 폰트 스타일 초기화 */
-em {
+em,
+address {
     font-style: normal;
 }
 
@@ -74,6 +75,17 @@ h6 {
     font-size: 13px;
     color: #222;
     font-weight: normal;
+}
+
+/* 테두리 초기화 */
+img,
+fieldset {
+    border: 0 none;
+}
+
+/* 버튼 초기화 */
+button {
+    border: 0;
 }
 
 /* IR 효과 */
