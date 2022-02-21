@@ -1,4 +1,9 @@
 /* 소스 보기 */
+.quiz__source {
+    position: absolute;
+    right: 3%; bottom: 57px;
+    padding: 10px 20px;
+}
 #modal {
     display: flex;
     justify-content: center;
@@ -12,6 +17,7 @@
     height: 100vh;
     z-index: 1000;
     display: none;
+    text-align: left;
 }
 .window {
     min-width: 360px;

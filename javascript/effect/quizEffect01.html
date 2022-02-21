@@ -102,6 +102,7 @@
             background: #fff;
             text-align: center;
             padding: 20px;
+            position: relative;
         }
         #footer a {
             font-family: 'Cafe24Dangdanghae';
@@ -557,12 +558,6 @@
               visibility: visible;
             }
         }
-        /* 소스 버튼 */
-        .quiz__source {
-            position: absolute;
-            right: 3%; bottom: 6%;
-            padding: 10px 20px;
-        }
     </style>
 </head>
 <body>
@@ -615,8 +610,11 @@
                     <div class="quiz__result"></div>
                 </div>
             </div>
-        </div>
-        
+        </div> 
+    </main>
+
+    <footer id="footer">
+        <a href="mailto:jundan2010@gmail.com">jundan2010@gmail.com</a>
         <div class="source">
             <button class="quiz__source">소스보기</button>
             <div id="modal">
@@ -632,7 +630,7 @@
                             <div class="symbol"></div>
                         </div>
                     </div>
-                    <div class="menu-bar"><span class="active">HTML</span><span>CSS</span><span>Javascript</span><span>jQuery</span></div>
+                    <div class="menu-bar"><span class="active">HTML</span><span>CSS</span><span>Javascript</span></div>
                     <div class="content-container">
                         <div class="content">
                             <div class="main">
@@ -769,10 +767,7 @@ quizConfirm.addEventListener("click", () => {
     quizDog.classList.add("like");
 });
 </code></pre>
-                                                            </div>
-                                                            <div class="main">
-                                <pre><code class="language-javascript"></code></pre>
-                                                            </div>
+                            </div>
                             <!-- <div class="scroll">
                                 <div class="start"></div>
                                 <div class="progress"></div>
@@ -788,15 +783,12 @@ quizConfirm.addEventListener("click", () => {
                     <div class="footer"></div>
                 </div>
             </div>
-        </div>  
-    </main>
-
-    <footer id="footer">
-        <a href="mailto:jundan2010@gmail.com">jundan2010@gmail.com</a>
+        </div> 
     </footer>
 
     <!-- script -->
     <script src="js/highlight.min.js"></script>
+    <script src="js/quiz.js"></script>
     <script>
         hljs.highlightAll();
 
@@ -824,38 +816,6 @@ quizConfirm.addEventListener("click", () => {
             quizConfirm.style.display = "none";
             quizResult.style.display = "block";
             quizDog.classList.add("like");
-        });
-
-        //tabmenu
-        const tabBtn = document.querySelectorAll(".menu-bar > span");
-        const tabCont = document.querySelectorAll(".content > .main");
-
-        tabBtn.forEach((btn, index) => {
-            btn.addEventListener("click", () => {
-
-                tabBtn.forEach(el => {
-                    el.classList.remove("active");
-                })
-
-                btn.classList.add("active");
-
-                tabCont.forEach(div => {
-                    div.style.display = "none";
-                })
-
-                tabCont[index].style.display = "block";
-            });
-        });
-
-        //소스 버튼
-        const modalA = document.querySelector("#modal");
-        const openBtn = document.querySelector(".source .quiz__source");
-        const closeBtn = document.querySelector(".title-bar .close");
-        openBtn.addEventListener("click", () => {
-            modalA.style.display = "block";
-        })
-        closeBtn.addEventListener("click", () => {
-            modalA.style.display = "none";
         });
     </script>
 </body>
