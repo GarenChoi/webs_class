@@ -862,15 +862,15 @@
 </code></pre>
                             </div>
                             <div class="main">
-<pre><code class="language-javascript">const quizType = document.querySelector(".quiz__type"); //퀴즈 종류
-const quizNumber = document.querySelector(".quiz__number");     //퀴즈 번호
-const quizAsk = document.querySelector(".quiz__ask");           //퀴즈 질문
-const quizConfirm = document.querySelector(".quiz__confirm");   //정답 확인 버튼
+<pre><code class="language-javascript">const quizType = document.querySelector(".quiz__type");        //퀴즈 종류
+const quizNumber = document.querySelector(".quiz__number");    //퀴즈 번호
+const quizAsk = document.querySelector(".quiz__ask");          //퀴즈 질문
+const quizConfirm = document.querySelector(".quiz__confirm");  //정답 확인 버튼
 const quizResult = document.querySelector(".quiz__result");    //정답 결과
-const quizTrue = document.querySelector(".quiz__view .true");    //정답
-const quizFalse = document.querySelector(".quiz__view .false");    //오답
-const quizView = document.querySelector(".quiz__view");     //강아지
-const quizInput = document.querySelector(".quiz__input");       //정답 입력 박스
+const quizTrue = document.querySelector(".quiz__view .true");  //정답
+const quizFalse = document.querySelector(".quiz__view .false");//오답
+const quizView = document.querySelector(".quiz__view");        //퀴즈 화면
+const quizInput = document.querySelector(".quiz__input");      //정답 입력 박스
 
 // 문제 정보
 const answerType = "javascript";
@@ -890,14 +890,14 @@ quizResult.style.display = "none"
 //정답 확인
 quizConfirm.addEventListener("click", () => {
     quizConfirm.style.display = "none";
-    quizResult.style.display = "block";
+            
     let quizValue = quizInput.value.toLowerCase().trim();
     
     if(quizValue==answerResult){
         quizView.classList.add("like");
-        quizResult.style.display = "none"
     } else {
         quizView.classList.add("dislike");
+        quizResult.style.display = "block";
         quizInput.style.display = "none";
     }
 });
@@ -927,15 +927,15 @@ quizConfirm.addEventListener("click", () => {
     <script>
         hljs.highlightAll();
 
-        const quizType = document.querySelector(".quiz__type"); //퀴즈 종류
-        const quizNumber = document.querySelector(".quiz__number");     //퀴즈 번호
-        const quizAsk = document.querySelector(".quiz__ask");           //퀴즈 질문
-        const quizConfirm = document.querySelector(".quiz__confirm");   //정답 확인 버튼
+        const quizType = document.querySelector(".quiz__type");        //퀴즈 종류
+        const quizNumber = document.querySelector(".quiz__number");    //퀴즈 번호
+        const quizAsk = document.querySelector(".quiz__ask");          //퀴즈 질문
+        const quizConfirm = document.querySelector(".quiz__confirm");  //정답 확인 버튼
         const quizResult = document.querySelector(".quiz__result");    //정답 결과
-        const quizTrue = document.querySelector(".quiz__view .true");    //정답
-        const quizFalse = document.querySelector(".quiz__view .false");    //오답
-        const quizView = document.querySelector(".quiz__view");     //강아지
-        const quizInput = document.querySelector(".quiz__input");       //정답 입력 박스
+        const quizTrue = document.querySelector(".quiz__view .true");  //정답
+        const quizFalse = document.querySelector(".quiz__view .false");//오답
+        const quizView = document.querySelector(".quiz__view");        //퀴즈 화면
+        const quizInput = document.querySelector(".quiz__input");      //정답 입력 박스
 
         // 문제 정보
         const answerType = "javascript";
@@ -955,14 +955,14 @@ quizConfirm.addEventListener("click", () => {
         //정답 확인
         quizConfirm.addEventListener("click", () => {
             quizConfirm.style.display = "none";
-            quizResult.style.display = "block";
+            
             let quizValue = quizInput.value.toLowerCase().trim();
             
             if(quizValue==answerResult){
                 quizView.classList.add("like");
-                quizResult.style.display = "none"
             } else {
                 quizView.classList.add("dislike");
+                quizResult.style.display = "block";
                 quizInput.style.display = "none";
             }
         });

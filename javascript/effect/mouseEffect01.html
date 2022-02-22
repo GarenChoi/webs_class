@@ -14,7 +14,6 @@
         body::before {
             background: rgba(75, 4, 16, 0.589);
         }
-        .cursor {}
         .mouse__wrap {
             display: flex;
             align-items: center;
@@ -24,6 +23,7 @@
             width: 100%;
             height: 100vh;
             overflow: hidden;
+            cursor: none;
         }
         .mouse__wrap p {
             font-size: 2.5vw;
@@ -37,6 +37,53 @@
         .mouse__wrap p span {
             border-bottom: 0.15vw dashed #fff;
         }
+        .cursor {
+            position: absolute;
+            left: 0; top: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            background-color: rgba(255,255,255,0.1);
+            user-select: none;
+            pointer-events: none;
+            transition: 
+                background-color .2s,
+                order-color .2s,
+                transform .6s,
+                border-radius .2s,
+                skewX 1s;
+        } 
+        .cursor.style1 {
+            background-color: rgba(255,165,0,0.4);
+            border-color: orange;
+        }
+        .cursor.style2 {
+            background-color: rgba(140,0,255,0.4);
+            border-color: rgb(140, 0, 255);
+            transform: rotate(720deg) scale(2);
+        }
+        .cursor.style3 {
+            background-color: rgba(0, 47, 255, 0.4);
+            border-color: rgb(0, 47, 255);
+            transform: scale(1.5) rotate(45deg);
+            border-radius: 10px;
+        }
+        .cursor.style4 {
+            background-color: rgba(121, 235, 197, 0.4);
+            border-color: rgb(121, 235, 197);
+            transform: scale(10) rotateY(360deg);
+        }
+        .cursor.style5 {
+            background-color: rgba(255, 0, 85, 0.4);
+            border-color: rgb(255, 0, 85);
+            transform: rotateY(720deg) scale(0.1);
+        }
+        .cursor.style6 {
+            background-color: rgba(219, 235, 0, 0.4);
+            border-color: rgb(219, 235, 0);
+            transform: scale(3) skewX(180deg);
+        }
     </style>
 </head>
 <body class="img05">
@@ -47,8 +94,8 @@
             <div class="cursor"></div>
 
             <div class="mouse__wrap">
-                <p>If you want to <span>die</span>, you'll <span>live</span>. If you want to <span>live</span>, you'll <span>die</span>.</p>
-                <p><span>죽고자</span> 하면 <span>살</span> 것이요, <span>살고자</span> 하면 <span>죽을</span> 것이다.</p>
+                <p>If you want to die, you'll <span class="style1">live</span>. If you want to live, you'll <span class="style2">die</span>.</p>
+                <p><span class="style3">죽고자</span> 하면 <span class="style4">살</span> 것이요, <span class="style5">살고자</span> 하면 <span class="style6">죽을</span> 것이다.</p>
             </div>
         </section>
     </main>
@@ -57,7 +104,7 @@
     <!-- info -->
     <div class="info">
         <div class="title">
-            <h1><a href="sliderEffect.html">Javascript Mouse Effect01</a></h1>
+            <h1><a href="mouseEffect.html">Javascript Mouse Effect01</a></h1>
             <p>마우스 이펙트 - 따라다니기</p>
         </div>
     
@@ -145,6 +192,76 @@
             document.querySelector(".screenX").innerHTML = event.screenX
             document.querySelector(".screenY").innerHTML = event.screenY
         });
+
+        //마우스 움직이기
+        window.addEventListener("mousemove", e => {
+            document.querySelector(".cursor").style.left = e.clientX-25 + "px";
+            document.querySelector(".cursor").style.top = e.clientY-25 + "px";
+        });
+
+        //마우스 효과
+        // document.querySelector(".style1").addEventListener("mouseover", () => {
+        //     document.querySelector(".cursor").classList.add("style1");
+        // });
+        // document.querySelector(".style1").addEventListener("mouseout", () => {
+        //     document.querySelector(".cursor").classList.remove("style1");
+        // });
+
+        // document.querySelector(".style2").addEventListener("mouseover", () => {
+        //     document.querySelector(".cursor").classList.add("style2");
+        // });
+        // document.querySelector(".style2").addEventListener("mouseout", () => {
+        //     document.querySelector(".cursor").classList.remove("style2");
+        // });
+
+        // document.querySelector(".style3").addEventListener("mouseover", () => {
+        //     document.querySelector(".cursor").classList.add("style3");
+        // });
+        // document.querySelector(".style3").addEventListener("mouseout", () => {
+        //     document.querySelector(".cursor").classList.remove("style3");
+        // });
+
+        // document.querySelector(".style4").addEventListener("mouseover", () => {
+        //     document.querySelector(".cursor").classList.add("style4");
+        // });
+        // document.querySelector(".style4").addEventListener("mouseout", () => {
+        //     document.querySelector(".cursor").classList.remove("style4");
+        // });
+
+        // document.querySelector(".style5").addEventListener("mouseover", () => {
+        //     document.querySelector(".cursor").classList.add("style5");
+        // });
+        // document.querySelector(".style5").addEventListener("mouseout", () => {
+        //     document.querySelector(".cursor").classList.remove("style5");
+        // });
+
+        // document.querySelector(".style6").addEventListener("mouseover", () => {
+        //     document.querySelector(".cursor").classList.add("style6");
+        // });
+        // document.querySelector(".style6").addEventListener("mouseout", () => {
+        //     document.querySelector(".cursor").classList.remove("style6");
+        // });
+
+            const style = document.querySelectorAll(".mouse__wrap p span")
+            const cursor = document.querySelector(".cursor")
+
+            // for(let i=0; i<style.length; i++){
+            //     style[i].addEventListener("mouseover", () => {
+            //         cursor.classList.add(`style${i+1}`);
+            //     });
+            //     style[i].addEventListener("mouseout", () => {
+            //         cursor.classList.remove(`style${i+1}`);
+            //     });
+            // }
+            
+            style.forEach((e,i) => {
+                style[i].addEventListener("mouseover", () => {
+                    cursor.classList.add(`style${i+1}`);
+                });
+                style[i].addEventListener("mouseout", () => {
+                    cursor.classList.remove(`style${i+1}`);
+                });
+            })
     </script>
 </body>
 </html>
