@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이펙트</title>
+
+    <link rel="stylesheet" href="../css/NexonLv1Gothic.css">
+    <link rel="stylesheet" href="../css/solarized-dark.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+
+    <style>
+        body::before {
+            background: rgba(75, 4, 16, 0.589);
+        }
+        .cursor {}
+        .mouse__wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #fff;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .mouse__wrap p {
+            font-size: 2.5vw;
+            line-height: 2;
+            font-weight: 300;
+        }
+        .mouse__wrap p:last-child {
+            font-size: 3vw;
+            font-weight: 400;
+        }
+        .mouse__wrap p span {
+            border-bottom: 0.15vw dashed #fff;
+        }
+    </style>
+</head>
+<body class="img05">
+    
+    <!-- main -->
+    <main>
+        <section id="mouseType01">
+            <div class="cursor"></div>
+
+            <div class="mouse__wrap">
+                <p>If you want to <span>die</span>, you'll <span>live</span>. If you want to <span>live</span>, you'll <span>die</span>.</p>
+                <p><span>죽고자</span> 하면 <span>살</span> 것이요, <span>살고자</span> 하면 <span>죽을</span> 것이다.</p>
+            </div>
+        </section>
+    </main>
+    <!-- //main -->
+
+    <!-- info -->
+    <div class="info">
+        <div class="title">
+            <h1><a href="sliderEffect.html">Javascript Mouse Effect01</a></h1>
+            <p>마우스 이펙트 - 따라다니기</p>
+        </div>
+    
+        <div class="number">
+            <ul>
+                <li class="active"><a href="mouseEffect01.html">1</a></li>
+                <li><a href="mouseEffect02.html">2</a></li>
+                <li><a href="mouseEffect03.html">3</a></li>
+                <li><a href="mouseEffect04.html">4</a></li>
+                <li><a href="mouseEffect05.html">5</a></li>
+                <li><a href="mouseEffect06.html">6</a></li>
+                <li><a href="mouseEffect07.html">7</a></li>
+                <li><a href="mouseEffect08.html">8</a></li>
+        </div>
+    
+        <div class="source">
+            <button class="source-btn">소스보기</button>
+            <div id="modal">
+                <div class="modal-wrap">
+                    <div class="modal-cont">
+                        <div class="code-view">
+                            <div class="view-header" aria-hidden="true">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="view-title">
+                                <ul>
+                                    <li class="active"><a href="#">HTML</a></li>
+                                    <li><a href="#">CSS</a></li>
+                                    <li><a href="#">Javascript</a></li>
+                                </ul>
+                            </div>
+                            <div class="view-cont">
+                                <div>
+<pre><code class="language-HTML">
+</code></pre>
+                                </div>
+                                <div>
+<pre><code class="language-CSS">
+</code></pre>
+                                </div>
+                                <div>
+<pre><code class="language-javascript">
+</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="modal-close">닫기</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="attr">
+            <ul>
+                <li>clientX : <span class="clientX">0</span>px</li>
+                <li>clientY : <span class="clientY">0</span>px</li>
+                <li>offsetX : <span class="offsetX">0</span>px</li>
+                <li>offsetY : <span class="offsetY">0</span>px</li>
+                <li>pageX : <span class="pageX">0</span>px</li>
+                <li>pageY : <span class="pageY">0</span>px</li>
+                <li>screenX : <span class="screenX">0</span>px</li>
+                <li>screenY : <span class="screenY">0</span>px</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //info -->
+
+    <script src="js/highlight.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script>
+        highlight();
+        modal();
+        tabMenu();
+
+        //출력용
+        window.addEventListener("mousemove", (event) => {
+            document.querySelector(".clientX").innerHTML = event.clientX
+            document.querySelector(".clientY").innerHTML = event.clientY
+            document.querySelector(".offsetX").innerHTML = event.offsetX
+            document.querySelector(".offsetY").innerHTML = event.offsetY
+            document.querySelector(".pageX").innerHTML = event.pageX
+            document.querySelector(".pageY").innerHTML = event.pageY
+            document.querySelector(".screenX").innerHTML = event.screenX
+            document.querySelector(".screenY").innerHTML = event.screenY
+        });
+    </script>
+</body>
+</html>
