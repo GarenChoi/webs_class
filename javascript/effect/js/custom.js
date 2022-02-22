@@ -21,7 +21,6 @@ const tabMenu = function(){
     const tabBtn = document.querySelectorAll(".view-title > ul > li");
     const tabCont = document.querySelectorAll(".view-cont > div");
 
-    //각각의 버튼을 클릭하면 경고창
     tabBtn.forEach((btn, index) => {
         btn.addEventListener("click", () => {
             // 클릭하지 않은건 active 삭제

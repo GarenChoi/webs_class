@@ -24,8 +24,9 @@ const modalA = document.querySelector("#modal");
 const openBtn = document.querySelector(".source .quiz__source");
 const closeBtn = document.querySelector(".title-bar .close");
 openBtn.addEventListener("click", () => {
-    modalA.style.display = "block";
+    modalA.classList.add("show");
+    modalA.classList.remove("hide");
 });
 closeBtn.addEventListener("click", () => {
-    modalA.style.display = "none";
+    modalA.classList.add("hide");
 });
