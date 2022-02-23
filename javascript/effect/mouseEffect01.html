@@ -40,7 +40,7 @@
         }
         .cursor {
             position: absolute;
-            left: 0; top: 0;
+            left: -100px; top: -100px;
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -82,8 +82,9 @@
         }
         .cursor.style6 {
             background-color: rgba(219, 235, 0, 0.4);
-            border-color: rgb(219, 235, 0);
-            transform: scale(3) skewX(180deg);
+            transform: scale(2.5) skewX(180deg);
+            border: 2px solid rgb(219, 235, 0);
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -119,6 +120,7 @@
                 <li><a href="mouseEffect06.html">6</a></li>
                 <li><a href="mouseEffect07.html">7</a></li>
                 <li><a href="mouseEffect08.html">8</a></li>
+            </ul>
         </div>
     
         <div class="source">
@@ -227,7 +229,25 @@
 </code></pre>
                                 </div>
                                 <div>
-<pre><code class="language-javascript">
+<pre><code class="language-javascript">const style = document.querySelectorAll(".mouse__wrap span");
+const cursor = document.querySelector(".cursor");
+//마우스 움직이기
+window.addEventListener("mousemove", e => {
+    let x = e.clientX-25 + "px";
+    let y = e.clientY-25 + "px";
+    cursor.style.cssText = `left: ${x}; top: ${y};`;
+});
+
+//마우스 효과
+style.forEach((e, i) => {
+    let attr = e.getAttribute("class");
+    e.addEventListener("mouseover", () => {
+        cursor.classList.add(attr);
+    });
+    e.addEventListener("mouseout", () => {
+        cursor.classList.remove(attr);
+    });
+});
 </code></pre>
                                 </div>
                             </div>
@@ -260,6 +280,9 @@
         modal();
         tabMenu();
 
+        const style = document.querySelectorAll(".mouse__wrap span");
+        const cursor = document.querySelector(".cursor");
+
         //출력용
         window.addEventListener("mousemove", (event) => {
             document.querySelector(".clientX").innerHTML = event.clientX
@@ -274,8 +297,12 @@
 
         //마우스 움직이기
         window.addEventListener("mousemove", e => {
-            document.querySelector(".cursor").style.left = e.clientX-25 + "px";
-            document.querySelector(".cursor").style.top = e.clientY-25 + "px";
+            // document.querySelector(".cursor").style.left = e.clientX-25 + "px";
+            // document.querySelector(".cursor").style.top = e.clientY-25 + "px";
+
+            let x = e.clientX-25 + "px";
+            let y = e.clientY-25 + "px";
+            cursor.style.cssText = `left: ${x}; top: ${y};`;
         });
 
         //마우스 효과
@@ -321,8 +348,7 @@
         //     document.querySelector(".cursor").classList.remove("style6");
         // });
 
-            const style = document.querySelectorAll(".mouse__wrap p span")
-            const cursor = document.querySelector(".cursor")
+            
 
             // for(let i=0; i<style.length; i++){
             //     style[i].addEventListener("mouseover", () => {
@@ -333,14 +359,25 @@
             //     });
             // }
             
-            style.forEach((e,i) => {
-                style[i].addEventListener("mouseover", () => {
-                    cursor.classList.add(`style${i+1}`);
+            // style.forEach((e,i) => {
+            //     e.addEventListener("mouseover", () => {
+            //         cursor.classList.add(`style${i+1}`);
+            //     });
+            //     e.addEventListener("mouseout", () => {
+            //         cursor.classList.remove(`style${i+1}`);
+            //     });
+            // });
+
+            //getAttribute
+            style.forEach((e, i) => {
+                let attr = e.getAttribute("class");
+                e.addEventListener("mouseover", () => {
+                    cursor.classList.add(attr);
                 });
-                style[i].addEventListener("mouseout", () => {
-                    cursor.classList.remove(`style${i+1}`);
+                e.addEventListener("mouseout", () => {
+                    cursor.classList.remove(attr);
                 });
-            })
+            });
     </script>
 </body>
 </html>
