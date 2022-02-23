@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>레이아웃</title>
+    <title>레이아웃08 : flex</title>
     <style>
         * {
             margin: 0;
@@ -29,29 +29,28 @@
         }
         #main {
             display: flex;
-            justify-content:space-between;
         }
-        #side {
-            width: 30%;
-            height: 720px;
+        #aside {
+            width: 25%;
+            height: 780px;
             background: #4FC3F7;
         }
         #contents {
-            width: 70%;
+            width: 75%;
         }
-        .cont1 {
+        #cont1 {
             width: 100%;
-            height: 240px;
+            height: 260px;
             background: #29B6F6;
         }
-        .cont2 {
+        #cont2 {
             width: 100%;
-            height: 240px;
+            height: 260px;
             background: #03A9F4;
         }
-        .cont3 {
+        #cont3 {
             width: 100%;
-            height: 240px;
+            height: 260px;
             background: #039BE5;
         }
         #footer {
@@ -59,31 +58,62 @@
             height: 100px;
             background: #0288D1;
         }
-        @media (max-width: 1220px){
+        @media (max-width: 1300px){
             #wrap {
                 width: 96%;
             }
-            #side {
-                height: 620px;
+            #contents {
+                display: flex;
+                flex-wrap: wrap;
             }
-            .cont1 {
-                width: 100%;
-                height: 310px;
+            #cont2 {
+                width: 50%;
+                height: 520px;
             }
-            .cont2 {
-                width: 100%;
-                height: 310px;
-            }
-            .cont3 {
-                width: 100%;
-                height: 100px;
+            #cont3 {
+                width: 50%;
+                height: 520px;
             }
         }
         @media (max-width: 768px){
-
+            #wrap {
+                width: 100%;
+            }
+            #aside {
+                width: 33%;
+            }
+            #contents {
+                width: 67%;
+            }
+            #cont1 {
+                width: 100%;
+                height: 390px;
+            }
+            #cont2 {
+                width: 100%;
+                height: 390px;
+            }
+            #cont3 {
+                display: none;
+            }
         }
-        @media (max-width: 600px){
-
+        @media (max-width: 480px){
+            #main {
+                flex-direction: column;
+            }
+            #aside {
+                width: 100%;
+                height: 200px;
+            }
+            #contents {
+                width: 100%;
+            }
+            #cont1 {
+                height: 430px;
+            }
+            #cont2 {
+                height: 150px;
+            }
         }
     </style>
 </head>
@@ -92,12 +122,12 @@
         <header id="header"></header>
         <nav id="nav"></nav>
         <main id="main">
-            <aside id="side"></aside>
+            <aside id="aside"></aside>
             <section id="contents">
-            <article class="cont1"></article>
-            <article class="cont2"></article>
-            <article class="cont3"></article>
-        </section>
+                <article id="cont1"></article>
+                <article id="cont2"></article>
+                <article id="cont3"></article>
+            </section>
         </main>
         <footer id="footer"></footer>
     </div>
