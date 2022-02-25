@@ -280,9 +280,10 @@
         
         /* 컨텐츠2 */
         #contents2 {
-            padding: 100px 0;
+            padding: 100px 100px;
             background-color: #fa6648;
             position: relative;
+            
         }
         #contents2 .btn_L {
             content: '';
@@ -308,24 +309,33 @@
             text-align: center;
         }
         .imgContainer {
+            width: 90%;
+            margin: 0 auto;
             margin-top: 150px;
             height: 400px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 100%;
         }
         .imgContainer .img01 {
-            width: 305px;
-            height: 300px;
+            width: 200px;
+            height: 200px;
         }
         .imgContainer .img02 {
+            width: 300px;
+            height: 300px;
+        }
+        .imgContainer .img03 {
             width: 400px;
             height: 400px;
         }
-        .imgContainer .img03 {
+        .imgContainer .img04 {
             width: 300px;
             height: 300px;
+        }
+        .imgContainer .img05 {
+            width: 200px;
+            height: 200px;
         }
         #contents2 p {
             margin-top: 100px;
@@ -465,17 +475,17 @@
         <!-- //contents1 -->
 
         <section id="contents2">
-            <div class="container">
                 <h3>Keyword 정리</h3>
                 <div class="imgContainer">
-                    <div class="img01"><img src="img/img03.png" alt="이미지"></div>
-                    <div class="img02"><img src="img/img04.png" alt="이미지"></div>
-                    <div class="img03"><img src="img/img05.png" alt="이미지"></div>
+                    <div class="img01"><img src="img/sliderImg01.png" alt="이미지"></div>
+                    <div class="img02"><img src="img/sliderImg02.png" alt="이미지"></div>
+                    <div class="img03"><img src="img/sliderImg03.png" alt="이미지"></div>
+                    <div class="img04"><img src="img/sliderImg04.png" alt="이미지"></div>
+                    <div class="img05"><img src="img/sliderImg05.png" alt="이미지"></div>
                 </div>
                 <a href="#" class="btn_L"></a>
                 <a href="#" class="btn_R"></a>
                 <p>Team Project<br><em>방역 투게더</em></p>
-            </div>
         </section>
         <!-- //contents2 -->
 
@@ -520,27 +530,28 @@
         const btn_L = document.querySelector("#contents2 .btn_L");
         const btn_R = document.querySelector("#contents2 .btn_R");
 
-        let I = 3;
+        let I = 5;
         btn_L.addEventListener("click", el => {
             el.preventDefault();
             
             I++;       
             imgCont.forEach((e,i) => {
-                let num = (i+I)%3;
-                e.src = `img/img0${num+3}.png`;
+                let num = (i+I)%5;
+                e.src = `img/sliderImg0${num+1}.png`;
             });
-            I = I%3+3;
+            I = I%5+5;
+            console.log(I);
         });
 
         btn_R.addEventListener("click", el => {
             el.preventDefault();
-            
+            console.log(I);
             I--;           
             imgCont.forEach((e,i) => {
-                let num = (i+I)%3;
-                e.src = `img/img0${num+3}.png`;
+                let num = (i+I)%5;
+                e.src = `img/sliderImg0${num+1}.png`;
             });
-            I = I%3+3;
+            I = I%5+5;
         });
         
     </script>
