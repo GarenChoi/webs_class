@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트</title>
+    <link href="https://webfontworld.github.io/BMJua/BMJua.css" rel="stylesheet">
+    <link rel="stylesheet" href="../javascript/css/NexonLv1Gothic.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            letter-spacing: 2px;
+        }
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+        h1,h2,h3,h4,h5,h6 {
+            text-decoration: none;
+            font-weight: normal;
+        }
+        button {
+            border: 0;
+            background: #fff;
+        }
+        a, em {
+            color: #000;
+            text-decoration: none;
+            font-style: normal;
+        }
+        li {
+            list-style: none;
+        }
+        #wrap {
+            font-family: 'BMJua';
+        }
+
+        /* 헤더 */
+        #header {
+            height: 80px;
+            background-color: #284ABE;
+        }
+        #header .container {
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            width: 50px;
+            height: 50px;
+            background-color: #fff;
+            border-radius: 25px;
+        }
+        #header ul {
+            margin-left: -10vw;
+        }
+        #header li {
+            display: inline;
+            margin: 30px;
+        }
+        #header li a {
+            color: #fff;
+        }
+        .icon {
+            display: flex;
+        }
+        .ico {
+            width: 24px;
+            height: 24px;
+            background: #fff;
+            margin: 15px;
+        }
+        .ico1 {}
+        .ico2 {}
+        .ico3 {}
+
+        /* 배너 */
+        #banner {
+            background: url(img/img01.png) right no-repeat;
+            background-color: #284ABE;
+        }
+        #banner .container {
+            padding: 100px 0 100px 0;
+            color: #fff;
+        }
+        #banner h1 {
+            font-size: 130px;
+        }
+        #banner h2 {
+            font-size: 70px;
+            margin-top: 80px;
+        }
+        #banner p {
+            font-size: 32px;
+            line-height: 50px;
+            margin-top: 80px;
+        }
+        #banner .box {
+            font-size: 16px;
+            letter-spacing: 0.45px;
+            color: #fff;
+            display: inline-block;
+            background-color: #ffc636;
+            margin-top: 34px;
+            padding: 10px 35px 12px 35px;
+            border: solid 1px #1c1c1d;
+            border-radius: 10px;
+            box-shadow: 0 4px 0 0 #202020;
+        }
+
+        /* 컨텐츠1 */
+        #contents1 {
+            padding: 100px 0;
+        }
+        #contents1 .container {
+            display: grid;
+            grid-template-areas: 
+            "tit1 tit1"
+            "text1 dataImg"
+            "box dataImg"
+            "btnBox btnBox"
+            "tit2 tit2"
+            "text2 text2"
+            "tit3 tit3"
+            "text3 text3"
+            "imgCard imgCard";
+            grid-template-columns: 40% 60%;
+        }
+        #contents1 .tit1 {
+            font-size: 48px;
+            color: #1c1c1d;
+            grid-area: tit1;
+            margin-bottom: 70px;
+            display: none;
+        }
+        #contents1 .tit1.active {
+            display: block;
+        }
+        #contents1 .text1 {
+            width: 430px;
+            font-size: 24px;
+            line-height: 1.5;
+            color: #474a57;
+            grid-area: text1;
+        }
+        #contents1 .dataImg {
+            width: 715px;
+            height: 419px;
+            background: url(img/img02.png) no-repeat;
+            grid-area: dataImg;
+        }
+        #contents1 .box {
+            margin-top: 110px;
+            text-align: center;
+            grid-area: box;
+        }
+        #contents1 .box a {
+            font-size: 16px;
+            line-height: 1;
+            letter-spacing: 0.45px;
+            color: #fff;
+            padding: 11px 58px;
+            border: 1px solid #1c1c1d;
+            border-radius: 10px;
+            background-color: #4f66af;
+            box-shadow: 0 4px 0 0 #202020;
+        }
+        #contents1 .btnBox {
+            font-family: 'NexonLv1Gothic';
+            width: 1080px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 100px;
+            grid-area: btnBox;
+        }
+        #contents1 .btn {
+            margin: 22px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #contents1 .btn a {
+            background: url(img/img09.png);
+        }
+        #contents1 .btn h4 {
+            margin-top: 13px;
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+        }
+        #contents1 .btn p {
+            margin-top: 7px;
+            font-size: 18px;
+            text-align: center;
+            font-weight: 100;
+        }
+        #contents1 .tit2 {
+            margin-top: 100px;
+            font-size: 48px;
+            color: #1c1c1d;
+            text-align: center;
+            grid-area: tit2;
+        }
+        #contents1 .text2 {
+            margin-top: 70px;
+            font-size: 24px;
+            line-height: 1.5;
+            color: #474a57;
+            text-align: center;
+            grid-area: text2;
+        }
+        #contents1 .tit3 {
+            margin-top: 100px;
+            font-size: 45px;
+            line-height: 1.08;
+            letter-spacing: 2;
+            text-align: center;
+            color: #1c1c1d;
+            grid-area: tit3;
+        }
+        #contents1 .text3 {
+            font-family: 'NexonLv1Gothic';
+            margin-top: 10px;
+            font-size: 18px;
+            letter-spacing: 0.45px;
+            text-align: center;
+            grid-area: text3;
+        }
+        #contents1 .imgCard {
+            margin-top: 70px;
+            display: flex;
+            justify-content: space-between;
+            grid-area: imgCard;
+        }
+        #contents1 .cd {
+            width: 345px;
+            height: 155px;
+            border: 2.5px solid #1c1c1d;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 0 0 #202020;
+            display: grid;
+            grid-template-areas: 
+            "img h4"
+            "p p";
+            grid-template-columns: 35% 65%;
+        }
+        #contents1 .card1 {
+            background: #00c6ae;
+        }
+        #contents1 .card2 {
+            background: #4f66af;
+        }
+        #contents1 .card3 {
+            background: #f589b7;
+        }
+        #contents1 .cd .img {
+            width: 100px;
+            height: 90px;
+            background: #fff;
+            border-radius: 10px;
+            grid-area: img;
+        }
+        #contents1 .cd h4 {
+            font-size: 30px;
+            line-height: 1.25;
+            color: #1c1c1d;
+            grid-area: h4;
+        }
+        #contents1 .cd p {
+            font-size: 20px;
+            letter-spacing: 0.63px;
+            color: #1c1c1d;
+            grid-area: p;
+        }
+        
+        /* 컨텐츠2 */
+        #contents2 {
+            padding: 100px 0;
+            background-color: #fa6648;
+            position: relative;
+        }
+        #contents2 .btn_L {
+            content: '';
+            width: 65px;
+            height: 67px;
+            background: url(img/img10.png) no-repeat;
+            position: absolute;
+            left: 0; top: 47%;
+        }
+        #contents2 .btn_R {
+            content: '';
+            width: 65px;
+            height: 67px;
+            background: url(img/img11.png) no-repeat;
+            position: absolute;
+            right: 0; top: 47%;
+        }
+        #contents2 h3 {
+            font-size: 45px;
+            line-height: 1.08;
+            letter-spacing: 2px;
+            color: #3f1a12;
+            text-align: center;
+        }
+        .imgContainer {
+            margin-top: 150px;
+            height: 400px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .imgContainer .img01 {
+            width: 305px;
+            height: 300px;
+        }
+        .imgContainer .img02 {
+            width: 400px;
+            height: 400px;
+        }
+        .imgContainer .img03 {
+            width: 300px;
+            height: 300px;
+        }
+        #contents2 p {
+            margin-top: 100px;
+            font-size: 24px;
+            line-height: 1.5;
+            letter-spacing: 0.45px;
+            text-align: center;
+        }
+        #contents2 em {
+            font-size: 52px;
+        }
+
+        /* 컨텐츠3 */
+        #contents3 {
+            padding: 100px;
+        }
+        #contents3 h3 {
+            font-size: 80px;
+            line-height: 0.63;
+            text-align: center;
+        }
+        #contents3 img {
+            margin: 150px 0 100px;
+        }
+
+        /* 컨텐츠4 */
+        #contents4 {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* 컨텐츠5 */
+        #contents5 {}
+        
+        /* 컨테이너 */
+        .container {
+            width: 1240px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="container">
+                <div class="logo"></div>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Works</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+                <div class="icon">
+                    <div class="ico1 ico"></div>
+                    <div class="ico2 ico"></div>
+                    <div class="ico3 ico"></div>
+                </div>
+            </div>
+        </header>
+        <!-- //header -->
+
+        <nav id="banner">
+            <div class="container">
+                <h1>방역투게더</h1>
+                <h2>지치고 힘들 때,<br>우리 함께 이겨내요.</h2>
+                <p>모두가 힘든 시기에 방투가 함께 하겠습니다.<br>코로나에 대한 모든 정보를 제공하겠습니다.</p>
+                <div class="box"><a href="#">Look at her</a></div> 
+            </div>
+        </nav>
+        <!-- //banner -->
+
+        <section id="contents1">
+            <div class="container">
+                <h3 class="tit1">장소별 방역 수칙을 알려줍니다.</h3>
+                <h3 class="tit1 active">실시간 확진자를 알려줍니다.</h3>
+                <h3 class="tit1">지원금 관련 정보를 알려줍니다.</h3>
+                <h3 class="tit1">비대면 커뮤니티를 운영합니다.</h3>
+                <h3 class="tit1">다크 모드를 지원합니다.</h3>
+                <p class="text1">실시간으로 늘어나는 국내 코로나 확진자와, 전 세계 확진자 수 그리고 접종 현황까지 한눈에 볼 수 있도록 디자인 했습니다.<br><br>
+                    계속되는 거리두기와 방역패스 시행으로 인해, 장소별, 상황별 정책이 달라 많은 이들이 혼란스러운 상황입니다. <br><br>
+                    방역 투게더는 이러한 어려움을 해소하기 위해 정확한 정보만을 취합하여 알려줍니다.</p>
+                <div class="box"><a href="#">Contact</a></div>
+                <div class="dataImg"></div>
+                <div class="btnBox">
+                    <div class="btn1 btn">
+                        <a href="#"><img src="img/img08.png" alt="버튼"></a>
+                        <h4>장소별 방역 수칙</h4>
+                        <p>Real Time</p>
+                    </div>
+                    <div class="btn2 btn">
+                        <a href="#"><img src="img/img09.png" alt="버튼"></a>
+                        <h4>실시간 확진자</h4>
+                        <p>Rules</p>
+                    </div>
+                    <div class="btn3 btn">
+                        <a href="#"><img src="img/img08.png" alt="버튼"></a>
+                        <h4>지원금 관련 정보</h4>
+                        <p>Information</p>
+                    </div>
+                    <div class="btn4 btn">
+                        <a href="#"><img src="img/img08.png" alt="버튼"></a>
+                        <h4>비대면 커뮤니티</h4>
+                        <p>Community</p>
+                    </div>
+                    <div class="btn5 btn">
+                        <a href="#"><img src="img/img08.png" alt="버튼"></a>
+                        <h4>다크 모드</h4>
+                        <p>Dark Mode</p>
+                    </div>
+                </div>
+                <h3 class="tit2">방역투게더는 ~~합니다.</h3>
+                <p class="text2">2년간의 거리두기는 새로 사귄 친구라는 말을 어색하게 만들기 충분한 시간이였습니다.<br>
+                    방역 투게더는 여러개의 테마를 가진 방을 만들어<br>
+                    관심사가 비슷한 사람들끼리 모여 그 동안 못 다한 대화를 나눕니다.</p>
+                <h3 class="tit3">UI/UX 전략</h3>
+                <p class="text3">Top Web Development Specialists</p>
+                <div class="imgCard">
+                    <div class="card1 cd">
+                        <div class="img"></div>
+                        <h4>심플하고 효율적인 UI 디자인</h4>
+                        <p>Nisi ullamco tempor tempor nulla labore ad labore sit eu duis. </p>
+                    </div>
+                    <div class="card2 cd">
+                        <div class="img"></div>
+                        <h4>최신 정보를 빠르게 업데이트</h4>
+                        <p>Nisi ullamco tempor tempor nulla labore ad labore sit eu duis. </p>
+                    </div>
+                    <div class="card3 cd">
+                        <div class="img"></div>
+                        <h4>비대면 커뮤니티 컨텐츠 활성화</h4>
+                        <p>Nisi ullamco tempor tempor nulla labore ad labore sit eu duis. </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //contents1 -->
+
+        <section id="contents2">
+            <div class="container">
+                <h3>Keyword 정리</h3>
+                <div class="imgContainer">
+                    <div class="img01"><img src="img/img03.png" alt="이미지"></div>
+                    <div class="img02"><img src="img/img04.png" alt="이미지"></div>
+                    <div class="img03"><img src="img/img05.png" alt="이미지"></div>
+                </div>
+                <a href="#" class="btn_L"></a>
+                <a href="#" class="btn_R"></a>
+                <p>Team Project<br><em>방역 투게더</em></p>
+            </div>
+        </section>
+        <!-- //contents2 -->
+
+        <section id="contents3">
+            <h3>Affinity Diagram</h3>
+            <img src="img/img06.png" alt="어피니티 다이어그램">
+        </section>
+        <!-- //contents3 -->
+
+        <section id="contents4">
+            <img src="img/img07.png" alt="와이어 프레임">
+        </section>
+        <!-- //contents4 -->
+        
+        <section id="contents5"></section>
+        <!-- //contents5 -->
+    </div>
+    <!-- //wrap -->
+
+    <script>
+        const tit = document.querySelectorAll("#contents1 .tit1");
+        const btnA = document.querySelectorAll("#contents1 .btnBox a");
+        const img = document.querySelectorAll("#contents1 .btnBox a img");
+
+        btnA.forEach((e,i) => {
+            e.addEventListener("click", el => {
+                el.preventDefault();
+
+                img.forEach(element => {
+                    element.src = "img/img08.png";
+                });
+                e.querySelector("img").src = "img/img09.png";
+
+                tit.forEach(title => {
+                    title.classList.remove("active");
+                });
+                tit[i].classList.add("active");
+            });
+        });
+
+        const imgCont = document.querySelectorAll("#contents2 .imgContainer div img");
+        const btn_L = document.querySelector("#contents2 .btn_L");
+        const btn_R = document.querySelector("#contents2 .btn_R");
+
+        let I = 3;
+        btn_L.addEventListener("click", el => {
+            el.preventDefault();
+            
+            I++;       
+            imgCont.forEach((e,i) => {
+                let num = (i+I)%3;
+                e.src = `img/img0${num+3}.png`;
+            });
+            I = I%3+3;
+        });
+
+        btn_R.addEventListener("click", el => {
+            el.preventDefault();
+            
+            I--;           
+            imgCont.forEach((e,i) => {
+                let num = (i+I)%3;
+                e.src = `img/img0${num+3}.png`;
+            });
+            I = I%3+3;
+        });
+        
+    </script>
+</body>
+</html>
