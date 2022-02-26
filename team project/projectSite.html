@@ -324,7 +324,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: all 0.3s;
         }
         .imgContainer .img01 {
             width: 200px;
@@ -345,6 +344,9 @@
         .imgContainer .img05 {
             width: 200px;
             height: 200px;
+        }
+        .image {
+            transition: all 0.1s;
         }
         #contents2 p {
             margin-top: 100px;
@@ -496,9 +498,9 @@
                 <h3>Keyword 정리</h3>
                 <div class="imgContainer">
                     <div class="img01"><img src="img/sliderImg01.png" alt="이미지"></div>
-                    <div class="img02"><img src="img/sliderImg02.png" alt="이미지"></div>
-                    <div class="img03"><img src="img/sliderImg03.png" alt="이미지"></div>
-                    <div class="img04"><img src="img/sliderImg04.png" alt="이미지"></div>
+                    <div class="img02 image"><img src="img/sliderImg02.png" alt="이미지"></div>
+                    <div class="img03 image"><img src="img/sliderImg03.png" alt="이미지"></div>
+                    <div class="img04 image"><img src="img/sliderImg04.png" alt="이미지"></div>
                     <div class="img05"><img src="img/sliderImg05.png" alt="이미지"></div>
                 </div>
                 <a href="#" class="btn_L"></a>
@@ -563,23 +565,38 @@
         let I = 5;
         btn_L.addEventListener("click", el => {
             el.preventDefault();
-            
+            // document.querySelectorAll("#contents2 .imgContainer .image").forEach(e => {
+            //     e.classList.add("aM");
+            // });
+            // document.querySelectorAll("#contents2 .imgContainer div.image")
             I++;       
             imgCont.forEach((e,i) => {
                 let num = (i+I)%5;
                 e.src = `img/sliderImg0${num+1}.png`;
+                document.querySelectorAll("#contents2 .imgContainer div.image").forEach(image => {
+                    image.style.transform = `translateX(-3vw)`;
+                    setTimeout(
+                        function (){
+                            image.style.transform = `translateX(0)`;
+                    },100)
+                });
             });
             I = I%5+5;
-            console.log(I);
         });
 
         btn_R.addEventListener("click", el => {
             el.preventDefault();
-            console.log(I);
             I--;           
             imgCont.forEach((e,i) => {
                 let num = (i+I)%5;
                 e.src = `img/sliderImg0${num+1}.png`;
+                document.querySelectorAll("#contents2 .imgContainer div.image").forEach(image => {
+                    image.style.transform = `translateX(3vw)`;
+                    setTimeout(
+                        function (){
+                            image.style.transform = `translateX(0)`;
+                    },100)
+                });
             });
             I = I%5+5;
         });
