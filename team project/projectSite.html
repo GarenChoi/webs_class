@@ -115,6 +115,14 @@
         #contents1 {
             padding: 100px 0;
         }
+        #contents1.dark {
+            background-color: rgb(51, 50, 50);
+        } 
+        #contents1.dark h3, 
+        #contents1.dark h4,
+        #contents1.dark p {
+            color: rgb(247, 234, 234) !important;
+        }
         #contents1 .container {
             display: grid;
             grid-template-areas: 
@@ -276,13 +284,13 @@
         #contents1 .cd h4 {
             font-size: 30px;
             line-height: 1.25;
-            color: #1c1c1d;
+            color: #1c1c1d !important;
             grid-area: h4;
         }
         #contents1 .cd p {
             font-size: 20px;
             letter-spacing: 0.63px;
-            color: #1c1c1d;
+            color: #1c1c1d !important;
             grid-area: p;
         }
         
@@ -297,17 +305,24 @@
             content: '';
             width: 65px;
             height: 67px;
-            background: url(img/img10.png) no-repeat;
+            background: url(img/btnImg01.png) no-repeat;
             position: absolute;
             left: 0; top: 47%;
+            z-index: 1;
+        }
+        #contents2 .btn_L:hover {
+            background: url(img/btnImg03.png) no-repeat;
         }
         #contents2 .btn_R {
             content: '';
             width: 65px;
             height: 67px;
-            background: url(img/img11.png) no-repeat;
+            background: url(img/btnImg02.png) no-repeat;
             position: absolute;
             right: 0; top: 47%;
+        }
+        #contents2 .btn_R:hover {
+            background: url(img/btnImg04.png) no-repeat;
         }
         #contents2 h3 {
             font-size: 45px;
@@ -555,6 +570,12 @@
                     dataImg.classList.remove("active");
                 });
                 dataImg[i].classList.add("active");
+
+                if(btnA[i]==btnA[4]){
+                    document.querySelector("#contents1").classList.add("dark");
+                } else {
+                    document.querySelector("#contents1").classList.remove("dark");
+                }
             });
         });
 
