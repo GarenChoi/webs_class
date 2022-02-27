@@ -364,14 +364,13 @@
             justify-content: space-between;
             align-items: center;
             position: relative;
-        }
-        .imgContainer div {
             transition: all 0.5s;
         }
         .imgContainer .img00 {
             background: url(img/sliderImg01.png) no-repeat 0 0 /contain;
             width: 250px;
             height: 250px;
+            transition: all 0.3s ease;
             position: absolute;
             left: 10%;
             top: 25%;
@@ -386,6 +385,7 @@
             background-size: contain;
             width: 350px;
             height: 350px;
+            transition: all 0.3s ease;
             position: absolute;
             left: 50%;
             top: -5%;
@@ -396,6 +396,7 @@
             background: url(img/sliderImg03.png) no-repeat 0 0 /contain;
             width: 250px;
             height: 250px;
+            transition: all 0.3s ease;
             position: absolute;
             right: 10%;
             top: 25%;
@@ -407,6 +408,7 @@
             background: url(img/sliderImg04.png) no-repeat 0 0 /contain;
             width: 150px;
             height: 150px;
+            transition: all 0.3s ease;
             position: absolute;
             right: 28%;
             top: 25%;
@@ -418,6 +420,7 @@
             background: url(img/sliderImg05.png) no-repeat 0 0 /contain;
             width: 150px;
             height: 150px;
+            transition: all 0.3s ease;
             position: absolute;
             left: 28%;
             top: 25%;
@@ -427,64 +430,59 @@
         }
         .imgContainer .im00 {
             background: url(img/sliderImg01.png) no-repeat 0 0 /contain;
-            width: 250px;
-            height: 250px;
+            width: 350px;
+            height: 350px;
+            transition: all 0.3s ease;
             position: absolute;
-            left: 10%;
-            top: 25%;
+            left: 20%;
             z-index: 1;
             filter: blur(1px);
-            transform: perspective(600px) rotateY(-50deg);
         }
         .imgContainer .im01 {
             background-image:url(img/sliderImg02.png);
             background-position: 0 0;
             background-repeat: no-repeat;
             background-size: contain;
+            width: 500px;
+            height: 500px;
+            transition: all 0.3s ease;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 2%;
+            z-index:2;
+        }
+        .imgContainer .im02 {
+            background: url(img/sliderImg03.png) no-repeat 0 0 /contain;
             width: 350px;
             height: 350px;
             transition: all 0.3s ease;
             position: absolute;
-            left: 50%;
-            top: -5%;
-            z-index:2;
-            transform: perspective(1500px) translateY(120px) translateX(-50%);
+            right: 20%;
+            z-index:1;
+            filter: blur(1px);
         }
-        .imgContainer .im02 {
-            background: url(img/sliderImg03.png) no-repeat 0 0 /contain;
+        .imgContainer .im03 {
+            background: url(img/sliderImg04.png) no-repeat 0 0 /contain;
             width: 250px;
             height: 250px;
             transition: all 0.3s ease;
             position: absolute;
-            right: 10%;
-            top: 25%;
-            z-index:1;
-            filter: blur(1px);
-            transform: perspective(600px) rotateY(50deg);
-        }
-        .imgContainer .im03 {
-            background: url(img/sliderImg04.png) no-repeat 0 0 /contain;
-            width: 150px;
-            height: 150px;
-            transition: all 0.3s ease;
-            position: absolute;
-            right: 28%;
+            right: 9%;
             top: 25%;
             z-index:0;
             filter: blur(2px);
-            transform: perspective(600px) rotateX(-20deg) rotateY(-20deg);
         }
         .imgContainer .im04 {
             background: url(img/sliderImg05.png) no-repeat 0 0 /contain;
-            width: 150px;
-            height: 150px;
+            width: 250px;
+            height: 250px;
             transition: all 0.3s ease;
             position: absolute;
-            left: 28%;
+            left: 9%;
             top: 25%;
             z-index:0;
             filter: blur(2px);
-            transform: perspective(600px) rotateX(-20deg) rotateY(20deg);
         }
         #contents2 p {
             margin-top: 100px;
