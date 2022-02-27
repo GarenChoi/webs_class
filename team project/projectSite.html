@@ -137,6 +137,20 @@
             "imgCard imgCard";
             grid-template-columns: 40% 60%;
         }
+        #contents1.dark .container {
+            display: grid;
+            grid-template-areas: 
+            "tit1"
+            "text1"
+            "box"
+            "btnBox"
+            "tit2"
+            "text2"
+            "tit3"
+            "text3"
+            "imgCard";
+            grid-template-columns: 100%;
+        }
         #contents1 .tit1 {
             font-size: 48px;
             color: #1c1c1d;
@@ -146,6 +160,9 @@
         }
         #contents1 .tit1.active {
             display: block;
+        }
+        #contents1.dark .tit1 {
+            text-align: center;
         }
         #contents1 .text1 {
             width: 430px;
@@ -158,6 +175,9 @@
         }
         #contents1 .text1.active {
             display: block;
+        }
+        #contents1.dark .text1 {
+            margin-left: 32%;
         }
         #contents1 .dataImg {
             width: 715px;
@@ -279,6 +299,7 @@
             height: 90px;
             background: #fff;
             border-radius: 10px;
+            border: 1px solid #000;
             grid-area: img;
         }
         #contents1 .cd h4 {
@@ -334,34 +355,122 @@
         .imgContainer {
             width: 90%;
             margin: 0 auto;
-            margin-top: 150px;
-            height: 400px;
+            margin-top: 100px;
+            height: 500px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
+        }
+        .imgContainer .img00 {
+            background: url(img/sliderImg01.png) no-repeat 0 0 /contain;
+            width: 350px;
+            height: 350px;
+            transition: all 0.3s ease;
+            position: absolute;
+            left: 20%;
+            z-index: 1;
+            filter: blur(1px);
         }
         .imgContainer .img01 {
-            width: 200px;
-            height: 200px;
+            background-image:url(img/sliderImg02.png);
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 500px;
+            height: 500px;
+            transition: all 0.3s ease;
+            position: absolute;
+            left: 34%;
+            top: 2%;
+            z-index:2;
         }
         .imgContainer .img02 {
-            width: 300px;
-            height: 300px;
+            background: url(img/sliderImg03.png) no-repeat 0 0 /contain;
+            width: 350px;
+            height: 350px;
+            transition: all 0.3s ease;
+            position: absolute;
+            left: 58%;
+            z-index:1;
+            filter: blur(1px);
         }
         .imgContainer .img03 {
-            width: 400px;
-            height: 400px;
+            background: url(img/sliderImg04.png) no-repeat 0 0 /contain;
+            width: 250px;
+            height: 250px;
+            transition: all 0.3s ease;
+            position: absolute;
+            top: 25%;
+            left: 75%;
+            z-index:0;
+            filter: blur(2px);
         }
         .imgContainer .img04 {
-            width: 300px;
-            height: 300px;
+            background: url(img/sliderImg05.png) no-repeat 0 0 /contain;
+            width: 250px;
+            height: 250px;
+            transition: all 0.3s ease;
+            position: absolute;
+            left: 9%;
+            top: 25%;
+            z-index:0;
+            filter: blur(2px);
         }
-        .imgContainer .img05 {
-            width: 200px;
-            height: 200px;
+        .imgContainer .im00 {
+            background: url(img/sliderImg01.png) no-repeat 0 0 /contain;
+            width: 350px;
+            height: 350px;
+            transition: all 0.3s ease;
+            position: absolute;
+            left: 20%;
+            z-index: 1;
+            filter: blur(1px);
         }
-        .image {
-            transition: all 0.1s;
+        .imgContainer .im01 {
+            background-image:url(img/sliderImg02.png);
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 500px;
+            height: 500px;
+            transition: all 0.3s ease;
+            position: absolute;
+            left: 34%;
+            top: 2%;
+            z-index:2;
+        }
+        .imgContainer .im02 {
+            background: url(img/sliderImg03.png) no-repeat 0 0 /contain;
+            width: 350px;
+            height: 350px;
+            transition: all 0.3s ease;
+            position: absolute;
+            left: 58%;
+            z-index:1;
+            filter: blur(1px);
+        }
+        .imgContainer .im03 {
+            background: url(img/sliderImg04.png) no-repeat 0 0 /contain;
+            width: 250px;
+            height: 250px;
+            transition: all 0.3s ease;
+            position: absolute;
+            top: 25%;
+            left: 75%;
+            z-index:0;
+            filter: blur(2px);
+        }
+        .imgContainer .im04 {
+            background: url(img/sliderImg05.png) no-repeat 0 0 /contain;
+            width: 250px;
+            height: 250px;
+            transition: all 0.3s ease;
+            position: absolute;
+            left: 9%;
+            top: 25%;
+            z-index:0;
+            filter: blur(2px);
         }
         #contents2 p {
             margin-top: 100px;
@@ -441,19 +550,26 @@
                 <h3 class="tit1">지원금 관련 정보를 알려줍니다.</h3>
                 <h3 class="tit1">비대면 커뮤니티를 운영합니다.</h3>
                 <h3 class="tit1">다크 모드를 지원합니다.</h3>
-                <p class="text1"></p>
+                <p class="text1">시시때때로 바뀌는 정부지침과 장소별로 다르게 적용되는 방역수칙에 많은 혼란을 겪고 있습니다. <br><br>
+                    이러한 문제점을 해결하기 위해 장소에 따른 거리두기 수칙을 정리하여 알려줍니다.<br><br>
+                    더 나아가, 상황에 따른 격리기준, PCR 검사 기준, 해외입국자 행동수칙 등 다양한 정보를 제공합니다.</p>
                 <p class="text1 active">실시간으로 늘어나는 국내 코로나 확진자와, 전 세계 확진자 수 그리고 접종 현황까지 한눈에 볼 수 있도록 디자인 했습니다.<br><br>
                     계속되는 거리두기와 방역패스 시행으로 인해, 장소별, 상황별 정책이 달라 많은 이들이 혼란스러운 상황입니다. <br><br>
                     방역 투게더는 이러한 어려움을 해소하기 위해 정확한 정보만을 취합하여 알려줍니다.</p>
                 <p class="text1">코로나로 인해 힘들어진 분들이 받을 수 있는 다양한 지원금이 있습니다.<br><br> 하지만 이런 지원금들을 정보의 부재로 놓치고 있는 분들이 꽤 있습니다.<br><br>
                     지원금의 종류, 지원 기준, 신청 기간 등 다양한 지원금 관련 정보를 제공합니다.</p>
-                <p class="text1"></p>
-                <p class="text1"></p>
+                <p class="text1">2년간의 거리두기는 새로 사귄 친구라는 말을 어색하게 만들기 충분한 시간이였습니다.<br><br>
+                    그래서 준비 했습니다. 방역 투게더는 놀이터, Q&A, 토론이라는 세 가지 테마를 만들어
+                    그 안에서 회원들끼리 화상으로 얼굴을 직접 마주하고 대화를 하며 의견을 나눌 수 있는
+                    공간을 만들었습니다.</p>
+                <p class="text1">우리는 요즘 밤낮으로 컴퓨터나 모바일 기기를 사용하고 있고, 우리 눈은 밤 늦게 까지 스크린을 쳐다보는 것이 익숙하지 않습니다.<br><br>
+                    이러한 부담을 덜어 주기 위해 방역투게더는 시대에 맞추어 다크모드를 지원합니다.<br><br>
+                    사용 환경에 맞추어 자유롭게 on/off 할 수 있도록 디자인하였습니다.</p>
                 <div class="box"><a href="#">Contact</a></div>
-                <div class="dataImg"></div>
+                <div class="dataImg"><img src="img/img02.png" alt="이미지"></div>
                 <div class="dataImg active"><img src="img/img02.png" alt="이미지"></div>
-                <div class="dataImg"></div>
-                <div class="dataImg"></div>
+                <div class="dataImg"><img src="img/img02.png" alt="이미지"></div>
+                <div class="dataImg"><img src="img/img02.png" alt="이미지"></div>
                 <div class="dataImg"></div>
                 <div class="btnBox">
                     <div class="btn1 btn">
@@ -512,11 +628,11 @@
         <section id="contents2">
                 <h3>Keyword 정리</h3>
                 <div class="imgContainer">
-                    <div class="img01"><img src="img/sliderImg01.png" alt="이미지"></div>
-                    <div class="img02 image"><img src="img/sliderImg02.png" alt="이미지"></div>
-                    <div class="img03 image"><img src="img/sliderImg03.png" alt="이미지"></div>
-                    <div class="img04 image"><img src="img/sliderImg04.png" alt="이미지"></div>
-                    <div class="img05"><img src="img/sliderImg05.png" alt="이미지"></div>
+                    <div class="img00"></div>
+                    <div class="img01"></div>
+                    <div class="img02"></div>
+                    <div class="img03"></div>
+                    <div class="img04"></div>
                 </div>
                 <a href="#" class="btn_L"></a>
                 <a href="#" class="btn_R"></a>
@@ -579,47 +695,35 @@
             });
         });
 
-        const imgCont = document.querySelectorAll("#contents2 .imgContainer div img");
+        const imgCont = document.querySelectorAll("#contents2 .imgContainer div");
         const btn_L = document.querySelector("#contents2 .btn_L");
         const btn_R = document.querySelector("#contents2 .btn_R");
 
-        let I = 5;
+        let num = 0;
         btn_L.addEventListener("click", el => {
             el.preventDefault();
-            // document.querySelectorAll("#contents2 .imgContainer .image").forEach(e => {
-            //     e.classList.add("aM");
-            // });
-            // document.querySelectorAll("#contents2 .imgContainer div.image")
-            I++;       
             imgCont.forEach((e,i) => {
-                let num = (i+I)%5;
-                e.src = `img/sliderImg0${num+1}.png`;
-                document.querySelectorAll("#contents2 .imgContainer div.image").forEach(image => {
-                    image.style.transform = `translateX(-3vw)`;
-                    setTimeout(
-                        function (){
-                            image.style.transform = `translateX(0)`;
-                    },100)
-                });
+                num = num+5;
+                e.classList.remove("img0"+(num)%5)
+                e.classList.remove("im0"+(num)%5)
+                e.classList.add("im0"+(num-1)%5)
+                num++;
+                e.style.backgroundImage = `url(img/sliderImg0${(i+1)}.png)`
             });
-            I = I%5+5;
+            
+            num--;
         });
 
         btn_R.addEventListener("click", el => {
             el.preventDefault();
-            I--;           
             imgCont.forEach((e,i) => {
-                let num = (i+I)%5;
-                e.src = `img/sliderImg0${num+1}.png`;
-                document.querySelectorAll("#contents2 .imgContainer div.image").forEach(image => {
-                    image.style.transform = `translateX(3vw)`;
-                    setTimeout(
-                        function (){
-                            image.style.transform = `translateX(0)`;
-                    },100)
-                });
+                e.classList.remove("im0"+(num)%5)
+                e.classList.remove("img0"+num%5)
+                num++;
+                e.classList.add("img0"+num%5)
+                e.style.backgroundImage = `url(img/sliderImg0${(i+1)}.png)`
             });
-            I = I%5+5;
+            num++;
         });
         
     </script>
