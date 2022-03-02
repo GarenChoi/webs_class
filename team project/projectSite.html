@@ -63,15 +63,17 @@
         }
         #header li {
             display: inline;
-            margin: 30px;
+            margin: 25px;
         }
         #header li a {
+            padding: 5px 10px;
+            
             color: #fff;
         }
         #header li.act a {
             background-color: #fafbfc;
             color: #284ABE;
-            padding: 10px;
+            padding: 5px 10px;
             border-radius: 20px;
         }
         .icon {
@@ -764,8 +766,7 @@
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
 
             document.querySelectorAll(".together").forEach((element, index) => {
-                console.log(index)
-                if(scrollTop >= element.offsetTop - 2){
+                if(scrollTop >= element.offsetTop - 200){
                     document.querySelectorAll("#header li").forEach(li => {
                     li.classList.remove("act");
                     });

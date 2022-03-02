@@ -39,8 +39,12 @@
 
         /* 헤더 */
         #header {
+            width: 100%;
+            position: fixed;
+            top: 0;
             height: 80px;
             background-color: #284ABE;
+            z-index: 100;
         }
         #header .container {
             height: 80px;
@@ -59,10 +63,18 @@
         }
         #header li {
             display: inline;
-            margin: 30px;
+            margin: 25px;
         }
         #header li a {
+            padding: 5px 10px;
+            
             color: #fff;
+        }
+        #header li.act a {
+            background-color: #fafbfc;
+            color: #284ABE;
+            padding: 5px 10px;
+            border-radius: 20px;
         }
         .icon {
             display: flex;
@@ -358,19 +370,20 @@
         .imgContainer {
             width: 90%;
             margin: 0 auto;
-            margin-top: 100px;
+            margin-top: 50px;
             height: 500px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: relative;
-            transition: all 0.5s;
+        }
+        .imgContainer div {
+            transition: all .5s cubic-bezier(0.6,-0.37, 0.74, 0.05);
         }
         .imgContainer .img00 {
             background: url(img/sliderImg01.png) no-repeat 0 0 /contain;
             width: 250px;
             height: 250px;
-            transition: all 0.3s ease;
             position: absolute;
             left: 10%;
             top: 25%;
@@ -385,7 +398,6 @@
             background-size: contain;
             width: 350px;
             height: 350px;
-            transition: all 0.3s ease;
             position: absolute;
             left: 50%;
             top: -5%;
@@ -396,9 +408,8 @@
             background: url(img/sliderImg03.png) no-repeat 0 0 /contain;
             width: 250px;
             height: 250px;
-            transition: all 0.3s ease;
             position: absolute;
-            right: 10%;
+            left: 75%;
             top: 25%;
             z-index:1;
             filter: blur(1px);
@@ -408,9 +419,8 @@
             background: url(img/sliderImg04.png) no-repeat 0 0 /contain;
             width: 150px;
             height: 150px;
-            transition: all 0.3s ease;
             position: absolute;
-            right: 28%;
+            left: 62%;
             top: 25%;
             z-index:0;
             filter: blur(2px);
@@ -420,7 +430,6 @@
             background: url(img/sliderImg05.png) no-repeat 0 0 /contain;
             width: 150px;
             height: 150px;
-            transition: all 0.3s ease;
             position: absolute;
             left: 28%;
             top: 25%;
@@ -430,59 +439,60 @@
         }
         .imgContainer .im00 {
             background: url(img/sliderImg01.png) no-repeat 0 0 /contain;
-            width: 350px;
-            height: 350px;
-            transition: all 0.3s ease;
+            width: 250px;
+            height: 250px;
             position: absolute;
-            left: 20%;
+            left: 10%;
+            top: 25%;
             z-index: 1;
             filter: blur(1px);
+            transform: perspective(600px) rotateY(-50deg);
         }
         .imgContainer .im01 {
             background-image:url(img/sliderImg02.png);
             background-position: 0 0;
             background-repeat: no-repeat;
             background-size: contain;
-            width: 500px;
-            height: 500px;
-            transition: all 0.3s ease;
+            width: 350px;
+            height: 350px;
             position: absolute;
             left: 50%;
-            transform: translateX(-50%);
-            top: 2%;
+            top: -5%;
             z-index:2;
+            transform: perspective(1500px) translateY(120px) translateX(-50%);
         }
         .imgContainer .im02 {
             background: url(img/sliderImg03.png) no-repeat 0 0 /contain;
-            width: 350px;
-            height: 350px;
-            transition: all 0.3s ease;
+            width: 250px;
+            height: 250px;
             position: absolute;
-            right: 20%;
+            left: 75%;
+            top: 25%;
             z-index:1;
             filter: blur(1px);
+            transform: perspective(600px) rotateY(50deg);
         }
         .imgContainer .im03 {
             background: url(img/sliderImg04.png) no-repeat 0 0 /contain;
-            width: 250px;
-            height: 250px;
-            transition: all 0.3s ease;
+            width: 150px;
+            height: 150px;
             position: absolute;
-            right: 9%;
+            left: 62%;
             top: 25%;
             z-index:0;
             filter: blur(2px);
+            transform: perspective(600px) rotateX(-20deg) rotateY(-20deg);
         }
         .imgContainer .im04 {
             background: url(img/sliderImg05.png) no-repeat 0 0 /contain;
-            width: 250px;
-            height: 250px;
-            transition: all 0.3s ease;
+            width: 150px;
+            height: 150px;
             position: absolute;
-            left: 9%;
+            left: 28%;
             top: 25%;
             z-index:0;
             filter: blur(2px);
+            transform: perspective(600px) rotateX(-20deg) rotateY(20deg);
         }
         #contents2 p {
             margin-top: 100px;
@@ -500,6 +510,7 @@
             padding: 100px;
         }
         #contents3 h3 {
+            margin-top: 50px;
             font-size: 80px;
             line-height: 0.63;
             text-align: center;
@@ -530,11 +541,11 @@
             <div class="container">
                 <div class="logo"></div>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Works</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">About</a></li>
+                    <li class="act"><a href="#banner">배너</a></li>
+                    <li><a href="#contents1">브리프</a></li>
+                    <li><a href="#contents2">키워드 정리</a></li>
+                    <li><a href="#contents3">어피니티 다이어그램</a></li>
+                    <li><a href="#contents4">와이어 프레임</a></li>
                 </ul>
                 <div class="icon">
                     <div class="ico1 ico"></div>
@@ -545,7 +556,7 @@
         </header>
         <!-- //header -->
 
-        <nav id="banner">
+        <nav id="banner" class="together">
             <div class="container">
                 <h1>방역투게더</h1>
                 <h2>지치고 힘들 때,<br>우리 함께 이겨내요.</h2>
@@ -555,7 +566,7 @@
         </nav>
         <!-- //banner -->
 
-        <section id="contents1">
+        <section id="contents1" class="together">
             <div class="container">
                 <h3 class="tit1">장소별 방역 수칙을 알려줍니다.</h3>
                 <h3 class="tit1 active">실시간 확진자를 알려줍니다.</h3>
@@ -637,7 +648,7 @@
         </section>
         <!-- //contents1 -->
 
-        <section id="contents2">
+        <section id="contents2" class="together">
                 <h3>Keyword 정리</h3>
                 <div class="imgContainer class">
                     <div class="img00"></div>
@@ -652,18 +663,18 @@
         </section>
         <!-- //contents2 -->
 
-        <section id="contents3">
+        <section id="contents3" class="together">
             <h3>Affinity Diagram</h3>
             <img src="img/img06.png" alt="어피니티 다이어그램">
         </section>
         <!-- //contents3 -->
 
-        <section id="contents4">
+        <section id="contents4" class="together">
             <img src="img/img07.png" alt="와이어 프레임">
         </section>
         <!-- //contents4 -->
         
-        <section id="contents5"></section>
+        <section id="contents5" class="together"></section>
         <!-- //contents5 -->
     </div>
     <!-- //wrap -->
@@ -675,6 +686,7 @@
         const btnA = document.querySelectorAll("#contents1 .btnBox a");
         const img = document.querySelectorAll("#contents1 .btnBox a img");
 
+        //버튼
         btnA.forEach((e,i) => {
             e.addEventListener("click", el => {
                 el.preventDefault();
@@ -711,6 +723,7 @@
         const btn_L = document.querySelector("#contents2 .btn_L");
         const btn_R = document.querySelector("#contents2 .btn_R");
 
+        //이미지 슬라이드
         let num = 0;
         btn_L.addEventListener("click", el => {
             el.preventDefault();
@@ -738,6 +751,34 @@
             num++;
         });
         
+        //목록
+        document.querySelectorAll("#header li a").forEach(li => {
+            li.addEventListener("click", (e) => {
+                e.preventDefault();
+                document.querySelector(li.getAttribute("href")).scrollIntoView({
+                    behavior:"smooth"
+                });
+            });
+        });
+
+        window.addEventListener("scroll", () => {
+
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
+
+            document.querySelectorAll(".together").forEach((element, index) => {
+                if(scrollTop >= element.offsetTop - 300){
+                    document.querySelectorAll("#header li").forEach(li => {
+                    li.classList.remove("act");
+                    });
+                    document.querySelector(`#header li:nth-child(${index+1})`).classList.add("act");
+                };
+            });
+            if(scrollTop > 0){
+                document.querySelector("#header").style.opacity = 0.8;
+            } else {
+                document.querySelector("#header").style.opacity = 1;
+            }
+        });
     </script>
 </body>
 </html>
