@@ -65,10 +65,11 @@
                 <li>10. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값 + 괄호 생략 + </li>
                 <li>11. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략</li>
                 <li>12. 화살표 함수 : 선언적 함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략</li>
-                <li>13. 즉시실행 함수</li>
-                <li>14. 파라미터 함수</li>
-                <li>15. 아규먼트 함수</li>
-                <li>16. 재귀 함수</li>
+                <li>13. 내부 함수</li>
+                <li>14. 즉시 실행 함수</li>
+                <li>15. 파라미터 함수</li>
+                <li>16. 아규먼트 함수</li>
+
                 <li>17. 콜백 함수</li>
                 <li>18. 객체생성자 함수</li>
                 <li>19. 프로토타입 함수</li>
@@ -328,29 +329,35 @@
 
             <!-- sample14 -->
             <div id="sample14" class="sample">
-                <h3>14. 화살표 함수 : 선언적 함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략</h3>
+                <h3>14. 즉시 실행 함수</h3>
                 <div class="code">
 <pre class="line-nembers"><code class="language-js">{
-    func = str => str;
-            
-    document.write(func("함수가 실행되었습니다."));
+    (function(){
+        document.write("1함수가 실행되었습니다.");
+    }());
+
+    (() => {
+        document.write("2함수가 실행되었습니다.");
+    })();
 }</code></pre>
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result14">함수가 실행되었습니다.</div>
+                    <div class="result14">1함수가 실행되었습니다.<br>
+                        2함수가 실행되었습니다.</div>
                 </div>
             </div>
             <!-- //sample14 -->
 
             <!-- sample15 -->
             <div id="sample15" class="sample">
-                <h3>15. 화살표 함수 : 선언적 함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략</h3>
+                <h3>15. 파라미터 함수</h3>
                 <div class="code">
 <pre class="line-nembers"><code class="language-js">{
-    func = str => str;
-            
-    document.write(func("함수가 실행되었습니다."));
+    function func(str = "함수가 실행되었습니다."){
+        document.write(str);
+    }
+    func();
 }</code></pre>
                 </div>
                 <div class="result">
@@ -362,17 +369,20 @@
 
             <!-- sample16 -->
             <div id="sample16" class="sample">
-                <h3>16. 화살표 함수 : 선언적 함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략</h3>
+                <h3>16. 아규먼트 함수</h3>
                 <div class="code">
 <pre class="line-nembers"><code class="language-js">{
-    func = str => str;
-            
-    document.write(func("함수가 실행되었습니다."));
+    function func(a, b){
+        document.write(arguments[0]);
+        document.write(arguments[1]);
+    }
+    func("a함수가 실행되었습니다.","b함수가 실행되었습니다.");
 }</code></pre>
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result16">함수가 실행되었습니다.</div>
+                    <div class="result16">a함수가 실행되었습니다.<br>
+                    b함수가 실행되었습니다.</div>
                 </div>
             </div>
             <!-- //sample16 -->
@@ -593,30 +603,30 @@
 
         // //14. 즉시 실행 함수
         // {
-        //     (function(){
-        //         document.write("함수가 실행되었습니다.");
-        //     }());
+            // (function(){
+            //     document.write("함수가 실행되었습니다.");
+            // }());
 
-        //     (() => {
-        //         document.write("함수가 실행되었습니다.");
-        //     })();
+            // (() => {
+            //     document.write("함수가 실행되었습니다.");
+            // })();
         // }
 
         // //15. 파라미터 함수
         // {
-        //     function func(str = "함수가 실행되었습니다."){
-        //         document.write(str);
-        //     }
-        //     func();
+            // function func(str = "함수가 실행되었습니다."){
+            //     document.write(str);
+            // }
+            // func();
         // }
 
         // //16. 아규먼트 함수
         // {
-        //     function func(a, b){
-        //         document.write(arguments[0]);
-        //         document.write(arguments[1]);
-        //     }
-        //     func("함수가 실행되었습니다.","함수가 실행되었습니다.");
+            // function func(a, b){
+            //     document.write(arguments[0]);
+            //     document.write(arguments[1]);
+            // }
+            // func("a함수가 실행되었습니다.","b함수가 실행되었습니다.");
         // }
     </script>
 </body>
