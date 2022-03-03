@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #header {
+            width: 100%;
+            height: 50px;
+            background-color: rgb(137, 237, 250);
+        }
+        #aside {
+            width: 25%;
+            height: 900px;
+            background-color: rgb(116, 221, 235);
+        }
+        #contents {
+            width: 50%;
+            height: 900px;
+            background-color: rgb(94, 209, 224);
+        }
+        #article {
+            width: 25%;
+            height: 900px;
+            background-color: rgb(68, 194, 211);
+        }
+        #footer {
+            width: 100%;
+            height: 50px;
+            background-color: rgb(46, 184, 202);
+        }
+        @media(max-width: 1300px){
+            #header {height: 100px;}
+            #aside {
+                width: 30%;
+                height: 800px;
+            }
+            #contents {
+                width: 70%;
+                height: 800px;
+            }
+            #article {
+                width: 100%;
+                height: 200px;
+            }
+            #footer {height: 100px;}
+        }
+        @media(max-width: 768px){
+            #header {height: 200px;}
+            #aside {display: none;}
+            #contents {
+                width: 100%;
+                height: 400px;
+            }
+            #article {height: 300px;}
+            #footer {height: 150px;}
+        }
+        @media(max-width: 480px){
+            #header {height: 250px;}
+            #contents {height: 300px;}
+            #article {height: 400px;}
+            #footer {height: 200px;}
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <aside id="aside"></aside>
+        <section id="contents"></section>
+        <article id="article"></article>
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>

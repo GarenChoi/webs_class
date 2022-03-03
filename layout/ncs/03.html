@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-areas: 
+            "header header"
+            "aside article1"
+            "aside article2"
+            "aside article3"
+            "footer footer";
+            grid-template-columns: 30% 70%;
+            grid-template-rows: 50px 300px 300px 300px 50px;
+        }
+        #header {
+            background-color: rgb(250, 181, 246);
+            grid-area: header;
+        }
+        #aside {
+            background-color: rgb(231, 147, 227);
+            grid-area: aside;
+        }
+        #article1 {
+            background-color: rgb(226, 119, 221);
+            grid-area: article1;
+        }
+        #article2 {
+            background-color: rgb(226, 102, 220);
+            grid-area: article2;
+        }
+        #article3 {
+            background-color: rgb(221, 75, 214);
+            grid-area: article3;
+        }
+        #footer {
+            background-color: rgb(202, 44, 194);
+            grid-area: footer;
+        }
+        @media(max-width: 1300px){
+            #wrap {
+                width: 100%;
+                display: grid;
+                grid-template-areas: 
+                "header header"
+                "aside article1"
+                "aside article2"
+                "article3 article3"
+                "footer footer";
+                grid-template-columns: 30% 70%;
+                grid-template-rows: 100px 450px 450px 200px 50px;
+            }
+        }
+        @media(max-width: 768px){
+            #wrap {
+                grid-template-areas: 
+                "header header"
+                "aside aside"
+                "article1 article2"
+                "article3 article3"
+                "footer footer";
+                grid-template-columns: 50% 50%;
+                grid-template-rows: 150px 150px 400px 200px 50px;
+            }
+        }
+        @media(max-width: 480px){
+            #wrap {
+                grid-template-areas: 
+                "header"
+                "aside"
+                "article1"
+                "article2"
+                "footer";
+                grid-template-columns: 100%;
+                grid-template-rows: 200px 350px 400px 350px 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <aside id="aside"></aside>
+        <article id="article1"></article>
+        <article id="article2"></article>
+        <article id="article3"></article>
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>
