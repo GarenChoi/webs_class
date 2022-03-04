@@ -1142,6 +1142,20 @@
                 </div>
                 <div class="code">
 <pre class="line-nembers"><code class="language-js">{
+    const text = "javascript";
+    const result = Array.from(text);
+
+    document.querySelector(".sample14_R1").innerHTML = result;
+
+    const text2 = "javascript";
+    const result2 = Array.from(text2, el => el+"10");
+
+    document.querySelector(".sample14_R2").innerHTML = result2;
+
+    const text3 = "javascript";
+    const result3 = [...text3].map(el => el);
+
+    document.querySelector(".sample14_R3").innerHTML = result3;
 }</code></pre>
                 </div>
             </div>
