@@ -378,25 +378,39 @@
         function scrollProgress(){
             nowScroll = true;
 
-            setInterval(() => {
-                if(nowScroll){
-                    nowScroll = false;
-                    hasScroll();
-                }
-            }, 300);
+            hasScroll();
+            // setInterval(() => {
+            //     if(nowScroll){
+            //         nowScroll = false;
+            //         hasScroll();
+            //     }
+            // }, 300);
         }
 
         function hasScroll(){
             let scrollTop = window.screenY || window.pageYOffset || document.documentElement.scrollTop;
+            document.querySelector(".scrollTop span").innerText = scrollTop;
  
             if(scrollTop < lastScroll){
                 document.querySelector("#parallax__nav").classList.add("show");
-            } if(scrollTop > lastScroll){
+            } else{
                 document.querySelector("#parallax__nav").classList.remove("show");
             }
 
             lastScroll = scrollTop;
         }
+
+        window.addEventListener("scroll",() => {
+            document.querySelectorAll(".content__item").forEach((element, index) => {
+                let scrollTop = window.screenY || window.pageYOffset || document.documentElement.scrollTop;
+                if(scrollTop >= element.offsetTop - 400){
+                    document.querySelectorAll("#parallax__nav li").forEach(li => {
+                    li.classList.remove("active");
+                    });
+                    document.querySelector(`#parallax__nav ul li:nth-child(${index+1})`).classList.add("active");
+                };
+            });
+        });
 
         window.addEventListener("scroll", scrollProgress);
     </script>
