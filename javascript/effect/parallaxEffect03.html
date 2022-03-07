@@ -372,20 +372,20 @@
         //     }
         // });
 
-        let nowScroll = true;
+        // let nowScroll = true;
         let lastScroll = 0;
 
-        function scrollProgress(){
-            nowScroll = true;
+        // function scrollProgress(){
+        //     nowScroll = true;
 
-            hasScroll();
-            // setInterval(() => {
-            //     if(nowScroll){
-            //         nowScroll = false;
-            //         hasScroll();
-            //     }
-            // }, 300);
-        }
+        //     hasScroll();
+        //     // setInterval(() => {
+        //     //     if(nowScroll){
+        //     //         nowScroll = false;
+        //     //         hasScroll();
+        //     //     }
+        //     // }, 300);
+        // }
 
         function hasScroll(){
             let scrollTop = window.screenY || window.pageYOffset || document.documentElement.scrollTop;
@@ -412,7 +412,7 @@
             });
         });
 
-        window.addEventListener("scroll", scrollProgress);
+        window.addEventListener("scroll", hasScroll);
     </script>
 
 </body>
