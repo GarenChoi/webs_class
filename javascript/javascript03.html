@@ -69,12 +69,12 @@
                 <li>14. 즉시 실행 함수</li>
                 <li>15. 파라미터 함수</li>
                 <li>16. 아규먼트 함수</li>
-
-                <li>17. 콜백 함수</li>
-                <li>18. 객체생성자 함수</li>
-                <li>19. 프로토타입 함수</li>
-                <li>20. 객체 리터럴 함수</li>
-                <li>21. 클래스</li>
+                <li>17. 재귀 함수</li>
+                <li>18. 콜백 함수</li>
+                <li>19. 객체생성자 함수</li>
+                <li>20. 프로토타입 함수</li>
+                <li>21. 객체 리터럴 함수</li>
+                <li>22. 클래스</li>
             </ul>
         </div>
         <!-- //list -->
@@ -387,6 +387,34 @@
             </div>
             <!-- //sample16 -->
 
+            <!-- sample17 -->
+            <div id="sample17" class="sample">
+                <h3>17. 재귀 함수</h3>
+                <div class="code">
+<pre class="line-nembers"><code class="language-js">{
+    function func(num){
+        if(num&lt;=1){
+            document.write("함수가 실행되었습니다.");
+        } else {
+            document.write("함수가 실행되었습니다.");
+            func(num-1);
+        }
+    }
+    func(5);
+}</code></pre>
+                </div>
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result17">함수가 실행되었습니다.<br>
+                        함수가 실행되었습니다.<br>
+                        함수가 실행되었습니다.<br>
+                        함수가 실행되었습니다.<br>
+                        함수가 실행되었습니다.
+                    </div>
+                </div>
+            </div>
+            <!-- //sample17 -->
+
         </div>
         <!-- script -->
     </main>
@@ -628,6 +656,30 @@
             // }
             // func("a함수가 실행되었습니다.","b함수가 실행되었습니다.");
         // }
+
+        // //17. 재귀 함수 : 자기 스스로를 호출
+        // {
+        //     // function func(){
+        //     //     document.write("함수가 실행되었습니다.");
+        //     //     func();
+        //     // }
+        //     // func();
+
+        //     function func(num){
+        //         if(num<=1){
+        //             document.write("함수가 실행되었습니다.");
+        //         } else {
+        //             document.write("함수가 실행되었습니다.");
+        //             func(num-1);
+        //         }
+        //     }
+        //     func(5);
+        // }
+
+        //18. 콜백 함수 :  
+        {
+
+        }
     </script>
 </body>
 </html>
