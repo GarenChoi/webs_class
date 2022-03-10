@@ -405,10 +405,9 @@
 
         reveal.forEach(el => {
             let revealHTML = el.innerHTML;
-            console.log(revealHTML)
-            if(revealHTML != "<div>"){
-                console.log(el.querySelector("div"))
-                let revealSpan = `<span>${revealHTML}</span>`;
+            let revealSpan = `<span>${revealHTML}</span>`;
+            
+            if(revealHTML.includes("div") == false){
                 el.innerHTML = revealSpan;
             } else {
                 el.innerHTML = revealHTML;
