@@ -281,9 +281,21 @@
         #contents > section:nth-child(even).show .content__item__desc {
             transform: translateX(0);
         }
+
+        /* topBtn */
+        .topBtn {
+            position: fixed;
+            bottom: 1vh;
+            right: 1vw;
+            padding: 17px 14px;
+            border-radius: 50%;
+            background: #000;
+        }
     </style>
 </head>
 <body>
+    <a href="#" class="topBtn">Top</a>
+
     <header id="parallax__title">
         <h1><a href="parallaxEffect.html">Javascript Parallax Effect04</a></h1>
         <p>패럴랙스 스크롤링 효과 - 나타나기</p>
@@ -443,6 +455,12 @@
             requestAnimationFrame(scroll);
         }
         scroll();
+
+        //topBtn
+        document.querySelector(".topBtn").addEventListener("click", el => {
+            el.preventDefault();
+            
+        })
     </script>
 
 </body>
