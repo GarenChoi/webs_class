@@ -14,7 +14,10 @@
             font-weight: 300;
         }
         body {
-            height: 20000px;
+            height: 50000px;
+        }
+        a {
+            text-decoration: none;
         }
         .scrollTop {
             position: fixed;
@@ -74,15 +77,105 @@
         .section2__bg {
             width: 100%;
             height: 100vh;
-            background: #000;
+            background: #222;
         }
         .section2__text1 {
             font-size: 4vw;
             color: #fff;
             white-space: nowrap;
         }
-        #section2 img {
-            width: 50vw;
+        .section2__text1 span {
+            font-size: 3vw;
+            position: absolute;
+            transform: translate(-50%,100%) scale(1);
+            top: 150%;
+            left: 50%;
+        }
+        .section2__img1 {
+            width: 70vw;
+            top: 80%;
+        }
+        .section2__img1__site {
+            position: absolute;
+            left: 50%;
+            top: 1.2vw;
+            transform: translate(-50%);
+            width: 55vw;
+            height: calc(100% - 6vw);
+            border-radius: 1vw 1vw 0 0;
+            overflow: hidden;
+        }
+        .section2__img1__site__img {
+            position: absolute;
+            top: 0;
+        }
+        .section2__img2 {
+            width: 70vw;
+            top: 80%;
+        }
+        .section2__img2__site {
+            position: absolute;
+            left: 50%;
+            top: 1.2vw;
+            transform: translate(-50%);
+            width: 55vw;
+            height: calc(100% - 6vw);
+            border-radius: 1vw 1vw 0 0;
+            overflow: hidden;
+        }
+        .section2__img2__site__img {
+            position: absolute;
+            top: 0;
+        }
+        .section2__img3 {
+            width: 70vw;
+            top: 80%;
+        }
+        .section2__img3__site {
+            position: absolute;
+            left: 50%;
+            top: 1.2vw;
+            transform: translate(-50%);
+            width: 55vw;
+            height: calc(100% - 6vw);
+            border-radius: 1vw 1vw 0 0;
+            overflow: hidden;
+        }
+        .section2__img3__site__img {
+            position: absolute;
+            top: 0;
+        }
+        .section2__img4 {
+            width: 70vw;
+            top: 80%;
+        }
+        .section2__img4__site {
+            position: absolute;
+            left: 50%;
+            top: 1.2vw;
+            transform: translate(-50%);
+            width: 55vw;
+            height: calc(100% - 6vw);
+            border-radius: 1vw 1vw 0 0;
+            overflow: hidden;
+        }
+        .section2__img4__site__img {
+            position: absolute;
+            top: 0;
+        }
+
+        /* 버튼 */
+        .btn {
+            position: fixed;
+            transform: translate(-50%,-50%) scale(1);
+            top: 50%;
+            left: 50%;
+            background: rgba(243, 33, 33, 0.795);
+            padding: 1vw 2vw;
+            border-radius: 30px;
+        }
+        .btn a {
+            color: #fff;
         }
     </style>
 </head>
@@ -139,15 +232,108 @@
             <div class="section2__text1 fixed"
                 data-9200="transform: translate(-50%,-50%) scale(0.4); top: 50%"
                 data-11000="transform: translate(-50%,-50%) scale(1); top: 50%;"
-                data-12000="transform: translate(-50%,-50%) scale(0.8); top: 15%;"
+                data-12000="transform: translate(-50%,-50%) scale(0.8); top: 10%;"
+                data-29000="transform: translate(-50%,-50%) scale(0.8); top: 10%;"
+                data-30000="transform: translate(-50%,-50%) scale(1); top: 50%;"
             >
-                I've Been Working In On Sites
+                I've Been Working In On Sites<br>
+                <span data-11900="display: none;" data-12000="display: block;" data-15700="display: none;">웹 표준 사이트</span>
+                <span data-16400="display: none;" data-16500="display: block;" data-20200="display: none;">제목1</span>
+                <span data-20900="display: none;" data-21000="display: block;" data-24700="display: none;">제목2</span>
+                <span data-25400="display: none;" data-25500="display: block;" data-29200="display: none;">제목3</span>
             </div>
 
-            <img class="fixed" src="img/MacBook Pro 13.png" alt="이미지"
-                data-11000="transform: translate(-50%,-50%); top: 150%;"
-                data-12000="transform: translate(-50%,-50%); top: 50%;"
+            <div class="section2__img1 fixed"
+                data-11000="transform: translate(-50%,-50%) scale(1); top: 150%; left: 50%"
+                data-12000="transform: translate(-50%,-50%) scale(1); top: 70%; left: 50%"
+                data-15500="transform: translate(-50%,-50%) scale(1); top: 70%; left: 50%"
+                data-16000="transform: translate(-50%,-50%) scale(0.1); top: 70%; left: 20%"
+                data-16500="transform: translate(-50%,-50%) scale(0.1); top: 70%; left: -40%"
             >
+                <img src="img/MacBook Pro 13.png" alt="이미지">
+                <div class="section2__img1__site">
+                    <div class="section2__img1__site__img"
+                        data-12500="top: 0%;"
+                        data-15000="top: -328%;"
+                    >
+                        <img src="img/site_01.png" alt="사이트">
+                        <div class="btn"
+                            data-15000="transform: translate(-50%,-50%) scale(0);"
+                            data-15100="transform: translate(-50%,-50%) scale(1);"
+                        ><a href="/site/webClass/index.html">사이트 바로가기</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section2__img2 fixed"
+                data-15500="transform: translate(-50%,-50%) scale(0.1); top: 70%; left: 140%"
+                data-16000="transform: translate(-50%,-50%) scale(0.1); top: 70%; left: 70%"
+                data-16500="transform: translate(-50%,-50%) scale(1); top: 70%; left: 50%"
+                data-20000="transform: translate(-50%,-50%) scale(1); top: 70%; left: 50%"
+                data-20500="transform: translate(-50%,-50%) scale(0.1); top: 70%; left: 20%"
+                data-21000="transform: translate(-50%,-50%) scale(0.1); top: 70%; left: -40%"
+            >
+                <img src="img/MacBook Pro 13.png" alt="이미지">
+                <div class="section2__img2__site">
+                    <div class="section2__img2__site__img"
+                        data-17000="top: 0%;"
+                        data-20000="top: -328%;"
+                    >
+                        <img src="img/site_01.png" alt="사이트">
+                        <div class="btn"
+                            data-19500="transform: translate(-50%,-50%) scale(0);"
+                            data-19600="transform: translate(-50%,-50%) scale(1);"
+                        ><a href="/site/webClass/index.html">사이트 바로가기</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section2__img3 fixed"
+                data-20000="transform: translate(-50%,-50%) scale(0.1); top: 70%; left: 140%"
+                data-20500="transform: translate(-50%,-50%) scale(0.1); top: 70%; left: 70%"
+                data-21000="transform: translate(-50%,-50%) scale(1); top: 70%; left: 50%"
+                data-24500="transform: translate(-50%,-50%) scale(1); top: 70%; left: 50%"
+                data-25000="transform: translate(-50%,-50%) scale(0.1); top: 70%; left: 20%"
+                data-25500="transform: translate(-50%,-50%) scale(0.1); top: 70%; left: -40%"
+            >
+                <img src="img/MacBook Pro 13.png" alt="이미지">
+                <div class="section2__img3__site">
+                    <div class="section2__img3__site__img"
+                        data-21500="top: 0%;"
+                        data-24500="top: -328%;"
+                    >
+                        <img src="img/site_01.png" alt="사이트">
+                        <div class="btn"
+                            data-24000="transform: translate(-50%,-50%) scale(0);"
+                            data-24100="transform: translate(-50%,-50%) scale(1);"
+                        ><a href="/site/webClass/index.html">사이트 바로가기</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section2__img4 fixed"
+                data-24500="transform: translate(-50%,-50%) scale(0.1); top: 70%; left: 140%"
+                data-25000="transform: translate(-50%,-50%) scale(0.1); top: 70%; left: 70%"
+                data-25500="transform: translate(-50%,-50%) scale(1); top: 70%; left: 50%"
+                data-29000="transform: translate(-50%,-50%) scale(1); top: 70%; left: 50%"
+                data-30000="transform: translate(-50%,-50%) scale(1; top: 150%; left: 50%"
+            >
+                <img src="img/MacBook Pro 13.png" alt="이미지">
+                <div class="section2__img4__site">
+                    <div class="section2__img4__site__img"
+                        data-26000="top: 0%;"
+                        data-29000="top: -328%;"
+                    >
+                        <img src="img/site_01.png" alt="사이트">
+                        <div class="btn"
+                            data-28500="transform: translate(-50%,-50%) scale(0);"
+                            data-28600="transform: translate(-50%,-50%) scale(1);"
+                        ><a href="/site/webClass/index.html">사이트 바로가기</a></div>
+                    </div>
+                </div>
+            </div>
+
+        
 
 
         </section>
