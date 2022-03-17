@@ -869,12 +869,13 @@
 .member-form h3 {
     font-size: 24px;
     font-weight: 500;
+    margin-top: 30px;
     margin-bottom: 30px;
     text-align: center;
 }
-.login-type .member-form h3 {
+/* .login-type .member-form h3 {
     margin-top: 30px;
-}
+} */
 .join-box label,
 .login-box label {
     display: block;
