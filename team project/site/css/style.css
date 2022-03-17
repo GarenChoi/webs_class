@@ -837,6 +837,9 @@
     margin-bottom: 30px;
     text-align: center;
 }
+.login-type .member-form h3 {
+    margin-top: 30px;
+}
 .join-box label,
 .login-box label {
     display: block;
@@ -867,7 +870,7 @@
     margin-top: 50px;
 }
 .login-submit {
-   font-size: 16px;
+    font-size: 16px;
     background: #605BFF;
     color: #fff;
     padding: 10px;
@@ -876,6 +879,7 @@
     transition: all 0.2s;
     cursor: pointer;
     border-radius: 30px;
+    margin: 10px 0 10px 0;
 }
 
 .join-submit:hover,
@@ -895,6 +899,7 @@
 .another {
     display: flex;
     justify-content: center;
+    margin-top: 25px;
 }
 .another img {
     width: 21px;
