@@ -906,6 +906,9 @@
     height: 21px;
     margin: 0 10px;
 }
+.another img:hover {
+    cursor: pointer;
+}
 .already {
     text-align: center;
     margin-top: 10px;
