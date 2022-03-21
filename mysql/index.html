@@ -437,13 +437,16 @@ ALTER TABLE myMember02 DROP youName;
                     <h4 class="pt20">모든 회원의 비밀번호를 '1234'로 변경</h4>
 <pre class="language-js"><code>UPDATE myMember SET youPass = '1234';</code></pre>
 
+                    <h4 class="pt20">아이디번호가 3번인 회원의 비밀번호를 '1234'로 변경</h4>
+<pre class="language-js"><code>UPDATE myMember SET youPass = '1234' WHERE memberID = 3;</code></pre>
+
                     <h4 class="pt20">5번부터 10번까지의 비밀번호를 '1234567'로 변경</h4>
 <pre class="language-js"><code>UPDATE myMember SET youPass = '1234567' WHERE memberID BETWEEN 5 AND 10;</code></pre>
 
                     <h4 class="pt20">아이디 내림차순</h4>
 <pre class="language-js"><code>UPDATE myMember SET youPass = '****' ORDER BY memberID DESC LIMIT 10;</code></pre>
 
-                    <h3 id="intro7-3" class="page-header">데이터 삭제하기</h3>
+                    <h3 id="intro7-4" class="page-header">데이터 삭제하기</h3>
                     <h4 class="pt20">전체 데이터 삭제</h4>
                     <div class="bs-callout bs-callout-info">
                         DELETE FROM 테이블명 or DELETE * FROM 테이블명;
