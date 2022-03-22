@@ -1,28 +1,115 @@
-장소별 수칙
-사이드바에 장소별 수칙을 클릭하면 여러가지 장소 카테고리 목록이 나오고 목록에서 원하는 카테고리를 
-클릭하면 그 카테고리에 대한 자세한 방역수칙을 알려주는 페이지로 이동하게 됩니다.
-
-상황별 수칙
-사이드바에서 상황별 수칙을 클릭하면 상황별 수칙 페이지로 이동하게 됩니다. 상황별 수칙 페이지에서는
-코로나에 관련된 각 상황들이 페이지 상단에 탭 메뉴로 나와있고 그 메뉴들 중 궁금한 상황을 클릭하면 
-페이지 가운데에 그 상황에 대한 수칙들이 나오게 됩니다.
-
-지원금 정보
-사이드바에서 지원금 정보를 클릭하면 지원금 정보 페이지로 이동하게 됩니다. 지원금 정보 페이지에서는
-코로나로 인해 힘든 상황에 처했을 때 받을 수 있는 지원금들에 대한 정보 (지원 명목, 지원 자격 등)들을 
-한눈에 파악할 수 있도록 도와줍니다.
-
-뉴스
-사이드바에서 뉴스를 클릭하며 뉴스 페이지로 이동하게 됩니다. 뉴스 페이지에서는 코로나에 관련된 
-다양한 뉴스들을 볼 수 있습니다. 가운데 상단에 있는 창에서는 실시간으로 최신 뉴스들이 업데이트 되고
-원하는 뉴스를 검색할 수 있습니다. 하단에 있는 창에는 가장 조회수가 높은 뉴스나 정부단체의 공식입장등
-주목할만한 뉴스들이 나오게 됩니다.
-
-지역별 확진자
-사이드바에서 지역별 확진자를 클릭하면 지역별 확진자 페이지로 이동하게 됩니다. 지역별 확진자 페이지에서는
-각 지역별로 나온 확진자 통계를 알 수 있습니다.
-
-확진자 통계
-확진자 통계를 누르면 확진자 통계 페이즈로 이동합니다. 확진자 통계 페이지에서는 현재 우리나라의 코로나
-확진자 수, 위중증자 수, 사망자 수, 확진율, 검사자 수를 일별, 주별, 월별, 실시간별로 알 수 있습니다. 
-페이지 상단의 항목별 메뉴와 그 아래에 있는 시간별 메뉴를 통해 원하는 통계가 나오도록 설정할 수 있습니다. 
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>자바스크립트 아이디저장(쿠키저장)</title>
+ 
+<script>
+    window.onload = function() {
+ 
+        if (getCookie("id")) { // getCookie함수로 id라는 이름의 쿠키를 불러와서 있을경우
+            document.loginForm.userid.value = getCookie("id"); //input 이름이 id인곳에 getCookie("id")값을 넣어줌
+            document.loginForm.idsave.checked = true; // 체크는 체크됨으로
+        }
+ 
+    }
+ 
+    function setCookie(name, value, expiredays) //쿠키 저장함수
+    {
+        var todayDate = new Date();
+        todayDate.setDate(todayDate.getDate() + expiredays);
+        document.cookie = name + "=" + escape(value) + "; path=/; expires="
+                + todayDate.toGMTString() + ";"
+    }
+ 
+    function getCookie(Name) { // 쿠키 불러오는 함수
+        var search = Name + "=";
+        if (document.cookie.length > 0) { // if there are any cookies
+            offset = document.cookie.indexOf(search);
+            if (offset != -1) { // if cookie exists
+                offset += search.length; // set index of beginning of value
+                end = document.cookie.indexOf(";", offset); // set index of end of cookie value
+                if (end == -1)
+                    end = document.cookie.length;
+                return unescape(document.cookie.substring(offset, end));
+            }
+        }
+    }
+ 
+    function sendit() {
+        var frm = document.loginForm;
+        if (!frm.userid.value) { //아이디를 입력하지 않으면.
+            alert("아이디를 입력 해주세요!");
+            frm.userid.focus();
+            return;
+        }
+        if (!frm.pwd.value) { //패스워드를 입력하지 않으면.
+            alert("패스워드를 입력 해주세요!");
+            frm.pwd.focus();
+            return;
+        }
+ 
+        if (document.loginForm.idsave.checked == true) { // 아이디 저장을 체크 하였을때
+            setCookie("id", document.loginForm.userid.value, 7); //쿠키이름을 id로 아이디입력필드값을 7일동안 저장
+        } else { // 아이디 저장을 체크 하지 않았을때
+            setCookie("id", document.loginForm.userid.value, 0); //날짜를 0으로 저장하여 쿠키삭제
+        }
+ 
+        document.loginForm.submit(); //유효성 검사가 통과되면 서버로 전송.
+ 
+    }
+</script>
+ 
+ 
+</head>
+<body>
+ 
+ 
+    <!-- login.html -->
+ 
+    <form id="loginForm" name="loginForm" method="post"
+        action="loginProcess.jsp">
+        <table width="100%" height="400" border="0" align="center">
+ 
+            <tr>
+                <td>
+                    <table border="0" width="300" height="200" align="center"
+                        class="loginBorder">
+                        <tr align="center">
+                            <td>로그인</td>
+ 
+                        </tr>
+ 
+                        <tr>
+                            <td>
+                                <table border="0" width="100%" height="100%">
+                                    <tr>
+                                        <td width="30%">아이디</td>
+                                        <td width="70%"><input type="text" name="userid"
+                                            size="20" maxlength="20"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>패스워드</td>
+                                        <td><input type="password" name="pwd" size="20"
+                                            maxlength="20"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" align="left"><input type="checkbox"
+                                            name="idsave" value="saveOk">아이디 저장</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr align="center">
+                            <td><input type="button" value="로그인" onclick="sendit()">
+                                <a href="member.html">회원가입 </a></td>
+ 
+                        </tr>
+ 
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
