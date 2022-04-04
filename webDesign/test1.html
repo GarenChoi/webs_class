@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        li {
+            list-style: none;
+        }
+        em {
+            font-style: normal;
+        }
+        #wrap {
+            width: 960px;
+            margin: 0 auto;
+            padding: 50px;
+        }
+        /* #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #header ul {
+            display: flex;
+            justify-content: space-between;
+        }
+        #header ul li {
+            position: relative;
+            padding: 20px 15px;
+            background-color: #eee;
+            border-radius: 10px;
+            margin-right: 5px;
+        }
+        #header ul li:last-child {
+            margin-right: auto;
+        }
+        #header ul li:hover {
+            background-color: rgb(189, 189, 189);
+        }
+        #header li a {
+            font-weight: bold;
+        }
+        #header ul li ul {
+            position: absolute;
+            display: block;
+            background-color: #eee;
+        }
+        #header ul li ul li {
+            margin: auto;
+        }
+        #header ul li ul li a {
+            font-size: 14px;
+            color: rgb(68, 68, 68);
+        } */
+        #header {height: 100px;}
+        #header h1 {float: left; padding-top: 5px;}
+        #header h1 img {width: 130px;}
+        #header .nav {float: right; z-index: 100; position: relative; margin-top: 20px;}
+        #header .nav li {position: relative; float: left; width: 120px; text-align: center;}
+        #header .nav li a {display: block; padding: 20px 15px; background: #ccc; white-space: nowrap;}
+        #header .nav li a:hover {background: #ddd;}
+        #header .nav li ul.submenu {display: none; position: absolute; left: 0; top: 59px; background: #ddd;}
+        #header .nav li ul.submenu li a {padding: 10px;}
+        #header .nav li ul.submenu li a:hover {background: #999;}
+        .clearfix::before, .clearfix::after {display: block; content: ''; clear: both;}
+        #contents {}
+        .imgSlider {
+            margin-top: 20px;
+        }
+        .imgSlider img {
+            width: 960px;
+        }
+
+        /* .content {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .cont1 {
+            width: 470px;
+            border: 1px solid #d8d8d8;
+            padding: 30px;
+            margin-right: 20px;
+        }
+        .cont1 .head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cont1 .head h3 {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .cont1 .head h3 span {
+            color: rgba(0, 0, 0, 0.24);
+            cursor: pointer;
+        }
+        .cont1 .head h3 span.select {
+            color: #000;
+        }
+        .cont1 .head .more {
+            font-size: 14px;
+            display: flex;
+        }
+        .cont1 .head .more img {
+            margin-left: 5px;
+        }
+        .cont1 .desc,
+        .cont1 .news {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .cont1 .desc.none,
+        .cont1 .news.none {
+            display: none;
+        }
+        .cont1 .desc span,
+        .cont1 .news span {
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.747);
+        }
+        .cont1 .desc1,
+        .cont1 .news1 {
+            margin-top: 15px;
+        } 
+        .cont2 {
+            width: 470px;
+            height: 218px;
+        }
+        .cont2 img {
+            width: 470px;
+            height: 218px;
+        }   */
+        .notice {position: relative; padding: 30px;}
+        .notice ul li {float: left; margin-right: 20px;}
+        .notice ul li a {font-size: 24px; color: #999; font-weight: bold;}
+        .notice ul li.active a {color: #000;}
+        .notice ul li ul {position: absolute; left: 30px; top: 70px;}
+        .notice ul li ul li {width: 95%; padding: 5px 0;}
+        .notice ul li ul li a {float: left; width: 60%; font-size: 16px; color: #333;
+            overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-weight: normal;}
+        .notice ul li ul li span {float: right; width: 20%;}
+        .notice .more {position: absolute; right: 30px; top: 35px;}
+
+        .cardImg {
+            margin-top: 30px;
+        }
+        .cardImg h3 {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .cardImg .imgBox {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .imgBox .card img {}
+        .imgBox .card span {
+            margin-top: 20px;
+            margin-bottom: 50px;
+            display: block;
+            font-size: 18px;
+        }
+        #footer {
+            border-top: 1px solid #d8d8d8;
+        }
+        #footer p {
+            margin: 30px 0;
+            color: rgba(0, 0, 0, 0.466);
+            line-height: 1.6;
+        }
+        #footer span {
+            color: rgba(0, 0, 0, 0.466);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <!-- <header id="header">
+            <div class="logo">
+                <img src="img/Slice 2.png" alt="로고 이미지">
+            </div>
+            <ul>
+                <li>
+                    <a href="#">즐길거리</a>
+                    <ul>
+                        <li><a href="#">즐길거리1</a></li>
+                        <li><a href="#">즐길거리2</a></li>
+                        <li><a href="#">즐길거리3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">요금/우대혜택</a>
+                    <ul>
+                        <li><a href="#">요금혜택1</a></li>
+                        <li><a href="#">우대혜택1</a></li>
+                        <li><a href="#">우대혜택2</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">참여프로그램</a></li>
+                <li><a href="#">이용가이드</a></li>
+                <li><a href="#">소통서비스</a></li>
+            </ul>
+        </header> -->
+        <header id="header" class="clearfix">
+            <h1><a href="#"><img src="img/Slice 2.png" alt="롯데월드"></a></h1>
+            <nav class="nav">
+                <ul class="clearfix">
+                    <li><a href="#">즐길거리</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">요금/우대혜택</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">참여프로그램</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">이용가이드</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">소통서비스</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- //header -->
+
+        <section id="contents">
+            <div class="imgSlider">
+                <img src="img/Slice 1.png" alt="배너 이미지">
+            </div>
+
+            <!-- <article class="content">
+                <div class="cont1">
+                    <div class="head">
+                        <h3><span class="select">롯데월드 소식</span>  &nbsp;|&nbsp;  <span>뉴스&middot;공지</span></h3>
+                        <span class="more">더보기 <img src="img/Slice 8.png" alt="더보기 이미지"></span>
+                    </div>
+                    <div class="desc desc1">그럴싸진관 미라클<span>2018.11.19</span></div>
+                    <div class="desc desc2">드림스테이지'힘내 소중한 너'<span>2018.11.20</span></div>
+                    <div class="desc desc3">'힘내 소중한 너' 음원 발매<span>2018.11.13</span></div>
+                    <div class="desc desc4">이용 요금 조정 안내<span>2018.11.12</span></div>
+                    <div class="news none news1">뉴스1<span>2018.11.19</span></div>
+                    <div class="news none news2">뉴스2<span>2018.11.20</span></div>
+                    <div class="news none news3">뉴스3<span>2018.11.13</span></div>
+                    <div class="news none news4">뉴스4<span>2018.11.12</span></div>
+                </div>
+                <div class="cont2">
+                    <img src="img/Slice 3.png" alt="링크 이미지">
+                </div> -->
+                <article class="notice">
+                    <ul class="clearfix">
+                        <li class="active"><a href="#">롯데월드 소식</a>
+                            <ul>
+                                <li><a href="#">1. 첫번째 목록입니다. 첫번째 목록입니다. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">1. 첫번째 목록입니다. 첫번째 목록입니다. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">1. 첫번째 목록입니다. 첫번째 목록입니다. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">1. 첫번째 목록입니다. 첫번째 목록입니다. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">뉴스&middot;공지</a>
+                            <ul>
+                                <li><a href="#">2. 두번째 목록입니다. 두번째 목록입니다. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">2. 두번째 목록입니다. 두번째 목록입니다. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">2. 두번째 목록입니다. 두번째 목록입니다. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">2. 두번째 목록입니다. 두번째 목록입니다. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <a href="#" class="more">더보기 +</a>
+                </article>
+
+            </article>
+            <div class="cardImg">
+                <h3>특별한 경험</h3>
+                <div class="imgBox">
+                    <div class="card card1">
+                        <img src="img/Slice 4.png" alt="카드 이미지1">
+                        <span>연간회원안내</span>
+                    </div>
+                    <div class="card card2">
+                        <img src="img/Slice 5.png" alt="카드 이미지2">
+                        <span>프리미엄투어</span>
+                    </div>
+                    <div class="card card3">
+                        <img src="img/Slice 6.png" alt="카드 이미지3">
+                        <span>공연참여프로그램</span>
+                    </div>
+                    <div class="card card4">
+                        <img src="img/Slice 7.png" alt="카드 이미지4">
+                        <span>단체프로그램</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer id="footer">
+            <p>서울특별시 송파구 올림픽로 240 호텔롯데 롯데월드 &nbsp;|&nbsp; 대표자:박동기<br>
+                사업자등록번호:219-85-00014 &nbsp;|&nbsp; 통신판매업신고번호:송파 제5513호 &nbsp;|&nbsp; 전화:1661-2000
+            </p>
+            <span>COPYRIGHT 2018 LOTTEWORLD.ALL RIGHTS RESERVED</span>
+        </footer>
+    </div>
+
+    <script src="../assets/js/jquery-1.12.4.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        let span1 = document.querySelector(".cont1 .head span:first-child");
+        let span2 = document.querySelector(".cont1 .head span:last-child");
+        let desc = document.querySelectorAll(".cont1 .desc");
+        let news = document.querySelectorAll(".cont1 .news");
+        span1.addEventListener("click", el => {
+            span1.classList.add("select");
+            span2.classList.remove("select");
+            desc.forEach(el=>{
+                el.classList.remove("none");
+            })
+            news.forEach(el=>{
+                el.classList.add("none");
+            })
+        })
+        span2.addEventListener("click", el => {
+            span2.classList.add("select");
+            span1.classList.remove("select");
+            news.forEach(el=>{
+                el.classList.remove("none");
+            })
+            desc.forEach(el=>{
+                el.classList.add("none");
+            })
+        })
+    </script>
+</body>
+</html>
