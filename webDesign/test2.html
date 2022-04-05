@@ -30,6 +30,10 @@
         em {
             font-style: normal;
         }
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
         #wrap {
             width: 1000px;
             margin: 0 auto;
@@ -89,8 +93,15 @@
         #contents {
             margin-top: 20px;
         }
+        .imgSlider {
+            width: 1000px;
+            height: 390px;
+            overflow: hidden;
+        }
         .imgSlider img {
             width: 1000px;
+            height: 390px;
+            
         }
         .content {
             margin-top: 25px;
@@ -240,7 +251,7 @@
             font-size: 14px;
             font-weight: bold;
         }
-        .FDesc > p{
+        .FDesc > p {
             margin-top: 25px;
             font-size: 12px;
             color: rgba(255, 255, 255, 0.397);
@@ -303,6 +314,8 @@
             <section id="contents">
                 <div class="imgSlider">
                     <img src="img/T2Img2.gif" alt="슬라이드이미지">
+                    <img src="img/T2Img3.gif" alt="슬라이드이미지">
+                    <img src="img/T2Img4.gif" alt="슬라이드이미지">
                 </div>
                 
                 <div class="content">
@@ -395,12 +408,36 @@
         })
 
         //2단 메뉴
+        // $("#header > ul > li").mouseover(function(){
+        //     $(this).find(".subMenu").css("display","block");
+        // })
+        // $("#header > ul > li").mouseout(function(){
+        //     $(this).find(".subMenu").css("display","none");
+        // })
+
         $("#header > ul > li").mouseover(function(){
-            $(this).find(".subMenu").css("display","block");
+            $(this).find(".subMenu").stop().slideDown(300);
         })
         $("#header > ul > li").mouseout(function(){
-            $(this).find(".subMenu").css("display","none");
+            $(this).find(".subMenu").stop().slideUp(300);
         })
+
+        //이미지 슬라이드
+        $index = 0;
+        setInterval(function(){
+            $index = $index + 1;
+            $(".imgSlider img").css("transition","all 0.3s");
+            $(".imgSlider img").css("transform","translateY("+-390*$index+"px)","transition","all 0.3s");
+
+            if($index == 2){
+                setTimeout(function(){
+                    $(".imgSlider img").css("transition","0");
+                    $(".imgSlider img").css("transform","translateY(0px)");
+                }, 300);
+                $index = 0;
+            }
+            
+        }, 3000)
     </script>
 </body>
 </html>
