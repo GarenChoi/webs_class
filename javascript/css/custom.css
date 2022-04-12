@@ -49,6 +49,12 @@ body.img07 {
 body.img08 {
     background-image: url(../effect/img/slider_img10.jpg);
 }
+body.img09 {
+    background-image: url(../effect/img/slider_img11.jpg);
+}
+body.img10 {
+    background-image: url(../effect/img/slider_img12.jpg);
+}
 body::before {
     content: '';
     position: absolute;
