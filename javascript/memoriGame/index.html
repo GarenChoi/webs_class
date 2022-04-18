@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -85,15 +87,57 @@
             80% {transform: translateX(8px);}
             100% {transform: translateX(0);}
         }
+        .card__sound {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+        .card__sound button {
+            line-height: 40px;
+            background: #fff;
+            width: 40px;
+            height: 40px;
+            color: #007bff;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 0;
+        }
+        .card__start {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+        .card__start button {
+            line-height: 40px;
+            background: #fff;
+            width: 40px;
+            height: 40px;
+            color: #007bff;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 0;
+        }
     </style>
 </head>
 <body>
     <div class="wrap__card">
         <div class="card__inner">
+            <div class="card__start">
+                <button class="material-icons">touch_app</button>
+            </div>
+            <div class="card__sound">
+                <button class="material-icons">volume_off</button>
+                <!-- <span class="material-icons">volume_up</span> -->
+                <audio id="song" src="audio/Jeremy_Black.mp3"></audio>
+            </div>
             <ul class="cards">
                 <li>
                     <div class="view front">
-                        <img src="../assets/img/icon_barbecue.png" alt="">
+                        <img src="../assets/img/icon1.png" alt="">
                     </div> 
                     <div class="view back">
                         <img src="../assets/img/icon_back.png" alt="">
@@ -101,7 +145,7 @@
                 </li>
                 <li>
                     <div class="view front">
-                        <img src="../assets/img/icon_bibimbap.png" alt="">
+                        <img src="../assets/img/icon1.png" alt="">
                     </div> 
                     <div class="view back">
                         <img src="../assets/img/icon_back.png" alt="">
@@ -109,7 +153,7 @@
                 </li>
                 <li>
                     <div class="view front">
-                        <img src="../assets/img/icon_onigiri.png" alt="">
+                        <img src="../assets/img/icon2.png" alt="">
                     </div> 
                     <div class="view back">
                         <img src="../assets/img/icon_back.png" alt="">
@@ -117,7 +161,7 @@
                 </li>
                 <li>
                     <div class="view front">
-                        <img src="../assets/img/icon_barbecue.png" alt="">
+                        <img src="../assets/img/icon2.png" alt="">
                     </div> 
                     <div class="view back">
                         <img src="../assets/img/icon_back.png" alt="">
@@ -125,7 +169,7 @@
                 </li>
                 <li>
                     <div class="view front">
-                        <img src="../assets/img/icon_burger.png" alt="">
+                        <img src="../assets/img/icon3.png" alt="">
                     </div> 
                     <div class="view back">
                         <img src="../assets/img/icon_back.png" alt="">
@@ -133,7 +177,7 @@
                 </li>
                 <li>
                     <div class="view front">
-                        <img src="../assets/img/icon_egg.png" alt="">
+                        <img src="../assets/img/icon3.png" alt="">
                     </div> 
                     <div class="view back">
                         <img src="../assets/img/icon_back.png" alt="">
@@ -141,7 +185,7 @@
                 </li>
                 <li>
                     <div class="view front">
-                        <img src="../assets/img/icon_bibimbap.png" alt="">
+                        <img src="../assets/img/icon4.png" alt="">
                     </div> 
                     <div class="view back">
                         <img src="../assets/img/icon_back.png" alt="">
@@ -149,7 +193,7 @@
                 </li>
                 <li>
                     <div class="view front">
-                        <img src="../assets/img/icon_onigiri.png" alt="">
+                        <img src="../assets/img/icon4.png" alt="">
                     </div> 
                     <div class="view back">
                         <img src="../assets/img/icon_back.png" alt="">
@@ -157,7 +201,7 @@
                 </li>
                 <li>
                     <div class="view front">
-                        <img src="../assets/img/icon_chicken.png" alt="">
+                        <img src="../assets/img/icon5.png" alt="">
                     </div> 
                     <div class="view back">
                         <img src="../assets/img/icon_back.png" alt="">
@@ -165,7 +209,7 @@
                 </li>
                 <li>
                     <div class="view front">
-                        <img src="../assets/img/icon_doughnut.png" alt="">
+                        <img src="../assets/img/icon5.png" alt="">
                     </div> 
                     <div class="view back">
                         <img src="../assets/img/icon_back.png" alt="">
@@ -173,7 +217,7 @@
                 </li>
                 <li>
                     <div class="view front">
-                        <img src="../assets/img/icon_burger.png" alt="">
+                        <img src="../assets/img/icon6.png" alt="">
                     </div> 
                     <div class="view back">
                         <img src="../assets/img/icon_back.png" alt="">
@@ -181,7 +225,7 @@
                 </li>
                 <li>
                     <div class="view front">
-                        <img src="../assets/img/icon_dumpling.png" alt="">
+                        <img src="../assets/img/icon6.png" alt="">
                     </div> 
                     <div class="view back">
                         <img src="../assets/img/icon_back.png" alt="">
@@ -189,7 +233,7 @@
                 </li>
                 <li>
                     <div class="view front">
-                        <img src="../assets/img/icon_doughnut.png" alt="">
+                        <img src="../assets/img/icon7.png" alt="">
                     </div> 
                     <div class="view back">
                         <img src="../assets/img/icon_back.png" alt="">
@@ -197,7 +241,7 @@
                 </li>
                 <li>
                     <div class="view front">
-                        <img src="../assets/img/icon_chicken.png" alt="">
+                        <img src="../assets/img/icon7.png" alt="">
                     </div> 
                     <div class="view back">
                         <img src="../assets/img/icon_back.png" alt="">
@@ -205,7 +249,7 @@
                 </li>
                 <li>
                     <div class="view front">
-                        <img src="../assets/img/icon_dumpling.png" alt="">
+                        <img src="../assets/img/icon8.png" alt="">
                     </div> 
                     <div class="view back">
                         <img src="../assets/img/icon_back.png" alt="">
@@ -213,7 +257,7 @@
                 </li>
                 <li>
                     <div class="view front">
-                        <img src="../assets/img/icon_egg.png" alt="">
+                        <img src="../assets/img/icon8.png" alt="">
                     </div> 
                     <div class="view back">
                         <img src="../assets/img/icon_back.png" alt="">
@@ -231,11 +275,26 @@
         //05. 두개의 이미지 비교하기
         //06. 틀린 이미지 애니메이션 효과 주기
         //07. 빨리 클리하면 버그 발생 처리하기
+        //08. 다 완성했을 때
+        //09. 카드 섞기
 
         const cards = document.querySelectorAll(".cards li");
+        const cardSound = document.querySelector(".card__sound button");
+        const cardSong = document.querySelector("#song");
+        const cardStart = document.querySelector(".card__start button");
 
         let cardOne, cardTwo;
         let disableDeck = false;
+        let matchedCard = 0;
+
+        let sound = [
+            "audio/match2.mp3",
+            "audio/match.mp3",
+            "audio/up.mp3",
+        ];
+        let soundMatch = new Audio(sound[0]);
+        let soundNoMatch = new Audio(sound[1]);
+        let soundSucces = new Audio(sound[2]);
 
         function flipCard(e){
             let clickedCard = e.target;
@@ -260,11 +319,21 @@
 
         function matchCards(img1, img2){
             if(img1==img2){
+                matchedCard++;
+                if(matchedCard == 8){
+                    setTimeout(()=>{
+                        shuffledCard();
+                    },1000);
+                }
+
+
                 cardOne.removeEventListener("click", flipCard);
                 cardTwo.removeEventListener("click", flipCard);
                 cardOne = cardTwo = "";
                 disableDeck = false;
+                soundMatch.play();
             } else {
+                
                 setTimeout(() => {
                     cardOne.classList.add("shake");
                     cardTwo.classList.add("shake");
@@ -275,13 +344,61 @@
                     cardTwo.classList.remove("shake", "flip");
                     cardOne = cardTwo = "";
                     disableDeck = false;
-                }, 1200)
+                }, 1200);
+                soundNoMatch.play();
             }
         }
 
+        //카드 섞기
+        function shuffledCard(){
+            cardOne = cardTwo = "";
+            disableDeck = false;
+            matchedCard = 0;
+
+            let arr = [1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8];
+            let result = arr.sort(() => Math.random() > 0.5 ? 1 : -1);
+
+            cards.forEach((card,index) => {
+                card.classList.remove("flip");
+
+                setTimeout(() => {
+                    card.classList.add("flip");
+                }, 200 * index);
+
+                setTimeout(() => {
+                    card.classList.remove("flip");
+                }, 4000);
+
+                let imgTag = card.querySelector(".front img");
+                imgTag.src = `../assets/img/icon${arr[index]}.png`;
+            })
+        }
+        // shuffledCard();
+        
+        //뮤직 재생
+        cardSound.addEventListener("click", () => {
+            cardSound.classList.toggle("is-playing");
+            
+            if(cardSound.classList.contains("is-playing")){
+                cardSound.innerText = "volume_up";
+                cardSong.play();
+            } else {
+                cardSound.innerText = "volume_off";
+                cardSong.pause();
+            }
+        });
+
+        //시작 버튼
+        cardStart.addEventListener("click", () => {
+            shuffledCard();
+        })
+
+        //카드 클릭
         cards.forEach(card => {
             card.addEventListener("click", flipCard)
         })
+
+        
     </script>
 </body>
 </html>
