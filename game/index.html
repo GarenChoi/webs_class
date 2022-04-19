@@ -28,6 +28,7 @@
         body {
             width: 100%;
             height: 100vh;
+            cursor: none;
         }
         #wrap {
             height: 100vh;
@@ -48,7 +49,6 @@
             margin-bottom: 5vh;
         }
         .btnBox > div {
-            cursor: pointer;
             margin: 0 1.5vw;
         }
         .btnBox > div:hover p {
@@ -77,19 +77,18 @@
             width: 70px;
         }
         .musicBox {
-            position: absolute;
             top: 50px;
             right: 50px;
             width: 380px;
             height: 610px;
+            text-align: right;
+            position: absolute;
             background: rgba(27, 7, 82, 0.842);
             color: #fff;
-            text-align: center;
-            display: none;
             flex-direction: column;
             justify-content: end;
+            display: none;
             border-radius: 20px;
-            cursor: pointer;
             transform: scale(0.5) rotateX(180deg) rotateY(360deg);
             transition: all 0.4s ease-in-out;
         }
@@ -105,11 +104,6 @@
             width: 380px;
             height: 590px;
         }
-        .cursor {
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
         .cursor img {
             width: 30px;
             height: 30px;
@@ -117,32 +111,58 @@
         .memoriBox {
             width: 800px;
             height: 820px;
-            background: #000;
+            position: absolute;
+            text-align: right;
+            background: rgba(27, 7, 82, 0.842);
             color: #fff;
-            text-align: center;
-            display: flex;
             flex-direction: column;
             justify-content: end;
-            position: absolute;
+            display: flex;
             top: 30px;
             left: 0;
-            cursor: pointer;
             transform: scaleY(0);
             transition: all 0.5s ease-in-out;
         }
         .memoriBox.show {
-            display: flex;
-        }
-        .memoriBox.show.move {
             transform: scaleY(1);
         }
         .memoriGame {
             width: 800px;
             height: 800px;
         }
+        .typingBox {
+            width: 900px;
+            height: 483px;
+            border-radius: 20px;
+            position: absolute;
+            text-align: right;
+            background: rgba(27, 7, 82, 0.842);
+            color: #fff;
+            flex-direction: column;
+            justify-content: end;
+            display: flex;
+            top: -50vh;
+            left: 28vw;
+            transition: all 0.5s ease-in-out;
+        }
+        .typingBox.show {
+            top: 20vh;
+            left: 28vw;
+        }
         .typingGame {
             width: 900px;
             height: 463px;
+        }
+        .close {
+            margin-right: 10px;
+        }
+        .cursor {
+            position: absolute;
+            left: 0; top: 0;
+            z-index: 100;
+            width: 25px;
+            user-select: none;
+            pointer-events: none;
         }
     </style>
 </head>
@@ -169,15 +189,15 @@
             </div>
         </div>
         <div class="musicBox">
-            handle
+            <span class="close">닫기</span>
             <iframe class="musicPlayer" src="https://garenchoi.github.io/webs_class/javascript/musicPlayer/index.html" frameborder="0"></iframe>
         </div>
         <div class="memoriBox">
-            handle
+            <span class="close">닫기</span>
             <iframe class="memoriGame" src="https://garenchoi.github.io/webs_class/javascript/memoriGame/index.html" frameborder="0"></iframe>
         </div>
         <div class="typingBox">
-            handle
+            <span class="close">닫기</span>
             <iframe class="typingGame" src="https://garenchoi.github.io/webs_class/javascript/typingGame/index.html" frameborder="0"></iframe>
         </div>
     </div>
@@ -190,6 +210,12 @@
         $(".typingBtn").draggable();
         $(".musicBox").draggable();
         $(".memoriBox").draggable();
+
+        window.addEventListener("mousemove", (e) => {
+            let x = e.clientX-5 + "px"
+            let y = e.clientY-5 + "px"
+            document.querySelector(".cursor").style.cssText = "left:" + x + "; top:" + y
+        });
 
         $(".musicBtn").click(function(){
             if($(".musicBox").hasClass("show")){
@@ -204,19 +230,25 @@
                 },10)
             }
         })
+        $(".musicBox span").click(function(){
+            $(".musicBox").removeClass("move");
+            setTimeout(()=>{
+                    $(".musicBox").removeClass("show");
+            },300);
+        })
 
         $(".memoriBtn").click(function(){
-            if($(".memoriBox").hasClass("show")){
-                $(".memoriBox").removeClass("move");
-                setTimeout(()=>{
-                    $(".memoriBox").removeClass("show");
-                },600)
-            } else {
-                $(".memoriBox").addClass("show");
-                setTimeout(()=>{
-                    $(".memoriBox").addClass("move");
-                },10)
-            }
+            $(".memoriBox").toggleClass("show");
+        })
+        $(".memoriBox span").click(function(){
+            $(".memoriBox").removeClass("show");
+        })
+
+        $(".typingBtn").click(function(){
+            $(".typingBox").toggleClass("show");
+        })
+        $(".typingBox span").click(function(){
+            $(".memoriBox").removeClass("show");
         })
     </script>
 </body>
