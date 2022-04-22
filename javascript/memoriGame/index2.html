@@ -412,7 +412,9 @@
         const cardWrap = document.querySelector(".card__wrap");
         const resultBox = document.querySelector(".result__box");
         const restart = resultBox.querySelector(".restart");
-        const score = resultBox.querySelector(".score");
+        const stopBtn1 = infoBox.querySelector(".stop");
+        const stopBtn2 = resultBox.querySelector(".stop");
+        const score = document.querySelector(".score");
 
 
         const infoBoxStart = document.querySelector(".info__box .buttons .start");
@@ -456,6 +458,21 @@
             resultBox.classList.remove("active");
             shuffledCard();
         }
+
+        //게임 그만하기 
+        stopBtn1.onclick = () => {
+            startBtn.classList.add("active");
+            infoBox.classList.remove("active");
+            cardWrap.classList.remove("active");
+            resultBox.classList.remove("active");
+        }
+        stopBtn2.onclick = () => {
+            startBtn.classList.add("active");
+            infoBox.classList.remove("active");
+            cardWrap.classList.remove("active");
+            resultBox.classList.remove("active");
+        }
+
         function flipCard(e){
             let clickedCard = e.target;
             
