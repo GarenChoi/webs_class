@@ -112,8 +112,8 @@
         height: 30px;
     }
     .memoriBox {
-        width: 800px;
-        height: 820px;
+        width: 700px;
+        height: 720px;
         position: absolute;
         top: 0;
         left: 0;
@@ -133,8 +133,8 @@
         transform: scaleY(1);
     }
     .memoriGame {
-        width: 800px;
-        height: 800px;
+        width: 700px;
+        height: 700px;
     }
     .typingBox {
         width: 900px;
