@@ -19,12 +19,14 @@
         width: 100%;
         height: 100vh;
         cursor: none;
+        overflow: hidden;
     }
     #wrap {
         height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        
     }
     #header{
         height: 30px;
@@ -40,10 +42,12 @@
         justify-content: center;
         margin-bottom: 5vh;
     }
-    .btnBox > div {
+    .btnBox > div,
+    .btnBox > a {
         margin: 0 1.5vw;
     }
-    .btnBox > div:hover p {
+    .btnBox > div:hover p,
+    .btnBox > a:hover p {
         background: rgb(43, 255, 0);
     }
     .btn {
@@ -63,9 +67,16 @@
         padding-bottom: 3px;
     }
     .memoriBtn img {
-        width: 70px;
+        width: 60px;
     }
     .typingBtn img {
+        width: 70px;
+    }
+    .reactBtn {
+        cursor: none;
+        text-decoration: none;
+    }
+    .reactBtn img {
         width: 70px;
     }
     .musicBox {

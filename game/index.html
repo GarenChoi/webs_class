@@ -27,13 +27,17 @@
                 <p class="btnText">music</p>
             </div>
             <div class="memoriBtn">
-                <div class="btn"><img src="assets/img/floppydisk.ico" alt=""></div>
+                <div class="btn"><img src="assets/img/arcade.ico" alt=""></div>
                 <p class="btnText">memory game</p>
             </div>
             <div class="typingBtn">
                 <div class="btn"><img src="assets/img/c64.ico" alt=""></div>
                 <p class="btnText">typing game</p>
             </div>
+            <a class="reactBtn" href="https://garenchoi.netlify.app" target="_blank">
+                <div class="btn"><img src="assets/img/floppydisk.ico" alt=""></div>
+                <p class="btnText">react site</p>
+            </a>
         </div>
         <div class="musicBox">
             <span class="close">닫기</span>
@@ -41,8 +45,8 @@
         </div>
         <div class="memoriBox">
             <span class="close">닫기</span>
-            <!-- <iframe class="memoriGame" src="https://garenchoi.github.io/webs_class/javascript/memoriGame/index2.html" frameborder="0"></iframe> -->
-            <iframe class="memoriGame" src="../javascript/memoriGame/index2.html" frameborder="0"></iframe>
+            <iframe class="memoriGame" src="https://garenchoi.github.io/webs_class/javascript/memoriGame/index2.html" frameborder="0"></iframe>
+            <!-- <iframe class="memoriGame" src="../javascript/memoriGame/index2.html" frameborder="0"></iframe> -->
         </div>
         <div class="typingBox">
             <span class="close">닫기</span>
@@ -96,7 +100,7 @@
             $(".typingBox").toggleClass("show");
         })
         $(".typingBox span").click(function(){
-            $(".memoriBox").removeClass("show");
+            $(".typingBox").removeClass("show");
         })
 
         function printTime() {
