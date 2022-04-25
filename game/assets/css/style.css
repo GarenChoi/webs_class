@@ -159,6 +159,9 @@
         width: 900px;
         height: 463px;
     }
+    .tetrisBtn img {
+        width: 60px;
+    }
     .close {
         margin-right: 10px;
     }

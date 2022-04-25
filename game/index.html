@@ -34,6 +34,10 @@
                 <div class="btn"><img src="assets/img/c64.ico" alt=""></div>
                 <p class="btnText">typing game</p>
             </div>
+            <a class="tetrisBtn" href="../javascript/tetrisGame/index.html" target="_blank">
+                <div class="btn"><img src="assets/img/3dsxl.ico" alt=""></div>
+                <p class="btnText">tetris game</p>
+            </a>
             <a class="reactBtn" href="https://garenchoi.netlify.app" target="_blank">
                 <div class="btn"><img src="assets/img/floppydisk.ico" alt=""></div>
                 <p class="btnText">react site</p>
@@ -64,6 +68,7 @@
         $(".reactBtn").draggable();
         $(".musicBox").draggable();
         $(".memoriBox").draggable();
+        $(".tetrisBtn").draggable();
 
 
         //오버시 효과
@@ -111,6 +116,18 @@
         });
         $(".reactBtn").mouseleave(function(){
             gsap.to(".reactBtn", {
+                duration: 0.3,
+                scale: 1
+            })
+        });
+        $(".tetrisBtn").mouseenter(function(){
+            gsap.to(".tetrisBtn", {
+                duration: 0.3,
+                scale: 1.3
+            })
+        });
+        $(".tetrisBtn").mouseleave(function(){
+            gsap.to(".tetrisBtn", {
                 duration: 0.3,
                 scale: 1
             })
