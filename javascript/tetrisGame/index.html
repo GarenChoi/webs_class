@@ -14,21 +14,64 @@
         body {
             height: 100vh;
             overflow: hidden;
-            background: url("imgbg01.png");
+            background-image: url("imgbg01.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            padding-top: 16vh;
         }
         li {
             list-style: none;
         }
-        .start__btn,
-        .info__box,
-        .result__box {
-            /* display: none; */
+        .info__box {
+            position: relative;
+            background: rgba(0, 0, 0, 0.644);
+            color: #fff;
+            border-radius: 20px;
+            padding: 30px;
+            z-index: 15;
         }
+        .info__box .title {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        .info__box .list {
+            width: 40%;
+            margin: 0 auto;
+        }
+        .start__btn,
+        .reStart__btn {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .start__btn > span,
+        .reStart__btn > span {
+            padding: 5px 20px;
+            border-radius: 20px;
+            background: red;
+            color: #000;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .start__btn > span:hover,
+        .reStart__btn > span:hover {
+            color: #fff;
+        }
+        .info__box .sBox {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+        } 
         .start__btn.hide,
-        .s.hide {
+        .reStart__btn.hide,
+        .sBox.hide {
             display: none;
         }
-
+        
         .tetris__inner {
             opacity: 0.9;
             width: 250px;
@@ -79,58 +122,56 @@
             border: 6px #ff861a outset !important;
             background-color: #ff7900;
         }
+        .gameOverBg {
+            position: absolute;
+            z-index: 10;
+            width: 100%;
+            height: 100vh;
+            background-image: url("imgbg02.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            display: none;
+        }
     </style>
 </head>
 <body>
-    <!-- 시작버튼 -->
-    
-
+    <div class="gameOverBg"></div>
     <!-- 규칙 박스 -->
     <div class="info__box">
-        <div class="title">메모리 게임을 하기 위한 규칙</div>
+        <div class="title">TETRIS GUIDE</div>
         <div class="list">
             <ol>
-                <li>전체 그림은 처음 한번만 보여줍니다.</li>
-                <li>같은 그림을 맞추면 2점을 얻습니다.</li>
-                <li>틀린 그림을 선택하면 1점을 잃습니다.</li>
+                <li>윗 방향키를 누르면 블록이 회전합니다.</li>
+                <li>스페이스바를 누르면 블록이 빠르게 내려옵니다.</li>
+                <li>한줄을 완성해서 없앨 때마다 점수를 획득합니다.</li>
             </ol>
         </div>
-        <div class="buttons">
-            <button class="stop">그만하기</button>
-            <button class="start">도전하기</button>
+        <div class="start__btn">
+            <span>GAME START</span>
         </div>
+        <div class="reStart__btn hide">
+            <span>TRY AGAIN</span>
+        </div>
+        <span class="sBox hide">SCORE : <b class="s">0</b></span>
     </div>
-
     <!-- 테트리스 박스 -->
     <div class="tetris__wrap">
-        
         <div class="tetris__inner">
-            <div class="start__btn">
-                <button>Start</button>
-            </div>
-            <p class="s hide">0</p>
             <ul></ul>
-        </div>
-    </div>
-
-    <!-- 결과 박스 -->
-    <div class="result__box">
-        <div class="title">게임을 성공하였습니다!</div>
-        <div class="score">
-            
-        </div>
-        <div class="buttons">
-            <button class="stop">그만하기</button>
-            <button class="restart">다시 도전하기</button>
         </div>
     </div>
 
     <script>
 
         const tetrisInner = document.querySelector(".tetris__inner ul");
-        const tetrisS = document.querySelector(".tetris__inner .s");
+        const tetrisS = document.querySelector(".info__box .s");
+        const tetrisSBox = document.querySelector(".info__box .sBox");
         const start = document.querySelector(".start__btn");
-        const startBtn = document.querySelector(".start__btn button");
+        const reStart = document.querySelector(".reStart__btn");
+        const startBtn = document.querySelector(".start__btn span");
+        const reStartBtn = document.querySelector(".reStart__btn span");
+        const gameOverBg = document.querySelector(".gameOverBg");
 
         const game_rows = 20;
         const game_cols = 10;
@@ -196,9 +237,26 @@
         //start버튼 누르기
         startBtn.addEventListener("click", function(){
             start.classList.add("hide");
-            tetrisS.classList.remove("hide");
+            tetrisSBox.classList.remove("hide");
+            reStart.classList.remove("hide");
+            document.querySelector(".list").style.display = "none";
+            document.querySelector(".title").innerText = "TETRIS GAME";
             generateNewBlock();
         })
+
+        //reStart버튼 누르기
+        reStartBtn.addEventListener("click", function(){
+            const childNodes = tetrisInner.childNodes;
+            childNodes.forEach(child => {
+                child.remove();
+                tetrisLine();
+            });
+            gameScore = 0;
+            gameOverBg.style.display = "none";
+            document.querySelector(".title").innerText = "TETRIS GAME";
+            generateNewBlock();
+        })
+
         init();
 
         //시작하기
@@ -341,7 +399,14 @@
 
         //게임 끝났을 때
         function gameOver(){
-            console.log("ㅇㅇ")
+            const childNodes = tetrisInner.childNodes;
+            childNodes.forEach(child => {
+                clearInterval(gameInterval);
+                child.remove();
+                tetrisLine();
+                gameOverBg.style.display = "block";
+                document.querySelector(".title").innerText = "GAME OVER";
+            });
         }
 
         //키보드 이벤트 
