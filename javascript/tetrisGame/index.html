@@ -251,6 +251,7 @@
                 tetrisLine();
             });
             gameScore = 0;
+            tetrisS.innerText = gameScore;
             gameOverBg.style.display = "none";
             document.querySelector(".title").innerText = "TETRIS GAME";
             generateNewBlock();
