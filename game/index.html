@@ -180,12 +180,19 @@
             $(".typingBox").removeClass("show");
         })
 
-        // $(".tetrisBtn").click(function(){
-        //     $(".tetrisBox").toggleClass("show");
-        // })
-        // $(".tetrisBox span").click(function(){
-        //     $(".tetrisBox").removeClass("show");
-        // })
+        $(".tetrisBtn").click(function(){
+            $(".tetrisBox").toggleClass("show");
+            setTimeout(()=>{
+                $(".tetrisGame").toggleClass("show");
+            },500)
+           
+        })
+        $(".tetrisBox span").click(function(){
+            $(".tetrisGame").removeClass("show");
+            setTimeout(()=>{
+                $(".tetrisBox").removeClass("show");
+            },500)
+        })
 
         function printTime() {
         var clock = document.getElementById("clock");            // 출력할 장소 선택

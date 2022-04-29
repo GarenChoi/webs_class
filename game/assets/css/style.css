@@ -145,12 +145,12 @@
         justify-content: end;
         display: flex;
         top: -100vh;
-        left: 28vw;
+        left: 50%;
+        transform: translateX(-50%);
         transition: all 0.5s ease-in-out;
     }
     .typingBox.show {
         top: 20vh;
-        left: 28vw;
     }
     .typingGame {
         width: 900px;
@@ -171,17 +171,22 @@
         color: #fff;
         flex-direction: column;
         justify-content: end;
-        transform: translate(-50%,-50%);
-        /* display: none;
-        opacity: 0; */
+        transform: translate(-50%,-50%) scaleX(0);
+        transition: all 0.5s ease-in;
+        display: flex;
     }
     .tetrisBox.show {
-        display: flex;
-        opacity: 1;
+        transform: translate(-50%,-50%) scaleX(1);
     }
     .tetrisGame {
         width: 800px;
         height: 900px;
+        transition: all 0.5s ease-in;
+        opacity: 0;
+    }
+    .tetrisGame.show {
+        transition: all 0.5s ease-in;
+        opacity: 1;
     }
     .close {
         margin-right: 10px;
