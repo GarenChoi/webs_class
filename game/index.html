@@ -34,11 +34,11 @@
                 <div class="btn"><img src="assets/img/c64.ico" alt=""></div>
                 <p class="btnText">typing game</p>
             </div>
-            <a class="tetrisBtn" href="../javascript/tetrisGame/index.html" target="_blank" rel="noopener noreferrer">
+            <div class="tetrisBtn" href="../javascript/tetrisGame/index.html" target="_blank" rel="noopener noreferrer">
                 <div class="btn"><img src="assets/img/3dsxl.ico" alt=""></div>
                 <p class="btnText">tetris game</p>
-            </a>
-            <a class="reactBtn" href="https://garenchoi.netlify.app" target="_blank" rel="noopener noreferrer">
+            </div>
+            <div class="reactBtn">
                 <div class="btn"><img src="assets/img/floppydisk.ico" alt=""></div>
                 <p class="btnText">react site</p>
             </a>
@@ -56,6 +56,10 @@
             <span class="close">닫기</span>
             <iframe class="typingGame" src="https://garenchoi.github.io/webs_class/javascript/typingGame/index.html" frameborder="0"></iframe>
         </div>
+        <div class="tetrisBox">
+            <span class="close">닫기</span>
+            <iframe class="tetrisGame" src="https://garenchoi.github.io/webs_class/javascript/tetrisGame/index.html" frameborder="0"></iframe>
+        </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -63,12 +67,14 @@
     <script src="assets/js/gsap.min.js"></script>
     <script>
         $(".musicBtn").draggable();
-        $(".memoriBtn").draggable();
-        $(".typingBtn").draggable();
-        $(".reactBtn").draggable();
         $(".musicBox").draggable();
+        $(".memoriBtn").draggable();
         $(".memoriBox").draggable();
+        $(".typingBtn").draggable();
+        $(".typingBox").draggable();
         $(".tetrisBtn").draggable();
+        $(".tetrisBox").draggable();
+        $(".reactBtn").draggable();
 
 
         //오버시 효과
@@ -173,6 +179,13 @@
         $(".typingBox span").click(function(){
             $(".typingBox").removeClass("show");
         })
+
+        // $(".tetrisBtn").click(function(){
+        //     $(".tetrisBox").toggleClass("show");
+        // })
+        // $(".tetrisBox span").click(function(){
+        //     $(".tetrisBox").removeClass("show");
+        // })
 
         function printTime() {
         var clock = document.getElementById("clock");            // 출력할 장소 선택
