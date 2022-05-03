@@ -189,31 +189,33 @@
     <script src="js/gsap.min.js"></script>
     <script>
         const parallaxCont = document.getElementById("parallax__cont");
-        //패럴랙스 박스 전체 가로 값
-        const parallaxWidth = parallaxCont.offsetWidth;
+        const contentItem = document.querySelector(".content__item");
 
-        //body에 높이 값에 --> 패럴랙스 박스 전체 가로 값
-        console.log(parallaxWidth)
-        console.log(window.innerWidth)
-        console.log(window.innerHeight)
-        let xxx = window.innerHeight/window.innerWidth;
-        let yyy = window.innerWidth - window.innerHeight;
+        // let xxx = window.innerHeight/window.innerWidth;
+        // let yyy = window.innerWidth - window.innerHeight;
         // let yyy = window.innerWidth * (1-xxx);
-        console.log(yyy)
-        document.body.style.height = `${parallaxWidth-yyy}px`;
-
-
 
         //스크롤 했을 때 left: scrollTop
         function scroll(){
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
-            document.querySelector(".scrollTop span").innerText = scrollTop;
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY; 
 
-            gsap.to(parallaxCont, {left: -scrollTop});
-            // parallaxCont.style.left = `-${scrollY}px`;
+            //기본 크기 셋팅
+            let parallaxWidth = parallaxCont.offsetWidth;
+            document.body.style.height = `${parallaxWidth}px`;
+
+            //섹션 박스
+            let viewWidth = parallaxWidth - window.innerWidth;
+            let viewHeight = parallaxWidth - window.innerHeight;
+            let goLeft = scrollTop * (viewWidth / viewHeight);
+
+            gsap.to(parallaxCont, {left: -goLeft});
+            
+            document.querySelector(".scrollTop span").innerText = scrollTop;
             requestAnimationFrame(scroll);
         }
         scroll();
+
+        window.addEventListener("resize", scroll)
     </script>
 
 </body>
