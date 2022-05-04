@@ -1,145 +1,145 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>마우스 이펙트</title>
 
-    <link rel="stylesheet" href="../css/NexonLv1Gothic.css">
-    <link rel="stylesheet" href="../css/solarized-dark.min.css">
-    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/NexonLv1Gothic.css" />
+    <link rel="stylesheet" href="../css/solarized-dark.min.css" />
+    <link rel="stylesheet" href="../css/custom.css" />
 
     <style>
-        body::before {
-            background: rgba(0, 0, 0, 0.8);
-        }
-        .shape {
-            position: absolute;
-            height: 3px;
-            width: 3px;
-            border: 2px solid #195259;
-        }
-        .shape.circle {
-            border-radius: 50%;
-        }
-        .shape.triangle svg {
-            width: 100%;
-        }
+      body::before {
+        background: rgba(0, 0, 0, 0.4);
+      }
+      .shape {
+        position: absolute;
+        height: 3px;
+        width: 3px;
+        border: 2px solid #195259;
+      }
+      .shape.circle {
+        border-radius: 50%;
+      }
+      .shape.triangle svg {
+        width: 100%;
+      }
 
-        .container {
-            position: relative;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 15px;
-            height: 15px;
-            cursor: none;
-        }
-        .mouse__wrap {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            color: #fff;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-            cursor: none;
-        }
-        .mouse__text {
-            display: flex;
-        }
-        .mouse__text p {
-            font-size: 150px;
-            font-weight: bold;
-            filter: blur(3px);
-            margin: 0 10px;
-        }
+      .container {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 15px;
+        height: 15px;
+        cursor: none;
+      }
+      .mouse__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: #fff;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        cursor: none;
+      }
+      .mouse__text {
+        display: flex;
+      }
+      .mouse__text p {
+        font-size: 150px;
+        font-weight: bold;
+        filter: blur(3px);
+        margin: 0 10px;
+      }
     </style>
-</head>
-<body class="img09">
-    
+  </head>
+  <body class="img09">
     <!-- main -->
     <main>
-        <section id="mouseType01">
-            <div class="container"></div> 
+      <section id="mouseType01">
+        <div class="container"></div>
 
-            <div class="mouse__wrap">
-                <div class="mouse__text">
-                    <p>F</p>
-                    <p>I</p>
-                    <p>R</p>
-                    <p>E</p>
-                    <p>W</p>
-                    <p>O</p>
-                    <p>R</p>
-                    <p>K</p>
-                    <p>S</p>
-                </div>
-            </div>
-        </section>
+        <div class="mouse__wrap">
+          <div class="mouse__text">
+            <p>M</p>
+            <p>O</p>
+            <p>U</p>
+            <p>S</p>
+            <p>E</p>
+            <p>E</p>
+            <p>F</p>
+            <p>F</p>
+            <p>C</p>
+            <p>T</p>
+          </div>
+        </div>
+      </section>
     </main>
     <!-- //main -->
 
     <!-- info -->
     <div class="info">
-        <div class="title">
-            <h1><a href="mouseEffect.html">Javascript Mouse Effect08</a></h1>
-            <p>마우스 이펙트 - 텍스트 효과</p>
-        </div>
-    
-        <div class="number">
-            <ul>
-                <li><a href="mouseEffect01.html">1</a></li>
-                <li><a href="mouseEffect02.html">2</a></li>
-                <li><a href="mouseEffect03.html">3</a></li>
-                <li><a href="mouseEffect04.html">4</a></li>
-                <li><a href="mouseEffect05.html">5</a></li>
-                <li><a href="mouseEffect06.html">6</a></li>
-                <li><a href="mouseEffect07.html">7</a></li>
-                <li class="active"><a href="mouseEffect08.html">8</a></li>
-            </ul>
-        </div>
-    
-        <div class="source">
-            <button class="source-btn">소스보기</button>
-            <div id="modal">
-                <div class="modal-wrap">
-                    <div class="modal-cont">
-                        <div class="code-view">
-                            <div class="view-header" aria-hidden="true">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <div class="view-title">
-                                <ul>
-                                    <li class="active"><a href="#">HTML</a></li>
-                                    <li><a href="#">CSS</a></li>
-                                    <li><a href="#">Javascript</a></li>
-                                </ul>
-                            </div>
-                            <div class="view-cont">
-                                <div>
-<pre><code class="language-HTML">
-</code></pre>
-                                </div>
-                                <div>
-<pre><code class="language-CSS">
-</code></pre>
-                                </div>
-                                <div>
-<pre><code class="language-javascript">
-</code></pre>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="modal-close">닫기</button>
+      <div class="title">
+        <h1><a href="mouseEffect.html">Javascript Mouse Effect08</a></h1>
+        <p>마우스 이펙트 - 텍스트 효과</p>
+      </div>
+
+      <div class="number">
+        <ul>
+          <li><a href="mouseEffect01.html">1</a></li>
+          <li><a href="mouseEffect02.html">2</a></li>
+          <li><a href="mouseEffect03.html">3</a></li>
+          <li><a href="mouseEffect04.html">4</a></li>
+          <li><a href="mouseEffect05.html">5</a></li>
+          <li><a href="mouseEffect06.html">6</a></li>
+          <li><a href="mouseEffect07.html">7</a></li>
+          <li class="active"><a href="mouseEffect08.html">8</a></li>
+        </ul>
+      </div>
+
+      <div class="source">
+        <button class="source-btn">소스보기</button>
+        <div id="modal">
+          <div class="modal-wrap">
+            <div class="modal-cont">
+              <div class="code-view">
+                <div class="view-header" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                  <span></span>
                 </div>
+                <div class="view-title">
+                  <ul>
+                    <li class="active"><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">Javascript</a></li>
+                  </ul>
+                </div>
+                <div class="view-cont">
+                  <div>
+                    <pre><code class="language-HTML">
+</code></pre>
+                  </div>
+                  <div>
+                    <pre><code class="language-CSS">
+</code></pre>
+                  </div>
+                  <div>
+                    <pre><code class="language-javascript">
+</code></pre>
+                  </div>
+                </div>
+              </div>
             </div>
+            <button class="modal-close">닫기</button>
+          </div>
         </div>
+      </div>
     </div>
     <!-- //info -->
 
@@ -148,79 +148,88 @@
     <script src="js/gsap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        // highlight();
-        // modal();
-        // tabMenu();
+      // highlight();
+      // modal();
+      // tabMenu();
 
-        // create array of shapes
-        var shapes = [
-          'circle',
-          'square',
-          'triangle'
-        ];
+      // create array of shapes
+      var shapes = ["circle", "square", "triangle"];
 
-        // create array of colors
-        var colors = [
-          '#A32734',
-          '#195259',
-          '#C38542'
-        ]
+      // create array of colors
+      var colors = ["#A32734", "#195259", "#C38542"];
 
-        // Function that will randomize two numbers
-        function getRandom(lower, upper){
-          var randomNumber = Math.round(Math.random()*(upper - lower) + lower);
-          return randomNumber;
-        }
+      // Function that will randomize two numbers
+      function getRandom(lower, upper) {
+        var randomNumber = Math.round(Math.random() * (upper - lower) + lower);
+        return randomNumber;
+      }
 
-        var amount = 300;
-        // append chosen number of shapes
-        for (var i = 0; i < amount; i++){
-          var color = colors[getRandom(0, 2)];
-          // append divs
-          $('.container').append('<div class="shape shape-' + i + ' ' + shapes[getRandom(0, 2)] + '" style="background-color: ' + color +  '; border: 2px solid ' + color + '"></div>');
-          // assign shape, color, size
-        }
+      var amount = 300;
+      // append chosen number of shapes
+      for (var i = 0; i < amount; i++) {
+        var color = colors[getRandom(0, 2)];
+        // append divs
+        $(".container").append(
+          '<div class="shape shape-' +
+            i +
+            " " +
+            shapes[getRandom(0, 2)] +
+            '" style="background-color: ' +
+            color +
+            "; border: 2px solid " +
+            color +
+            '"></div>'
+        );
+        // assign shape, color, size
+      }
 
-        // send each shape in different direction on tween
-        for (var i = 0; i < amount; i++){
-          TweenMax.to($('.shape-' + i), 0.5, {delay: Math.random(),x: getRandom(-200, 200), y: getRandom(-200, 200), opacity: 0, repeat:-1, ease: Power2.easeOut});
-        }
-
-        $(document).bind('mousemove', function(e){
-            $('.container').css({
-               left:  e.pageX,
-               top:   e.pageY
-            });
+      // send each shape in different direction on tween
+      for (var i = 0; i < amount; i++) {
+        TweenMax.to($(".shape-" + i), 0.5, {
+          delay: Math.random(),
+          x: getRandom(-200, 200),
+          y: getRandom(-200, 200),
+          opacity: 0,
+          repeat: -1,
+          ease: Power2.easeOut,
         });
+      }
 
-        $('.mouse__text').mouseenter(function(){
-            $('body').removeClass('img09');
-            $('body').addClass('img10');
-            $('.mouse__text p').css('filter','blur(0)');
-        })
-        $('.mouse__text').mouseleave(function(){
-            $('body').removeClass('img10');
-            $('body').addClass('img09');
-            $('.mouse__text p').css('filter','blur(3px)');
-        })
+      $(document).bind("mousemove", function (e) {
+        $(".container").css({
+          left: e.pageX,
+          top: e.pageY,
+        });
+      });
 
-        let randC = [
-            '#A32734',
-            '#195259',
-            '#C38542',
-            'rgb(44 89 25)',
-            'rgb(167 30 156)',
-            'rgb(94 91 94)',
-            '#fff'
-        ]
+      $(".mouse__text").mouseenter(function () {
+        $("body").removeClass("img09");
+        $("body").addClass("img10");
+        $(".mouse__text p").css("filter", "blur(0)");
+      });
+      $(".mouse__text").mouseleave(function () {
+        $("body").removeClass("img10");
+        $("body").addClass("img09");
+        $(".mouse__text p").css("filter", "blur(3px)");
+      });
 
-        $('.mouse__text p').mouseenter(function(){
-            let randColor = randC[getRandom(0, 6)];
-            gsap.to($(this), {duration:0.5, scale: 1.6, color: randColor})
-        })
-        $('.mouse__text p').mouseleave(function(){
-            gsap.to($(this), {duration:0.5, scale: 1})
-        })
+      let randC = [
+        "#A32734",
+        "#195259",
+        "#C38542",
+        "rgb(44 89 25)",
+        "rgb(167 30 156)",
+        "rgb(94 91 94)",
+        "#fff",
+      ];
+
+      $(".mouse__text p").mouseenter(function () {
+        let randColor = randC[getRandom(0, 6)];
+        gsap.to($(this), { duration: 0.5, scale: 1.6, color: randColor });
+      });
+      $(".mouse__text p").mouseleave(function () {
+        gsap.to($(this), { duration: 0.5, scale: 1 });
+      });
     </script>
-</body>
-</html>    
+  </body>
+</html>
