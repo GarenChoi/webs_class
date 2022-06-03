@@ -554,9 +554,9 @@
 
       function scroll() {
         let scrollTop =
-          window.screenY ||
           window.pageYOffset ||
-          document.documentElement.scrollTop;
+          document.documentElement.scrollTop ||
+          window.scrollY;
         document.querySelector(".scrollTop span").innerText =
           Math.round(scrollTop);
 

@@ -1,3 +1,19 @@
 <script>
-    console.log(Number.MIN_SAFE_INTEGER);
+  let absolutes = [4, 7, 12];
+  let signs = [true, false, true];
+
+  function solution(absolutes, signs) {
+    var answer = 0;
+
+    for (i = 0; i < signs.length; i++) {
+      if (signs[i] == true) {
+        answer = answer + absolutes[i];
+      } else {
+        answer = answer - absolutes[i];
+      }
+    }
+
+    console.log(answer);
+  }
+  solution(absolutes, signs);
 </script>
